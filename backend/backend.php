@@ -1,13 +1,20 @@
 <?php
 
-// This is the backend for the app. It will handle all of the database connections and queries.
+//This is the backend for the app. It will handle all of the database connections and queries.
 
-$server = "oceanus.cse.buffalo.edu";
-$username = "breckenm";
-$password = "50301442";
-$db = "cse442_2023_fall_team_o_db";
 
-$conn = new mysqli($server, $username, $password, $db);
+//This function will read the database credentials from a csv file and return them as an array.
+
+function readCSV($csvfile){
+    $open = fopen($csvfile, 'r');
+    $line1 = fgetcsv($open, 1000, ",");
+    $line2 = fgetcsv($open, 1000, ",");
+    return $line2;
+}
+
+$creds = readCSV("credentials.csv");
+
+$conn = new mysqli($creds[0], $creds[1], $creds[2], $creds[3]);
 
 if ($conn->connect_error) {
    die("Connection failed: " . $conn->connect_error);
@@ -57,6 +64,8 @@ function loginSQL($username, $password){
 //This function will take in a username, password, email, and alt_email and create a new user 
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
+//clean up code, too many conditionals. 2 nests max.
+
 function signUpSQL($username,$password,$email){
     global $conn;
     $sql = "SELECT username FROM Users WHERE username = '$username'";
@@ -94,8 +103,12 @@ function emailUser($username,$email){
     if (strlen($msg) > 70){
         $msg = wordwrap($msg,70);
     }
-    mail($email,"Gig App Password Reset",$msg);
-    echo "An email has been sent to your email address containing a password reset code || \n";
+    $mailSent = mail($email,"Gig App Password Reset",$msg);
+    if ($mailSent == false){
+        echo "Error sending email || \n";
+    }else{
+        echo "An email has been sent to your email address containing a password reset code || \n";
+    }
     return $randCode;
 }
 
@@ -128,7 +141,7 @@ function resetPassword($username, $email, $code, $newpassword){
     }else{
         $sql = "DELETE FROM resetCodes WHERE username = '$username' AND email = '$email'";
         $conn->query($sql);
-        echo "Incorrect code || \n";
+        echo "Incorrect reset code || \n";
     }
 }
 
@@ -151,7 +164,9 @@ signUpSQL("testuser6","testpassword2745","testemail277");
 forgotPassword("breckenmcg@gmail.com");
 resetPassword("testuser5","breckenmcg@gmail.com","939688676","newpassword");
 
-//All tests successful so far :)
+
+$conn->close();
+//All tests successful so far 
 
 ?>
 
