@@ -1,11 +1,12 @@
 <?php
 
+// This is the backend for the app. It will handle all of the database connections and queries.
+
 $server = "oceanus.cse.buffalo.edu";
 $username = "breckenm";
 $password = "50301442";
 $db = "cse442_2023_fall_team_o_db";
 
-//$conn = new mysqli("127.0.0.1", "breckenm", "50301442", "database", 3306);
 $conn = new mysqli($server, $username, $password, $db);
 
 if ($conn->connect_error) {
@@ -15,10 +16,16 @@ if ($conn->connect_error) {
 echo "Database Connection Status: Online || \n";
 
 
+// This function will take in a JSON object and convert it to a SQL query.
+
+
 function jsonToSQL($json){
     $sql = json_decode($json);
     return $sql;
 }
+
+//This function will take in a username and password string and check if it exists in the database. If it 
+//does, it will return true, if not, it will return false.
 
 function loginSQL($username, $password){
     global $conn;
@@ -32,6 +39,9 @@ function loginSQL($username, $password){
         return false;
     }
 }
+
+//This function will take in a username, password, email, and alt_email and create a new user 
+//in the database. If the user already exists, it will return false, it will not create a new user.
 
 function signUpSQL($username,$password,$email,$alt_email){
     global $conn;
@@ -48,10 +58,11 @@ function signUpSQL($username,$password,$email,$alt_email){
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error . " || \n";
             return false;
-    }
+        }
     }
 }
 
+//Theses are tests for the functions above. They will be removed once the app is complete.
 
 loginSQL("testuser","testsneaky");
 signUpSQL("testuser","testsneaky","testemail","testemail");
