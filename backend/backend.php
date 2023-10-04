@@ -45,20 +45,73 @@ function loginSQL($username, $password){
 
 function signUpSQL($username,$password,$email){
     global $conn;
-    if (loginSQL($username,$password) == true){
-        echo "User already exists || \n";
+    $sql = "SELECT username FROM Users WHERE username = '$username'";
+    $result = $conn->query($sql);
+    if ($result->num_rows >0){
+        echo "Username is taken || \n";
         return false;
     }else{
-        $randID = FLOOR(RAND()) + 1000;
-        $sql = "INSERT INTO Users (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
+        $sql = "SELECT email FROM Users WHERE email = '$email'";
         $result = $conn->query($sql);
-        if ($result === TRUE) {
-            echo "New user created successfully || \n";
-            return true;
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error . " || \n";
+        if ($result->num_rows >0){
+            echo "An account has already been registered with this email || \n";
             return false;
+        }else{
+            $randID = FLOOR(RAND()) + 1000;
+            $sql = "INSERT INTO Users (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
+            $result = $conn->query($sql);
+            if ($result === TRUE) {
+                echo "New user created successfully || \n";
+                return true;
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error . " || \n";
+                return false;
+            }
         }
+    }
+}
+
+//This function will send an email to the users email address containing a randomly generated code. They
+//will use this code to reset their password. A helper function for forgotPassword().
+
+function emailUser($username,$email){
+    $randCode = FLOOR(RAND()) + 1005;
+    $msg = "Hello ".$username.",\n\n your password reset code is ". $randCode ."\n\n Please do not share it with anyone. Thank you,\n The Gig App Team";
+    if (strlen($msg) > 70){
+        $msg = wordwrap($msg,70);
+    }
+    mail($email,"Gig App Password Reset",$msg);
+    return $randCode;
+}
+
+//This function will email the user and add the code to the database so they can successfully
+//reset their password with the code. 
+
+function forgotPassword($email){
+    global $conn;
+    $sql = "SELECT username FROM Users WHERE email = '$email'";
+    $result = $conn->query($sql);
+    $username = $result->fetch_assoc()["username"];
+    $randCode = emailUser($username, $email);
+    $sql = "INSERT INTO resetCodes (username, email, code) VALUES ('$username', '$email', '$randCode')";
+    $conn->query($sql);
+}
+
+//This function 
+
+function resetPassword($username, $email, $code, $newpassword){
+    global $conn;
+    $sql = "SELECT code FROM resetCodes WHERE username = '$username' AND email = '$email'";
+    $result = $conn->query($sql);
+    $result = $result->fetch_assoc()["code"];
+    if ($result == $code){
+        $sql = "UPDATE Users SET password = '$newpassword' WHERE username = '$username' AND email = '$email'";
+        $conn->query($sql);
+        $sql = "DELETE FROM resetCodes WHERE username = '$username' AND email = '$email'";
+        $conn->query($sql);
+        echo "Password reset successfully || \n";
+    }else{
+        echo "Incorrect code || \n";
     }
 }
 
@@ -69,6 +122,10 @@ signUpSQL("testuser","testpassword","testemail");
 signUpSQL("testuser","testpassword","testemail");
 signUpSQL("testuser2","testpassword2","testemail2");
 loginSQL("testuser2","testpassword2");
+signUpSQL("testuser2","testpassword27","testemail27");
+signUpSQL("testuser3","testpassword27","testemail27");
+loginSQL("testuser3","testpassword27");
+signUpSQL("testuser4","testpassword274","testemail2");
 
 ?>
 
