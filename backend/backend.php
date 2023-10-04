@@ -15,9 +15,23 @@ if ($conn->connect_error) {
 
 echo "Database Connection Status: Online || \n";
 
+//This function will generate a random ID for the user. It will check if the ID already exists 
+//in the database to make sure every user has a unique ID. If it already exists, it will recursively
+//generate new ids until it finds one that doesn't exist.
 
-// This function will take in a JSON object and convert it to a SQL query.
+function generateID(){
+    global $conn;
+    $randID = FLOOR(RAND()) + 1000;
+    $sql = "SELECT account_id FROM Users WHERE account_id = '$randID'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0){
+        generateID();
+    }else{
+        return $randID;
+    }
+}
 
+//This function will take in a JSON object and convert it to a SQL query.
 
 function jsonToSQL($json){
     $sql = json_decode($json);
@@ -57,7 +71,7 @@ function signUpSQL($username,$password,$email){
             echo "An account has already been registered with this email || \n";
             return false;
         }else{
-            $randID = FLOOR(RAND()) + 1000;
+            $randID = generateID();
             $sql = "INSERT INTO Users (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
             $result = $conn->query($sql);
             if ($result === TRUE) {
@@ -81,6 +95,7 @@ function emailUser($username,$email){
         $msg = wordwrap($msg,70);
     }
     mail($email,"Gig App Password Reset",$msg);
+    echo "An email has been sent to your email address containing a password reset code || \n";
     return $randCode;
 }
 
@@ -111,6 +126,8 @@ function resetPassword($username, $email, $code, $newpassword){
         $conn->query($sql);
         echo "Password reset successfully || \n";
     }else{
+        $sql = "DELETE FROM resetCodes WHERE username = '$username' AND email = '$email'";
+        $conn->query($sql);
         echo "Incorrect code || \n";
     }
 }
@@ -126,6 +143,15 @@ signUpSQL("testuser2","testpassword27","testemail27");
 signUpSQL("testuser3","testpassword27","testemail27");
 loginSQL("testuser3","testpassword27");
 signUpSQL("testuser4","testpassword274","testemail2");
+signUpSQL("testuser5","testpassword274","breckenmcg@gmail.com");
+loginSQL("testuser5","testpassword274");
+signUpSQL("testuser6","testpassword2745","testemail277");
+
+
+forgotPassword("breckenmcg@gmail.com");
+resetPassword("testuser5","breckenmcg@gmail.com","939688676","newpassword");
+
+//All tests successful so far :)
 
 ?>
 
