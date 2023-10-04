@@ -29,7 +29,7 @@ function jsonToSQL($json){
 
 function loginSQL($username, $password){
     global $conn;
-    $sql = "SELECT username, sneaky FROM logins WHERE username = '$username' AND sneaky = '$password'";
+    $sql = "SELECT username, password FROM Users WHERE username = '$username' AND password = '$password'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         echo "Logged in Successfully as: ".$username." || \n";
@@ -43,14 +43,14 @@ function loginSQL($username, $password){
 //This function will take in a username, password, email, and alt_email and create a new user 
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
-function signUpSQL($username,$password,$email,$alt_email){
+function signUpSQL($username,$password,$email){
     global $conn;
     if (loginSQL($username,$password) == true){
         echo "User already exists || \n";
         return false;
     }else{
         $randID = FLOOR(RAND()) + 1000;
-        $sql = "INSERT INTO logins (account_id, username, email, alt_email, sneaky) VALUES ('$randID','$username', '$email', '$alt_email', '$password')";
+        $sql = "INSERT INTO Users (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
         $result = $conn->query($sql);
         if ($result === TRUE) {
             echo "New user created successfully || \n";
@@ -64,11 +64,11 @@ function signUpSQL($username,$password,$email,$alt_email){
 
 //Theses are tests for the functions above. They will be removed once the app is complete.
 
-loginSQL("testuser","testsneaky");
-signUpSQL("testuser","testsneaky","testemail","testemail");
-signUpSQL("testuser2","testsneaky2","testemail2","testemail3");
-signUpSQL("testuser3","testsneaky3","testemail3","testemail3");
-signUpSQL("testuser4","testsneaky4","testemail4","testemail4");
+loginSQL("testuser","testpassword");
+signUpSQL("testuser","testpassword","testemail");
+signUpSQL("testuser","testpassword","testemail");
+signUpSQL("testuser2","testpassword2","testemail2");
+loginSQL("testuser2","testpassword2");
 
 ?>
 
