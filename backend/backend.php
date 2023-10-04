@@ -1,6 +1,5 @@
 <?php
 
-
 $server = "oceanus.cse.buffalo.edu";
 $username = "breckenm";
 $password = "50301442";
@@ -21,30 +20,44 @@ function jsonToSQL($json){
     return $sql;
 }
 
-function executeSQL($sql){
-    global $conn;
-    $conn->query($sql);
-}
-
 function loginSQL($username, $password){
     global $conn;
     $sql = "SELECT username, sneaky FROM logins WHERE username = '$username' AND sneaky = '$password'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        echo "Logged in Successfully as: ".$username."\n";
+        echo "Logged in Successfully as: ".$username." || \n";
         return true;
     } else {
-        echo "Incorrect username or password\n";
+        echo "Incorrect username or password || \n";
         return false;
     }
 }
 
-$sql = "SELECT username FROM logins";
-$result = $conn->query($sql);
+function signUpSQL($username,$password,$email,$alt_email){
+    global $conn;
+    if (loginSQL($username,$password) == true){
+        echo "User already exists || \n";
+        return false;
+    }else{
+        $randID = FLOOR(RAND()) + 1000;
+        $sql = "INSERT INTO logins (account_id, username, email, alt_email, sneaky) VALUES ('$randID','$username', '$email', '$alt_email', '$password')";
+        $result = $conn->query($sql);
+        if ($result === TRUE) {
+            echo "New user created successfully || \n";
+            return true;
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error . " || \n";
+            return false;
+    }
+    }
+}
 
-//echo $result->fetch_assoc()["username"];
 
 loginSQL("testuser","testsneaky");
+signUpSQL("testuser","testsneaky","testemail","testemail");
+signUpSQL("testuser2","testsneaky2","testemail2","testemail3");
+signUpSQL("testuser3","testsneaky3","testemail3","testemail3");
+signUpSQL("testuser4","testsneaky4","testemail4","testemail4");
 
 ?>
 
