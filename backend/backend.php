@@ -97,7 +97,7 @@ function forgotPassword($email){
     $conn->query($sql);
 }
 
-//This function 
+//This function updates the users password in the database and removes the code from the database.
 
 function resetPassword($username, $email, $code, $newpassword){
     global $conn;
