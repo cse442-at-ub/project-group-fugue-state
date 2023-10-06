@@ -17,7 +17,7 @@ function connect(){
     if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
     }
-    echo "Database Connection Status: Online || \n";
+    echo "Database Connection Status... Online || \n";
     return $conn;
 }
 

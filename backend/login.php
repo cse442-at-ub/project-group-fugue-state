@@ -12,7 +12,7 @@ function jsonToSQL($json){
 
 function loginSQL($username, $password){
     global $conn;
-    $sql = "SELECT username, password FROM Users WHERE username = '$username' AND password = '$password'";
+    $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$password'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         echo "Logged in Successfully as: ".$username." || \n";
