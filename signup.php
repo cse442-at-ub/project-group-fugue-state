@@ -7,7 +7,7 @@
 function generateID(){
     global $conn;
     $randID = FLOOR(RAND()) + 1000;
-    $sql = "SELECT account_id FROM Users WHERE account_id = '$randID'";
+    $sql = "SELECT account_id FROM logins WHERE account_id = '$randID'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
         generateID();
@@ -19,24 +19,27 @@ function generateID(){
 //This function will take in a username, password, email, and alt_email and create a new user 
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
-//clean up code, too many conditionals. 2 nests max.
 
 function signUpSQL($username,$password,$email){
     global $conn;
-    $sql = "SELECT username FROM Users WHERE username = '$username'";
+    $sql = "SELECT username FROM logins WHERE username = '$username'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
         echo "Username is taken || \n";
         return false;
     }
-    $sql = "SELECT email FROM Users WHERE email = '$email'";
+    if (strlen($username) == 0 || strlen($password) == 0 || strlen($email) == 0){
+        echo "Please fill out all fields || \n";
+        return false;
+    }
+    $sql = "SELECT email FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
         echo "An account has already been registered with this email || \n";
         return false;
     }
     $randID = generateID();
-    $sql = "INSERT INTO Users (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
+    $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
     $result = $conn->query($sql);
     if ($result === TRUE) {
         echo "New user created successfully || \n";
