@@ -22,7 +22,7 @@ function generateID(){
 
 function signUpSQL($username,$password,$email){
     global $conn;
-    $sql = "SELECT username FROM Users WHERE username = '$username'";
+    $sql = "SELECT username FROM logins WHERE username = '$username'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
         echo "Username is taken || \n";
@@ -32,14 +32,14 @@ function signUpSQL($username,$password,$email){
         echo "Please fill out all fields || \n";
         return false;
     }
-    $sql = "SELECT email FROM Users WHERE email = '$email'";
+    $sql = "SELECT email FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
         echo "An account has already been registered with this email || \n";
         return false;
     }
     $randID = generateID();
-    $sql = "INSERT INTO Users (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
+    $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
     $result = $conn->query($sql);
     if ($result === TRUE) {
         echo "New user created successfully || \n";
