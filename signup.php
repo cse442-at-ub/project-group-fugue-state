@@ -1,5 +1,7 @@
 <?php 
 
+require "connect.php";
+
 //This function will generate a random ID for the user. It will check if the ID already exists 
 //in the database to make sure every user has a unique ID. If it already exists, it will recursively
 //generate new ids until it finds one that doesn't exist.
@@ -20,9 +22,12 @@ function generateID(){
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
 
-function signUpSQL($username,$password,$email){
+function signUpSQL(){
+    $username = getUsername();
+    $password = getPassword();
+    $email = getEmail();
     global $conn;
-    $sql = "SELECT username FROM Users WHERE username = '$username'";
+    $sql = "SELECT username FROM logins WHERE username = '$username'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
         echo "Username is taken || \n";
@@ -32,14 +37,14 @@ function signUpSQL($username,$password,$email){
         echo "Please fill out all fields || \n";
         return false;
     }
-    $sql = "SELECT email FROM Users WHERE email = '$email'";
+    $sql = "SELECT email FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
         echo "An account has already been registered with this email || \n";
         return false;
     }
     $randID = generateID();
-    $sql = "INSERT INTO Users (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
+    $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
     $result = $conn->query($sql);
     if ($result === TRUE) {
         echo "New user created successfully || \n";
@@ -49,5 +54,8 @@ function signUpSQL($username,$password,$email){
         return false;
     }
 }
+
+$conn = connect();
+signUpSQL();
 
 ?>
