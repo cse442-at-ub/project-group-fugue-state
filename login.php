@@ -27,7 +27,6 @@ function loginSQL(){
         return true;
     } else {
         echo "Incorrect username or password || \n";
-        echo $hashed_password;
         return false;
     }
 }
