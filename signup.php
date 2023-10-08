@@ -25,6 +25,7 @@ function generateID(){
 function signUpSQL(){
     $username = getUsername();
     $password = getPassword();
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $email = getEmail();
     global $conn;
     $sql = "SELECT username FROM logins WHERE username = '$username'";
@@ -44,7 +45,7 @@ function signUpSQL(){
         return false;
     }
     $randID = generateID();
-    $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$password', '$email', '$randID')";
+    $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$hashed_password', '$email', '$randID')";
     $result = $conn->query($sql);
     if ($result === TRUE) {
         echo "New user created successfully || \n";
