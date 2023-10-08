@@ -18,8 +18,9 @@ require "connect.php";
 function loginSQL(){
     $username = getUsername();
     $password = getPassword();
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     global $conn;
-    $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$password'";
+    $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$hashed_password'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         echo "Logged in Successfully as: ".$username." || \n";
