@@ -25,7 +25,7 @@ function generateID(){
 function signUpSQL(){
     $username = getUsername();
     $password = getPassword();
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = hash("sha256",$password);
     $email = getEmail();
     global $conn;
     $sql = "SELECT username FROM logins WHERE username = '$username'";
