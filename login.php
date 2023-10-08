@@ -18,7 +18,7 @@ require "connect.php";
 function loginSQL(){
     $username = getUsername();
     $password = getPassword();
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = hash("sha256",$password);
     global $conn;
     $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$hashed_password'";
     $result = $conn->query($sql);
@@ -27,6 +27,7 @@ function loginSQL(){
         return true;
     } else {
         echo "Incorrect username or password || \n";
+        echo $hashed_password;
         return false;
     }
 }
