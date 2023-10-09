@@ -18,6 +18,33 @@ function generateID(){
     }
 }
 
+//This function quantifies the strength of the password, making sure the user includes 
+//lower case letters, upper case letters, numbers, and special characters. 
+
+function passwordStrength($password){
+    if (strlen($password) < 8){
+        echo "password is too short || \n";
+        return false;
+    }
+    if (preg_match('/[A-Z]/', $password) == false){
+        echo "password does not contain upper case letters || \n";
+        return false;
+    }
+    if (preg_match('/[a-z]/', $password) == false){
+        echo "password does not contain lower case letters || \n";
+        return false;
+    }
+    if (preg_match('/[0-9]/', $password) == false){
+        echo "password does not contain numbers || \n";
+        return false;
+    }
+    if (preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $password) == false){
+        echo "password does not contain special characters || \n";
+        return false;
+    }
+    return true;
+}
+
 //This function will take in a username, password, email, and alt_email and create a new user 
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
@@ -25,6 +52,9 @@ function generateID(){
 function signUpSQL(){
     $username = getUsername();
     $password = getPassword();
+    if (passwordStrength($password) == false){
+        return false;
+    }
     $hashed_password = hash("sha256",$password);
     $email = getEmail();
     global $conn;
@@ -55,6 +85,7 @@ function signUpSQL(){
         return false;
     }
 }
+
 
 $conn = connect();
 signUpSQL();
