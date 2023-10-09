@@ -23,7 +23,7 @@ function connect(){
 
 //These functions retrieve the username and password from the html form. For login and signup scripts.
 
-function getUsername($input){
+function getInfo($input){
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $info = $_POST[$input];
         return $info;
