@@ -16,8 +16,8 @@ require "connect.php";
 //does, it will return true, if not, it will return false.
 
 function loginSQL(){
-    $username = getUsername();
-    $password = getPassword();
+    $username = getInfo("username");
+    $password = getInfo("password");
     $hashed_password = hash("sha256",$password);
     global $conn;
     $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$hashed_password'";
