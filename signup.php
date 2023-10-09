@@ -50,13 +50,13 @@ function passwordStrength($password){
 
 
 function signUpSQL(){
-    $username = getUsername();
-    $password = getPassword();
+    $username = getInfo("username");
+    $password = getInfo("password");
     if (passwordStrength($password) == false){
         return false;
     }
     $hashed_password = hash("sha256",$password);
-    $email = getEmail();
+    $email = getInfo("email");
     global $conn;
     $sql = "SELECT username FROM logins WHERE username = '$username'";
     $result = $conn->query($sql);
