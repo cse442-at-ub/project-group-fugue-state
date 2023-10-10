@@ -1,0 +1,42 @@
+.search-bar-w-radio {
+  width: 53px;
+  height: 53px;
+  background-color: #d9d9d9;
+  border-radius: 43px;
+  border: 0.5px solid;
+  border-color: #cbc2c2;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.search-bar-w-radio .lens {
+  position: relative;
+  width: 35px;
+  height: 31px;
+  top: 10px;
+  left: 12px;
+}
+
+.search-bar-w-radio .overlap-group {
+  position: relative;
+  width: 37px;
+  height: 31px;
+}
+
+.search-bar-w-radio .ellipse {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  top: 0;
+  left: 0;
+  border-radius: 13.3px;
+  border: 3px solid;
+  border-color: #ffffff;
+}
+
+.search-bar-w-radio .line {
+  position: absolute;
+  width: 14px;
+  height: 12px;
+  top: 19px;
+  left: 23px;
+}

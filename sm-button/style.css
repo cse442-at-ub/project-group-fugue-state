@@ -1,0 +1,41 @@
+.button-sm {
+  width: 170px;
+  height: 77px;
+}
+
+.button-sm .overlap-group {
+  position: relative;
+  width: 166px;
+  height: 74px;
+  top: 1px;
+  left: 2px;
+}
+
+.button-sm .rectangle {
+  position: absolute;
+  width: 166px;
+  height: 73px;
+  top: 1px;
+  left: 0;
+  background-color: #89c0f2bf;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #cbc2c2;
+  box-shadow: 0px 4px 4px #00000040, inset 0px 4px 4px #00000040;
+}
+
+.button-sm .text {
+  position: absolute;
+  width: 166px;
+  height: 73px;
+  top: 0;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Miriam Libre", Helvetica;
+  font-weight: 700;
+  color: #6a6868bf;
+  font-size: 23px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
