@@ -23,14 +23,14 @@ function loginSQL(){
     $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$hashed_password'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        //echo "Logged in Successfully as: ".$username." || \n";
-        header("Location: success.html");
-        //return true;
+        $message = "Login succsessful";
+        $redirect = "success.html";
+        popUp($message,$redirect);
         exit();
     } else {
-        //echo "Incorrect username or password || \n";
-        header("Location: failure.html");
-        //return false;
+        $message = "Incorrect login information";
+        $redirect = "testlogin.html";
+        popUp($message,$redirect);
         exit();
     }
 }
