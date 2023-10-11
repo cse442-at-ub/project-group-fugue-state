@@ -53,7 +53,9 @@ function signUpSQL(){
     $username = getInfo("username");
     $password = getInfo("password");
     if (passwordStrength($password) == false){
-        return false;
+        //return false;
+        header("Location: testsignup.html");
+        exit();
     }
     $hashed_password = hash("sha256",$password);
     $email = getInfo("email");
@@ -61,28 +63,38 @@ function signUpSQL(){
     $sql = "SELECT username FROM logins WHERE username = '$username'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
-        echo "Username is taken || \n";
-        return false;
+        //echo "Username is taken || \n";
+        header("Location: testsignup.html");
+        //return false;
+        exit();
     }
     if (strlen($username) == 0 || strlen($password) == 0 || strlen($email) == 0){
-        echo "Please fill out all fields || \n";
-        return false;
+        //echo "Please fill out all fields || \n";
+        header("Location: testsignup.html");
+        //return false;
+        exit();
     }
     $sql = "SELECT email FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
-        echo "An account has already been registered with this email || \n";
-        return false;
+        //echo "An account has already been registered with this email || \n";
+        header("Location: testsignup.html");
+        //return false;
+        exit();
     }
     $randID = generateID();
     $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$hashed_password', '$email', '$randID')";
     $result = $conn->query($sql);
     if ($result === TRUE) {
-        echo "New user created successfully || \n";
-        return true;
+        //echo "New user created successfully || \n";
+        header("Location: testlogin.html");
+        //return true;
+        exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error . " || \n";
-        return false;
+        //echo "Error: " . $sql . "<br>" . $conn->error . " || \n";
+        header("Location: testsignup.html");
+        //return false;
+        exit();
     }
 }
 
