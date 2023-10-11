@@ -1,7 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
 require "connect.php";
 
@@ -23,11 +23,15 @@ function loginSQL(){
     $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$hashed_password'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        echo "Logged in Successfully as: ".$username." || \n";
-        return true;
+        //echo "Logged in Successfully as: ".$username." || \n";
+        header("Location: success.html");
+        //return true;
+        exit();
     } else {
-        echo "Incorrect username or password || \n";
-        return false;
+        //echo "Incorrect username or password || \n";
+        header("Location: failure.html");
+        //return false;
+        exit();
     }
 }
 
