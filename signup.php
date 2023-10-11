@@ -18,14 +18,6 @@ function generateID(){
     }
 }
 
-//This function creates a popup message with a custom message and then redirects to another page
-
-function popUp($message,$redirect){
-    echo '<script type="text/javascript">'; 
-    echo 'alert("'.$message.'");';
-    echo 'window.location.href = "'.$redirect.'";';
-    echo '</script>';
-}
 
 //This function quantifies the strength of the password, making sure the user includes 
 //lower case letters, upper case letters, numbers, and special characters. 
