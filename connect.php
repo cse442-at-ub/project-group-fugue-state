@@ -21,5 +21,24 @@ function connect(){
     return $conn;
 }
 
+//These functions retrieve the username and password from the html form. For login and signup scripts.
+
+function getInfo($input){
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $info = $_POST[$input];
+        return $info;
+    }
+}
+
+//This function creates a popup message with a custom message and then redirects to another page
+
+function popUp($message,$redirect){
+    echo '<script type="text/javascript">'; 
+    echo 'alert("'.$message.'");';
+    echo 'window.location.href = "'.$redirect.'";';
+    echo '</script>';
+}
+
+
 
 ?>
