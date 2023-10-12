@@ -18,6 +18,12 @@ require "connect.php";
 function loginSQL(){
     $username = getInfo("username");
     $password = getInfo("password");
+    if (strlen($username) == 0 || strlen($password) == 0){
+        $message = "Please fill out all fields";
+        $redirect = "testlogin.html";
+        popUp($message,$redirect);
+        exit();
+    }
     $hashed_password = hash("sha256",$password);
     global $conn;
     $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$hashed_password'";
