@@ -1,20 +1,93 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>CSE312 Sample Front End</title>
-    <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
-<!--    <link rel="stylesheet" type="text/css" href="public/style.css"/>-->
-</head>
-<body onload="welcome();">
+    <head>
+        <link href= "{{url_for('static', filename='profile.css')}}" rel = "stylesheet">
+    </head>
+    <body>
+        <!-- GIG APP links back to homepage-->
+        <a href="{{ url_for('home') }}" class='profile-icon'>
+            <img src= "{{url_for('static', filename='img/logo.png')}}" />
+        </a>
 
-<h1>CSE442 Sample Page</h1>
+        <!-- This is the text User Bio-->
+        <div style="width: 268.37px; height: 59.91px; left: 52px; top: 252px; position: absolute; color: #1E1E1E; font-size: 32px; font-family: Miriam Libre; font-weight: 700; letter-spacing: 2.88px; word-wrap: break-word">User Bio:</div>
+        
+        <!-- This is the white rectangel under User Bio-->   
+        <div style="width: 559px; height: 281px; left: 47px; top: 306px; position: absolute">
+            <div style="width: 559px; height: 281px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset; border-radius: 8px; border: 1px #CBC2C2 solid"></div>
+            <div style="width: 548.94px; height: 270.90px; left: 5.03px; top: 5.77px; position: absolute; background: white; border: 0.50px black solid"></div>
+        </div>
+        
+        <!-- This is the text recently played-->   
+        <div style="width: 307px; height: 60px; left: 55px; top: 596px; position: absolute; color: #1E1E1E; font-size: 32px; font-family: Miriam Libre; font-weight: 700; letter-spacing: 2.88px; word-wrap: break-word">Recently Played:</div>
+        <!-- This is the white rectangel under recently played-->   
+        <div style="width: 559px; height: 281px; left: 50px; top: 650px; position: absolute">
+            <div style="width: 559px; height: 281px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset; border-radius: 8px; border: 1px #CBC2C2 solid"></div>
+            <div style="width: 548.94px; height: 270.90px; left: 5.03px; top: 5.77px; position: absolute; background: white; border: 0.50px black solid"></div>
+            <div style="width: 542px; height: 53px; left: 9px; top: 61px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+            <div style="width: 542px; height: 53px; left: 9px; top: 114px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+            <div style="width: 542px; height: 53px; left: 9px; top: 167px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+            <div style="width: 542px; height: 53px; left: 9px; top: 220px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        </div>
 
-<p id="paragraph">
-    This text is from the HTML file 🙂
-</p>
-<hr/>
-<img src= "{{url_for('static', filename='cat.jpg')}}" alt="Temp" class="my_image">
-<br/>
-<hr/>
-<script src="static/functions.js"></script>
-</body>
-</html>
+        <!-- This is the text Shared Songs-->
+        <div style="width: 268.37px; height: 59.91px; left: 664px; top: 252px; position: absolute; color: #1E1E1E; font-size: 32px; font-family: Miriam Libre; font-weight: 700; letter-spacing: 2.88px; word-wrap: break-word">Shared Songs:</div>
+        <!-- This is the white rectangel under shared songs-->
+        <div style="width: 742px; height: 281px; left: 664px; top: 306px; position: absolute">
+            <div style="width: 742px; height: 281px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset; border-radius: 8px; border: 1px #CBC2C2 solid"></div>
+            <div style="width: 728.64px; height: 270.90px; left: 6.68px; top: 5.77px; position: absolute; background: white; border: 0.50px black solid"></div>
+        </div>
+
+        <!-- This is for Song title,-->
+        <div style="width: 153px; height: 61px; left: 1204px; top: 292px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Views</div>
+        <div style="width: 153px; height: 61px; left: 687px; top: 292px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Song Title</div>
+        <div style="width: 178px; height: 61px; left: 922.21px; top: 292px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Created Date</div>
+        <div style="width: 316px; height: 60px; left: 671px; top: 597px; position: absolute; color: #1E1E1E; font-size: 32px; font-family: Miriam Libre; font-weight: 700; letter-spacing: 2.88px; word-wrap: break-word">Favorite Songs:</div>
+        <div style="width: 268.37px; height: 59.91px; left: 664px; top: 252px; position: absolute; color: #1E1E1E; font-size: 32px; font-family: Miriam Libre; font-weight: 700; letter-spacing: 2.88px; word-wrap: break-word">Shared Songs:</div>
+        <!-- This is for username-->
+        <div style="width: 240px; height: 36px; left: 628px; top: 168px; position: absolute; color: #1E1E1E; font-size: 32px; font-family: Miriam Libre; font-weight: 700; letter-spacing: 2.88px; word-wrap: break-word">Username</div>
+        
+        <div style="width: 742px; height: 281px; left: 664px; top: 306px; position: absolute">
+            <div style="width: 742px; height: 281px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset; border-radius: 8px; border: 1px #CBC2C2 solid"></div>
+            <div style="width: 728.64px; height: 270.90px; left: 6.68px; top: 5.77px; position: absolute; background: white; border: 0.50px black solid"></div>
+        </div>
+
+        <!-- This is for song title, created, views for shared songs-->
+        <div style="width: 153px; height: 61px; left: 1204px; top: 292px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Views</div>
+        <div style="width: 153px; height: 61px; left: 687px; top: 292px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Song Title</div>
+        <div style="width: 178px; height: 61px; left: 922.21px; top: 292px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Created Date</div>
+        <div style="width: 316px; height: 60px; left: 671px; top: 597px; position: absolute; color: #1E1E1E; font-size: 32px; font-family: Miriam Libre; font-weight: 700; letter-spacing: 2.88px; word-wrap: break-word">Favorite Songs:</div>
+        <div style="width: 742px; height: 281px; left: 671px; top: 650px; position: absolute">
+            <div style="width: 742px; height: 281px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset; border-radius: 8px; border: 1px #CBC2C2 solid"></div>
+            <div style="width: 728.64px; height: 270.90px; left: 6.68px; top: 5.77px; position: absolute; background: white; border: 0.50px black solid"></div>
+        </div>
+
+        <!-- This is for song title, created, views for Recently played and favorite songs-->
+        <div style="width: 153px; height: 61px; left: 1211px; top: 637px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Views</div>
+        <div style="width: 153px; height: 61px; left: 694px; top: 637px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Song Title</div>
+        <div style="width: 93px; height: 61px; left: 982px; top: 637px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Author</div>
+        <div style="width: 153px; height: 61px; left: 73px; top: 650px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Song Title</div>
+        <div style="width: 101px; height: 61px; left: 361px; top: 650px; position: absolute; color: black; font-size: 28px; font-family: Miriam Libre; font-weight: 400; word-wrap: break-word">Author</div>
+        
+        <!-- This is for the dashed line for shared songs and favorite songs-->
+        <div style="width: 711px; height: 53px; left: 687px; top: 701px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 687px; top: 754px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 687px; top: 807px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 687px; top: 860px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 687px; top: 701px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 679px; top: 406px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 687px; top: 807px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 687px; top: 860px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 679px; top: 353px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 679px; top: 459px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 711px; height: 53px; left: 679px; top: 512px; position: absolute; background: rgba(217, 217, 217, 0); border: 0.50px black solid"></div>
+        <div style="width: 100px; height: 100px; left: 1333px; top: 582px; position: absolute"></div>
+
+        <!-- This is the profile picture-->
+        <div style="width: 102px; height: 114.10px; left: 669px; top: 41px; position: absolute">
+            <div style="width: 102px; height: 102px; left: 0px; top: 0px; position: absolute; background: #B1AAAA; border-radius: 9999px"></div>
+            <div style="width: 37.78px; height: 37.78px; left: 31.48px; top: 12.59px; position: absolute; background: #6A6868; border-radius: 9999px"></div>
+            <div style="width: 60.19px; height: 59.63px; left: 79.06px; top: 114.10px; position: absolute; transform: rotate(-178.48deg); transform-origin: 0 0; background: #6A6868; border-radius: 9999px"></div>
+        </div>
+    </body>
+</html> 
