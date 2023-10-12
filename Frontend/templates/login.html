@@ -1,20 +1,67 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>CSE312 Sample Front End</title>
+  <head>
+    <link href= "{{url_for('static', filename='globals.css')}}" rel = "stylesheet">
+    <link href= "{{url_for('static', filename='styleguide.css')}}" rel = "stylesheet">
     <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
-<!--    <link rel="stylesheet" type="text/css" href="public/style.css"/>-->
-</head>
-<body onload="welcome();">
+    <!--
+      <link rel="stylesheet" href="globals.css" />
+      <link rel="stylesheet" href="styleguide.css" />
+      <link rel="stylesheet" href="style.css" />
+    -->
+  </head>
+  <body>
+    <div class="desktop-home-page">
+      <div class="div">
+        <div class="overlap">
 
-<h1>CSE442 Sample Page</h1>
+        </div>
+        <a href="{{ url_for('login') }}" class='sign-in'>
+          <div class="text-wrapper-2">Sign In</div>
+        </a>
+        <!--<div class="sign-in"><div class="text-wrapper-2">Sign In</div></div>-->
 
-<p id="paragraph">
-    This text is from the HTML file 🙂
-</p>
-<hr/>
-<img src= "{{url_for('static', filename='cat.jpg')}}" alt="Temp" class="my_image">
-<br/>
-<hr/>
-<script src="static/functions.js"></script>
-</body>
+        <a href="{{ url_for('profile') }}" class='profile-icon'>
+          <div class="overlap-4">
+            <div class="ellipse-3"></div>
+            <img class="img" src= "{{url_for('static', filename='img/ellipse-4-2.svg')}}" />
+              <!--<img class="img" src="img/ellipse-4-2.svg" />-->
+          </div>
+        </a>
+        <!--<div class="profile-icon">
+          <div class="overlap-4">
+            <div class="ellipse-3"></div>
+            <img src= "{{url_for('static', filename='img/ellipse-4-2.svg')}}" />
+          </div>
+        </div>-->
+        <img src= "{{url_for('static', filename='img/logo.png')}}" />
+        <!--<img class="logo" src="img/logo.png" />-->
+
+          <style>
+              input[type=text] {
+              width: 50%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              box-sizing: border-box;
+              border: 1px solid #555;
+              outline: none;
+            }
+
+            input[type=text]:focus {
+              background-color: lightblue;
+            }
+            </style>
+          <h2>Sign In</h2>
+          <form action="/action_page.php">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" value=""><br>
+            <label for="password">Password:</label><br>
+            <input type="text" id="password" name="password" value=""><br><br>
+            <a href="{{ url_for('profile') }}">
+              <input type="submit" value="login">
+            </a>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
