@@ -1,20 +1,164 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>CSE312 Sample Front End</title>
-    <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
-<!--    <link rel="stylesheet" type="text/css" href="public/style.css"/>-->
-</head>
-<body onload="welcome();">
+    <head>
+        <link href= "{{url_for('static', filename='globals.css')}}" rel = "stylesheet">
+        <link href= "{{url_for('static', filename='styleguide.css')}}" rel = "stylesheet">
+        <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
+        <link href= "{{url_for('static', filename='profile.css')}}" rel = "stylesheet">
+    </head>
+        <body>
+        <div class="desktop-home-page">
+            <div class="div">
+                <a href="{{ url_for('home') }}" class='sign-in'>
+                    <div class="text-wrapper-2">Sign out</div>
+                </a>
+                <a href="{{ url_for('tbd') }}" class='settings'>
+                    <div class="ellipse-wrapper">
+                        <div class="ellipse"></div>
+                    </div>
+                </a>
+                <a href="{{ url_for('profile') }}" class='profile-icon'>
+                    <div class="overlap-4">
+                        <div class="ellipse-3"></div>
+                        <img class="img" src= "{{url_for('static', filename='img/ellipse-4-2.svg')}}" />
+                    </div>
+                </a>
+                <a href="{{ url_for('home') }}" class='logo-icon'>
+                    <img src= "{{url_for('static', filename='img/logo.png')}}" />
+                </a>
+                <div class="rectangle-4"></div>
+                <div class="profile-tab">
+                    <div class="font">Profile</div>
+                    <div class="font2">Your usename will be displayed to other users</div>
+                </div>
+                <div class="info-tab">
+                    <div class="font">Personal Information</div>
+                </div>
+                <div class="interests-tab">
+                    <div class="font">Preferences</div>
+                </div>
+                <div class="profile-box">
+                    <div class="font">Username: </div>
+                    <input class="text-box" type="email" id="user" name="user" placeholder="User123">
+                    <div class="username-button">
+                        <input class="font3" type="submit" value="Save" />
+                    </div>
+                </div>
+                <div class="info-box">
+                    <div class="Email">
+                        <div class="font">Email: 
+                            <input class="text-box" type="email" id="email" name="email" placeholder="example@gamil.com">
+                        </div>
+                            <div class="email-button">
+                                <input class="font3" type="submit" value="Save" />
+                            </div>
+                    </div>
+                    <div class="Password">
+                        <div class="font">New Password: 
+                            <input class="text-box" type="password" id="password" name="password" placeholder="">
+                        </div>
+                        
+                        <div class="font">Confirm Password:
+                            <input class="text-box" type="password" id="password" name="password" placeholder="">
+                        </div>
+                        <div class="password-button">
+                            <input class="font3" type="submit" value="Save" />
+                        </div>
+                    </div>
+                </div>
+                <div class="interests-box">
+                    <div class="font">Music Type</div>
+                    <div class="first-row">
+                        <div>
+                            <input type="checkbox" id="Rock" name="Rock" />
+                            <label class="font" for="Rock">Rock</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="Pop" name="Pop" />
+                            <label class="font" for="Pop">Pop</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="Country" name="Country" />
+                            <label class="font" for="Country">Country</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="Jazz" name="Jazz" />
+                            <label class="font" for="Jazz">Jazz</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="Classical" name="Classical" />
+                            <label class="font" for="Classical">Classical</label>
+                        </div>
+                    </div>
+                    <div class="second-row">
+                        <div>
+                            <input type="checkbox" id="Folk" name="Folk" />
+                            <label class="font" for="Folk">Folk</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="Indie" name="Indie" />
+                            <label class="font" for="Indie">Indie</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="Alt" name="Alt" />
+                            <label class="font" for="Alt">Alt</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="Metal" name="Metal" />
+                            <label class="font" for="Metal">Metal</label>
+                        </div>
+                    </div>
+                    <div class="submit-row">
+                        <div>
+                            <input class="font3" type="submit" value="Submit" />
+                        </div>
+                    </div>
+                </div>
 
-<h1>CSE442 Sample Page</h1>
-
-<p id="paragraph">
-    This text is from the HTML file 🙂
-</p>
-<hr/>
-<img src= "{{url_for('static', filename='cat.jpg')}}" alt="Temp" class="my_image">
-<br/>
-<hr/>
-<script src="static/functions.js"></script>
-</body>
+            </div>
+        </div>
+    </body>
 </html>
+
+
+
+
+<!-- GIG APP links back to homepage
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href= "{{url_for('static', filename='profile.css')}}" rel = "stylesheet">
+    </head>
+    <body>
+        <div class = "header"> 
+            <div class = "logo">
+                GIG APP links back to homepage
+                <a href="{{ url_for('home') }}" class='logo-icon'>
+                    <img src= "{{url_for('static', filename='img/logo.png')}}" />
+                </a>
+                
+            </div>
+
+            <div class = "profile-icon">  
+                icon
+            </div>
+
+            <div class = "sign-out">
+                sign-out
+            </div>
+        </div>
+        <div class = "sidebar">
+            <div class = "sidebar-link">
+                profile
+            </div>
+            <div class = "sidebar-link">
+                personal info
+            </div>
+            <div class = "sidebar-link">
+                Interests
+            </div>
+        </div>
+        
+    </body>
+</html> 
+-->
