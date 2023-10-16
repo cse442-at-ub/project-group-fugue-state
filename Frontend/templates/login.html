@@ -50,9 +50,9 @@
             input[type=text]:focus {
               background-color: lightblue;
             }
-            </style>
+          </style>
           <h2>Sign In</h2>
-          <form action="login.php" method="post">
+          <form action="../../login.php" method="post">
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username" value=""><br>
             <label for="password">Password:</label><br>
@@ -60,10 +60,12 @@
             <a href="{{ url_for('home') }}">
               <input type="submit" value="login">
             </a>
+          </form>
+          <form action="../../signup.php" method="post">
             <a href="{{ url_for('sign_up') }}">
               <input type="submit" value="signup">
             </a>
-        </form>
+          </form>
       </div>
     </div>
   </body>
