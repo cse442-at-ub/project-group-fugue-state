@@ -40,8 +40,11 @@
             <input type="text" id="username" name="username" value=""><br>
             <label for="password">Password:</label><br>
             <input type="text" id="password" name="password" value=""><br><br>
-            <a href="{{ url_for('profile') }}">
+            <a href="{{ url_for('home') }}">
               <input type="submit" value="login">
+            </a>
+            <a href="{{ url_for('sign_up') }}">
+              <input type="submit" value="signup">
             </a>
         </form>
       </div>
