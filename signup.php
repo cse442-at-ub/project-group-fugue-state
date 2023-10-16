@@ -36,19 +36,16 @@ function passwordStrength($password){
     }
     if (preg_match('/[a-z]/', $password) == false){
         $message = "password does not contain lowercase letters";
-        $redirect = "testsignup.html";
         popUp($message,$signupPath);
         return false;
     }
     if (preg_match('/[0-9]/', $password) == false){
         $message = "password does not contain numbers";
-        $redirect = "testsignup.html";
         popUp($message,$signupPath);
         return false;
     }
     if (preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $password) == false){
         $message = "password does not contain special characters";
-        $redirect = "testsignup.html";
         popUp($message,$signupPath);
         return false;
     }
