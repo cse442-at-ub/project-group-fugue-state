@@ -12,7 +12,7 @@ function readCSV($csvfile){
 //This function connects to the database and returns the connection object.
 
 function connect(){
-    $creds = readCSV("../../credentials.csv");
+    $creds = readCSV("credentials.csv"); // ../../credentials.csv if in templates folder
     $conn = new mysqli($creds[0], $creds[1], $creds[2], $creds[3]);
     if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
@@ -39,8 +39,8 @@ function popUp($message,$redirect){
     echo '</script>';
 }
 
-$loginPath = "login.html";
-$signupPath = "signup.html";
-$homePath = "homepage.html";
+$loginPath = "Frontend/templates/login.html";
+$signupPath = "Frontend/templates/signup.html";
+$homePath = "Frontend/templates/homepage.html";
 
 ?>
