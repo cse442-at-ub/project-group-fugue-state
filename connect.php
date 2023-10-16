@@ -39,8 +39,8 @@ function popUp($message,$redirect){
     echo '</script>';
 }
 
-$loginPath = "test";
-$signupPath = "test";
-$homePath = "test";
+$loginPath = "login.html";
+$signupPath = "signup.html";
+$homePath = "homepage.html";
 
 ?>
