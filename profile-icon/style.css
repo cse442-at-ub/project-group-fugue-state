@@ -1,0 +1,29 @@
+.profile-icon {
+  width: 102px;
+  height: 114px;
+}
+
+.profile-icon .overlap-group {
+  position: relative;
+  height: 102px;
+  background-color: #b0a9a9;
+  border-radius: 51px;
+}
+
+.profile-icon .ellipse {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: 13px;
+  left: 31px;
+  background-color: #6a6868;
+  border-radius: 18.89px;
+}
+
+.profile-icon .img {
+  position: absolute;
+  width: 60px;
+  height: 31px;
+  top: 54px;
+  left: 20px;
+}
