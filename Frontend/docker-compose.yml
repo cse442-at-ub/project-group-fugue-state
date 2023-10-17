@@ -1,7 +1,0 @@
-# Map local port 8080 to your app in your docker-compose.yml file
-version : '3'
-services:
-  app:
-    build: .
-    ports:
-      - '8080:8080'
