@@ -61,21 +61,21 @@ function signUpSQL(){
     global $loginPath;
     $username = getInfo("username");
     $password = getInfo("password");
+    $email = getInfo("email");
+    if (strlen($username) == 0 || strlen($password) == 0 || strlen($email) == 0){
+        $message = "Please fill out all fields";
+        popUp($message,$signupPath);
+        exit();
+    }
     if (passwordStrength($password) == false){
         exit();
     }
     $hashed_password = hash("sha256",$password);
-    $email = getInfo("email");
     global $conn;
     $sql = "SELECT username FROM logins WHERE username = '$username'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
         $message = "This username is already taken";
-        popUp($message,$signupPath);
-        exit();
-    }
-    if (strlen($username) == 0 || strlen($password) == 0 || strlen($email) == 0){
-        $message = "Please fill out all fields";
         popUp($message,$signupPath);
         exit();
     }
