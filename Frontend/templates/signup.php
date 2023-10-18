@@ -24,7 +24,9 @@
 
         </div>
 
-        <img src= "{{url_for('static', filename='img/logo.png')}}" />
+        <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
+          <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
+        </a>
         <!--<img class="logo" src="img/logo.png" />-->
 
           <style>
