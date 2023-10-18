@@ -32,13 +32,19 @@
               outline: none;
             }
 
-            input[type=text]:focus {
+            input[type=username]:focus {
               background-color: lightblue;
             }
+            input[type=password]:focus {
+              background-color: lightblue;
           </style>
           <style>
             h1 {
                 font-size: 32px;
+            }
+            h2{
+            	font-size: 16px;
+                margin:	2.5% 25%;
             }
 
             div.relative {
@@ -75,6 +81,16 @@
             border-radius: 8px;
             box-sizing: border-box;
             }
+            input[id=signup]{
+            width: 50%;
+            background-color: white;
+            color: black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: black;
+            border-radius: 8px;
+            cursor: pointer;
+            }
           </style>
           <div class="relative">
             <h1>Sign In:</h1>
@@ -84,9 +100,10 @@
               <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
                 <input type="submit" value="Sign in">
               </a>
+            <h2>or</h2>
             </form>
             <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php">
-              <input type="submit" value="signup">
+              <input type="submit" id="signup" value="Register New Account">
             </a>
       </div>
     </div>
