@@ -58,16 +58,17 @@ function passwordStrength($password){
 
 function signUpSQL(){
     global $loginPath;
+    global $signupPath;
     $username = getInfo("username");
     $password = getInfo("password");
     $email = getInfo("email");
     if (strlen($username) == 0 || strlen($password) == 0 || strlen($email) == 0){
         $message = "Please fill out all fields";
         popUp($message);
-        exit();
+        //exit();
     }
     if (passwordStrength($password) == false){
-        exit();
+        //exit();
     }
     $hashed_password = hash("sha256",$password);
     global $conn;
@@ -76,14 +77,14 @@ function signUpSQL(){
     if ($result->num_rows > 0){
         $message = "This username is already taken";
         popUp($message);
-        exit();
+        //exit();
     }
     $sql = "SELECT email FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0){
         $message = "This email is already registered to another user";
         popUp($message);
-        exit();
+        //exit();
     }
     $randID = generateID();
     $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$hashed_password', '$email', '$randID')";
@@ -95,8 +96,8 @@ function signUpSQL(){
         exit();
     } else {
         $message = "Unsuccsessful signup";
-        popUp($message);    
-        exit();
+        popUp($message);  
+        //exit();
     }
 }
 

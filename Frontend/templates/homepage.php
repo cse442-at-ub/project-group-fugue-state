@@ -18,7 +18,7 @@
             <div class="explore"></div>
             <div class="text-wrapper">Explore</div>
           </div>
-          <a href="{{ url_for('tbd') }}" class='button-med'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='button-med'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Rock</div>

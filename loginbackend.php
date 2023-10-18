@@ -17,12 +17,14 @@ require "connect.php";
 
 function loginSQL(){
     global $homePath;
+    global $loginPath;
     $username = getInfo("username");
     $password = getInfo("password");
     if (strlen($username) == 0 || strlen($password) == 0){
         $message = "Please fill out all fields";
         popUp($message);
-        exit();
+        redirectPage($loginPath);
+        //exit();
     }
     $hashed_password = hash("sha256",$password);
     global $conn;
@@ -36,7 +38,8 @@ function loginSQL(){
     } else {
         $message = "Incorrect login information";
         popUp($message);
-        exit();
+        redirectPage($loginPath);
+        //exit();
     }
 }
 
