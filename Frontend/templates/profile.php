@@ -63,7 +63,7 @@
                         </div>
                         <div class="Password">
                             <div class="font">Old Password: 
-                                <input class="text-box" type="password" id="password" name="password" placeholder="">
+                                <input class="text-box" type="password" id="password" name="oldpassword" placeholder="">
                             </div>
                             
                             <div class="font">New Password:
