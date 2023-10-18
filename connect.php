@@ -32,9 +32,14 @@ function getInfo($input){
 
 //This function creates a popup message with a custom message and then redirects to another page
 
-function popUp($message,$redirect){
+function popUp($message){
     echo '<script type="text/javascript">'; 
     echo 'alert("'.$message.'");';
+    echo '</script>';
+}
+
+function redirectPage($redirect){
+    echo '<script type="text/javascript">'; 
     echo 'window.location.href = "'.$redirect.'";';
     echo '</script>';
 }

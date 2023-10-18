@@ -16,13 +16,12 @@ require "connect.php";
 //does, it will return true, if not, it will return false.
 
 function loginSQL(){
-    global $loginPath;
     global $homePath;
     $username = getInfo("username");
     $password = getInfo("password");
     if (strlen($username) == 0 || strlen($password) == 0){
         $message = "Please fill out all fields";
-        popUp($message,$loginPath);
+        popUp($message);
         exit();
     }
     $hashed_password = hash("sha256",$password);
@@ -31,11 +30,12 @@ function loginSQL(){
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $message = "Login succsessful";
-        popUp($message,$homePath);
+        popUp($message);
+        redirectPage($homePath);
         exit();
     } else {
         $message = "Incorrect login information";
-        popUp($message,$loginPath);
+        popUp($message);
         exit();
     }
 }
