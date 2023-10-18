@@ -87,6 +87,18 @@ function missingFields($username,$password,$email){
     return true;
 }
 
+//This function makes sure that the password and confirm password match and if they dont
+//creates a popup error and returns false
+
+function confirmPassword($password,$confirm_password){
+    if ($password != $confirm_password){
+        $message = "Passwords do not match";
+        popUp($message);
+        return false;
+    }
+    return true;
+}
+
 //This function will take in a username, password, email, and alt_email and create a new user 
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
@@ -97,9 +109,10 @@ function signUpSQL(){
     global $conn;
     $username = getInfo("username");
     $password = getInfo("password");
+    $confirm_password = getInfo("confirm_password");
     $email = getInfo("email");
     if (missingFields($username,$password,$email) == false || takenInfo($username,$email) == false
-        || passwordStrength($password) == false){
+        || passwordStrength($password) == false || confirmPassword($password,$confirm_password) == false){
         redirectPage($signupPath);
         //exit();
     }else{
