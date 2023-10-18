@@ -25,27 +25,27 @@ function generateID(){
 function passwordStrength($password){
     $message = "Password does not meet requirements";
     if (strlen($password) < 8){
-        $message = "password is too short";
+        //$message = "password is too short";
         popUp($message);    
         return false;
     }
     if (preg_match('/[A-Z]/', $password) == false){
-        $message = "password does not contain uppercase letters";;
+        //$message = "password does not contain uppercase letters";;
         popUp($message);
         return false;
     }
     if (preg_match('/[a-z]/', $password) == false){
-        $message = "password does not contain lowercase letters";
+        //$message = "password does not contain lowercase letters";
         popUp($message);
         return false;
     }
     if (preg_match('/[0-9]/', $password) == false){
-        $message = "password does not contain numbers";
+        //$message = "password does not contain numbers";
         popUp($message);
         return false;
     }
     if (preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $password) == false){
-        $message = "password does not contain special characters";
+        //$message = "password does not contain special characters";
         popUp($message);
         return false;
     }
