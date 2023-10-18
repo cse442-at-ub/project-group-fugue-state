@@ -65,12 +65,14 @@ function signUpSQL(){
     if (strlen($username) == 0 || strlen($password) == 0 || strlen($email) == 0){
         $message = "Please fill out all fields";
         popUp($message);
+        redirectPage($signupPath);
         //exit();
     }
     if (passwordStrength($password) == false){
-        //exit();
         $message = "Password does not meet requirements";
         popUp($message);
+        redirectPage($signupPath);
+        //exit();
     }
     $hashed_password = hash("sha256",$password);
     global $conn;
@@ -79,6 +81,7 @@ function signUpSQL(){
     if ($result->num_rows > 0){
         $message = "This username is already taken";
         popUp($message);
+        redirectPage($signupPath);
         //exit();
     }
     $sql = "SELECT email FROM logins WHERE email = '$email'";
@@ -86,6 +89,7 @@ function signUpSQL(){
     if ($result->num_rows > 0){
         $message = "This email is already registered to another user";
         popUp($message);
+        redirectPage($signupPath);
         //exit();
     }
     $randID = generateID();
@@ -99,6 +103,7 @@ function signUpSQL(){
     } else {
         $message = "Unsuccsessful signup";
         popUp($message);  
+        redirectPage($signupPath);
         //exit();
     }
 }
