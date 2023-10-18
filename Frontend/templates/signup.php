@@ -89,13 +89,10 @@
                 <input type="password" id="password" name="password" placeholder="Password" value=""><br><br>
                 <label for="confirm_password">Confirm Password:</label><br>
                 <input type="password" id="confirm_password" name="confirm_password" placeholder="Password" value=""><br><br>
-                <a href="{{ url_for('login') }}">
-                  <input type="submit" value=Sign up>
+                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
+                  <input type="submit" value="Sign up">
                 </a>
             </form>
-            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
-                <input type="submit" value=login>
-            </a>
           </div>
       </div>
     </div>
