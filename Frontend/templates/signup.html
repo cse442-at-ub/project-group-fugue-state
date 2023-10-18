@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    div.relative {
+    position: relative;
+    top:260px;
+    left: 400px;
+    }
+  </style>
   <head>
     <link href= "{{url_for('static', filename='globals.css')}}" rel = "stylesheet">
     <link href= "{{url_for('static', filename='styleguide.css')}}" rel = "stylesheet">
@@ -34,20 +41,22 @@
               background-color: lightblue;
             }
             </style>
-          <h2>Sign In</h2>
-          <form action="signup.php" method="post">
-            <label for="username">Create Username:</label><br>
-            <input type="text" id="username" name="username" value=""><br>
-            <label for="email">Enter Email:</label><br>
-            <input type="text" id="email" name="email" value=""><br>
-            <label for="password">Create Password:</label><br>
-            <input type="text" id="password" name="password" value=""><br><br>
-            <label for="confirm_password">Confirm Password:</label><br>
-            <input type="text" id="confirm_password" name="confirm_password" value=""><br><br>
-            <a href="{{ url_for('login') }}">
-              <input type="submit" value=signup>
-            </a>
-        </form>
+          <div class="relative">
+              <h2>Sign In</h2>
+              <form action="signup.php" method="post">
+                <label for="username">Create Username:</label><br>
+                <input type="text" id="username" name="username" value=""><br>
+                <label for="email">Enter Email:</label><br>
+                <input type="text" id="email" name="email" value=""><br>
+                <label for="password">Create Password:</label><br>
+                <input type="text" id="password" name="password" value=""><br><br>
+                <label for="confirm_password">Confirm Password:</label><br>
+                <input type="text" id="confirm_password" name="confirm_password" value=""><br><br>
+                <a href="{{ url_for('login') }}">
+                  <input type="submit" value=signup>
+                </a>
+            </form>
+          </div>
       </div>
     </div>
   </body>
