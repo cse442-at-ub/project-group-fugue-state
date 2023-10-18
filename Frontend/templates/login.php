@@ -86,7 +86,7 @@
               </a>
             </form>
             <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php">
-              <input type="submit" value="signup">
+              <input type="submit" value="Sign up">
             </a>
       </div>
     </div>
