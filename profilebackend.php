@@ -80,6 +80,18 @@ function passwordMatch($oldpassword,$email){
 
 }
 
+
+//This function makes sure the new password doesnt match the old password 
+
+function redundantPassword($oldpassword,$password){
+    $message = "New password cannot be the same as old password";
+    if ($oldpassword == $password){
+        popUp($message);
+        return false;
+    }
+    return true;
+}
+
 //This function will take in a username, password, email, and alt_email and create a new user 
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
@@ -93,11 +105,11 @@ function signUpSQL(){
     $hashed_password = hash("sha256",$password);
     $email = getInfo("email");
     if (missingFields($oldpassword,$password,$email) == false || passwordStrength($password) == false
-    || passwordMatch($hashed_oldpassword,$email) == false){
+    || passwordMatch($hashed_oldpassword,$email) == false || redundantPassword($oldpassword,$password) == false){
         redirectPage($profilePath);
         //exit();
     }else{
-        $sql = "UPDATE logins SET password='$password' WHERE email='$email'";
+        $sql = "UPDATE logins SET password='$hashed_password' WHERE email='$email'";
         $result = $conn->query($sql);
         if ($result === TRUE) {
             $message = "Password Updated";
