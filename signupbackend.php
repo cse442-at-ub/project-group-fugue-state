@@ -26,27 +26,27 @@ function passwordStrength($password){
     global $signupPath;
     if (strlen($password) < 8){
         $message = "password is too short";
-        popUp($message);    
+        //popUp($message);    
         return false;
     }
     if (preg_match('/[A-Z]/', $password) == false){
         $message = "password does not contain uppercase letters";;
-        popUp($message);
+        //popUp($message);
         return false;
     }
     if (preg_match('/[a-z]/', $password) == false){
         $message = "password does not contain lowercase letters";
-        popUp($message);
+        //popUp($message);
         return false;
     }
     if (preg_match('/[0-9]/', $password) == false){
         $message = "password does not contain numbers";
-        popUp($message);
+        //popUp($message);
         return false;
     }
     if (preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $password) == false){
         $message = "password does not contain special characters";
-        popUp($message);
+        //popUp($message);
         return false;
     }
     return true;
@@ -69,6 +69,8 @@ function signUpSQL(){
     }
     if (passwordStrength($password) == false){
         //exit();
+        $message = "Password does not meet requirements";
+        popUp($message);
     }
     $hashed_password = hash("sha256",$password);
     global $conn;
