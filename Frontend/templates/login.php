@@ -37,27 +37,57 @@
             }
           </style>
           <style>
+            h1 {
+                font-size: 32px;
+            }
+
             div.relative {
             position: relative;
             top:260px;
             left: 400px;
             }
+            input[type=submit] {
+            width: 25%;
+            background-color: #0349fc;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 12.5%;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            }
+            input[type=username], select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            }
+
+            input[type=password] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            }
           </style>
           <div class="relative">
-            <h2>Sign In</h2>
+            <h1>Sign In:</h1>
             <form action="../../loginbackend.php" method="post">
-              <label for="username">Username:</label><br>
-              <input type="text" id="username" name="username" value=""><br>
-              <label for="password">Password:</label><br>
-              <input type="password" id="password" name="password" value=""><br><br>
+              <input type="username" id="username" name="username" placeholder="Username" value=""><br>
+              <input type="password" id="password" name="password" placeholder="Password" value=""><br><br>
               <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
-                <input type="submit" value="login">
+                <input type="submit" value="Sign in">
               </a>
             </form>
             <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php">
               <input type="submit" value="signup">
             </a>
-        </div>
       </div>
     </div>
   </body>
