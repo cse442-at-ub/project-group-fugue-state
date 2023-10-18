@@ -43,7 +43,7 @@
             </style>
           <div class="relative">
               <h2>Sign In</h2>
-              <form action="signup.php" method="post">
+              <form action="../../signupbackend.php" method="post">
                 <label for="username">Create Username:</label><br>
                 <input type="text" id="username" name="username" value=""><br>
                 <label for="email">Enter Email:</label><br>
@@ -56,6 +56,9 @@
                   <input type="submit" value=signup>
                 </a>
             </form>
+            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
+                <input type="submit" value=login>
+            </a>
           </div>
       </div>
     </div>

@@ -45,20 +45,18 @@
           </style>
           <div class="relative">
             <h2>Sign In</h2>
-            <form action="../../login.php" method="post">
+            <form action="../../loginbackend.php" method="post">
               <label for="username">Username:</label><br>
               <input type="text" id="username" name="username" value=""><br>
               <label for="password">Password:</label><br>
               <input type="text" id="password" name="password" value=""><br><br>
-              <a href="{{ url_for('home') }}">
+              <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
                 <input type="submit" value="login">
               </a>
             </form>
-            <form action="../../signup.php" method="post">
-              <a href="{{ url_for('sign_up') }}">
-                <input type="submit" value="signup">
-              </a>
-            </form>
+            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php">
+              <input type="submit" value="signup">
+            </a>
         </div>
       </div>
     </div>
