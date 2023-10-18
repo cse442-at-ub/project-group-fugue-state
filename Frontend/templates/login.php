@@ -56,11 +56,9 @@
                 <input type="submit" value="login">
               </a>
             </form>
-            <form action="../../signupbackend.php" method="post">
-              <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php">
-                <input type="submit" value="signup">
-              </a>
-            </form>
+            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php">
+              <input type="submit" value="signup">
+            </a>
         </div>
       </div>
     </div>
