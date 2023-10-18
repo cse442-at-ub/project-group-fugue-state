@@ -33,22 +33,24 @@
             input[type=text]:focus {
               background-color: lightblue;
             }
-          </style>
-          <h2>Sign In</h2>
-          <form action="../../login.php" method="post">
-            <label for="username">Username:</label><br>
+            </style>
+          <h2>Sign Up</h2>
+          <form action="../../signupbackend.php" method="post">
+            <label for="username">Create Username:</label><br>
             <input type="text" id="username" name="username" value=""><br>
-            <label for="password">Password:</label><br>
+            <label for="email">Enter Email:</label><br>
+            <input type="text" id="email" name="email" value=""><br>
+            <label for="password">Create Password:</label><br>
             <input type="text" id="password" name="password" value=""><br><br>
-            <a href="{{ url_for('home') }}">
-              <input type="submit" value="login">
+            <label for="confirm_password">Confirm Password:</label><br>
+            <input type="text" id="confirm_password" name="confirm_password" value=""><br><br>
+            <a href="{{ url_for('login') }}">
+              <input type="submit" value=signup>
             </a>
-          </form>
-          <form action="../../signup.php" method="post">
-            <a href="{{ url_for('sign_up') }}">
-              <input type="submit" value="signup">
-            </a>
-          </form>
+        </form>
+        <a href="login.html">
+          <input type="submit" value=login>
+        </a>
       </div>
     </div>
   </body>
