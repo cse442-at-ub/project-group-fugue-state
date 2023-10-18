@@ -44,7 +44,7 @@
               <input type="submit" value="login">
             </a>
           </form>
-          <a href="signup.php"> 
+          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php"> 
             <input type="submit" value="signup">
           </a>
       </div>
