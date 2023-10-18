@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    div.relative {
+    position: relative;
+    top:260px;
+    left: 400px;
+    }
+  </style>
   <head>
-    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/globals.css">
-    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/styleguide.css">
-    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/style.css">
+    <link href= "{{url_for('static', filename='globals.css')}}" rel = "stylesheet">
+    <link href= "{{url_for('static', filename='styleguide.css')}}" rel = "stylesheet">
+    <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
     <!--
       <link rel="stylesheet" href="globals.css" />
       <link rel="stylesheet" href="styleguide.css" />
@@ -17,9 +24,7 @@
 
         </div>
 
-        <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
-          <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
-        </a>
+        <img src= "{{url_for('static', filename='img/logo.png')}}" />
         <!--<img class="logo" src="img/logo.png" />-->
 
           <style>
@@ -36,23 +41,22 @@
               background-color: lightblue;
             }
             </style>
-          <h2>Sign Up</h2>
-          <form action="../../signupbackend.php" method="post">
-            <label for="username">Create Username:</label><br>
-            <input type="text" id="username" name="username" value=""><br>
-            <label for="email">Enter Email:</label><br>
-            <input type="text" id="email" name="email" value=""><br>
-            <label for="password">Create Password:</label><br>
-            <input type="text" id="password" name="password" value=""><br><br>
-            <label for="confirm_password">Confirm Password:</label><br>
-            <input type="text" id="confirm_password" name="confirm_password" value=""><br><br>
-            <a href="{{ url_for('login') }}">
-              <input type="submit" value=signup>
-            </a>
-        </form>
-        <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
-          <input type="submit" value=login>
-        </a>
+          <div class="relative">
+              <h2>Sign In</h2>
+              <form action="signup.php" method="post">
+                <label for="username">Create Username:</label><br>
+                <input type="text" id="username" name="username" value=""><br>
+                <label for="email">Enter Email:</label><br>
+                <input type="text" id="email" name="email" value=""><br>
+                <label for="password">Create Password:</label><br>
+                <input type="text" id="password" name="password" value=""><br><br>
+                <label for="confirm_password">Confirm Password:</label><br>
+                <input type="text" id="confirm_password" name="confirm_password" value=""><br><br>
+                <a href="{{ url_for('login') }}">
+                  <input type="submit" value=signup>
+                </a>
+            </form>
+          </div>
       </div>
     </div>
   </body>
