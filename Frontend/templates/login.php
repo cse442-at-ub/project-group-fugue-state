@@ -41,8 +41,6 @@
             position: relative;
             top:260px;
             left: 400px;
-            box-sizing: border-box;
-            border: 3px solid #FFFFFFFF;
             }
           </style>
           <div class="relative">

@@ -49,9 +49,9 @@
                 <label for="email">Enter Email:</label><br>
                 <input type="text" id="email" name="email" value=""><br>
                 <label for="password">Create Password:</label><br>
-                <input type="text" id="password" name="password" value=""><br><br>
+                <input type="hidden" id="password" name="password" value=""><br><br>
                 <label for="confirm_password">Confirm Password:</label><br>
-                <input type="text" id="confirm_password" name="confirm_password" value=""><br><br>
+                <input type="hidden" id="confirm_password" name="confirm_password" value=""><br><br>
                 <a href="{{ url_for('login') }}">
                   <input type="submit" value=signup>
                 </a>
