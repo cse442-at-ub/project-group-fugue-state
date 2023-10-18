@@ -8,9 +8,9 @@
     }
   </style>
   <head>
-    <link href= "{{url_for('static', filename='globals.css')}}" rel = "stylesheet">
-    <link href= "{{url_for('static', filename='styleguide.css')}}" rel = "stylesheet">
-    <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/globals.css">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/style.css">
     <!--
       <link rel="stylesheet" href="globals.css" />
       <link rel="stylesheet" href="styleguide.css" />
