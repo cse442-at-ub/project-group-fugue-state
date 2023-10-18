@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href= "{{url_for('static', filename='globals.css')}}" rel = "stylesheet">
-        <link href= "{{url_for('static', filename='styleguide.css')}}" rel = "stylesheet">
-        <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
-        <link href= "{{url_for('static', filename='profile.css')}}" rel = "stylesheet">
+        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/globals.css">
+        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/styleguide.css">
+        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/style.css">
+        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.css">
     </head>
         <body>
         <div class="desktop-home-page">
             <div class="div">
-                <a href="{{ url_for('home') }}" class='sign-in'>
+                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
                     <div class="text-wrapper-2">Sign out</div>
                 </a>
-                <a href="{{ url_for('tbd') }}" class='settings'>
+                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
                     <div class="ellipse-wrapper">
                         <div class="ellipse"></div>
                     </div>
                 </a>
-                <a href="{{ url_for('profile') }}" class='profile-icon'>
+                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
                     <div class="overlap-4">
                         <div class="ellipse-3"></div>
-                        <img class="img" src= "{{url_for('static', filename='img/ellipse-4-2.svg')}}" />
+                        <img class="img" src= "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/ellipse-4-2.svg" />
                     </div>
                 </a>
-                <a href="{{ url_for('home') }}" class='logo-icon'>
-                    <img src= "{{url_for('static', filename='img/logo.png')}}" />
+                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/home.php" class='logo-icon'>
+                    <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/static/img/logo.png" />
                 </a>
                 <div class="rectangle-4"></div>
                 <div class="profile-tab">

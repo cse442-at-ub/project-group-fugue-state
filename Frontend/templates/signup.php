@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href= "{{url_for('static', filename='globals.css')}}" rel = "stylesheet">
-    <link href= "{{url_for('static', filename='styleguide.css')}}" rel = "stylesheet">
-    <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/globals.css">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/style.css">
     <!--
       <link rel="stylesheet" href="globals.css" />
       <link rel="stylesheet" href="styleguide.css" />
@@ -17,7 +17,7 @@
 
         </div>
 
-        <img src= "{{url_for('static', filename='img/logo.png')}}" />
+        <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/static/img/logo.png" />
         <!--<img class="logo" src="img/logo.png" />-->
 
           <style>

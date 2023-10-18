@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href= "{{url_for('static', filename='globals.css')}}" rel = "stylesheet">
-    <link href= "{{url_for('static', filename='styleguide.css')}}" rel = "stylesheet">
-    <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/globals.css">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/style.css">
   </head>
   <body>
     <div class="desktop-coming-soon">
       <div class="div">
         <div class="text-wrapper">Coming Soon...</div>
-        <img src= "{{url_for('static', filename='img/logo.png')}}" />
+        <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/static/img/logo.png" />
       </div>
     </div>
   </body>

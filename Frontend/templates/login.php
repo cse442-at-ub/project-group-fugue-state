@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href= "{{url_for('static', filename='globals.css')}}" rel = "stylesheet">
-    <link href= "{{url_for('static', filename='styleguide.css')}}" rel = "stylesheet">
-    <link href= "{{url_for('static', filename='style.css')}}" rel = "stylesheet">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/globals.css">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/style.css">
     <!--
       <link rel="stylesheet" href="globals.css" />
       <link rel="stylesheet" href="styleguide.css" />
@@ -17,7 +17,7 @@
 
         </div>
 
-        <img src= "{{url_for('static', filename='img/logo.png')}}" />
+        <img src= "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
         <!--<img class="logo" src="img/logo.png" />-->
 
           <style>
@@ -40,7 +40,7 @@
             <input type="text" id="username" name="username" value=""><br>
             <label for="password">Password:</label><br>
             <input type="text" id="password" name="password" value=""><br><br>
-            <a href="{{ url_for('home') }}">
+            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php">
               <input type="submit" value="login">
             </a>
           </form>
