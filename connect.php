@@ -12,7 +12,7 @@ function readCSV($csvfile){
 //This function connects to the database and returns the connection object.
 
 function connect(){
-    $creds = readCSV("credentials.csv"); // ../../credentials.csv if in templates folder
+    $creds = readCSV("../credentials.csv"); // ../../credentials.csv if in templates folder
     $conn = new mysqli($creds[0], $creds[1], $creds[2], $creds[3]);
     if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
@@ -32,15 +32,20 @@ function getInfo($input){
 
 //This function creates a popup message with a custom message and then redirects to another page
 
-function popUp($message,$redirect){
+function popUp($message){
     echo '<script type="text/javascript">'; 
     echo 'alert("'.$message.'");';
+    echo '</script>';
+}
+
+function redirectPage($redirect){
+    echo '<script type="text/javascript">'; 
     echo 'window.location.href = "'.$redirect.'";';
     echo '</script>';
 }
 
-$loginPath = "Frontend/templates/login.html";
-$signupPath = "Frontend/templates/signup.html";
-$homePath = "Frontend/templates/homepage.html";
+$loginPath = "Frontend/templates/login.php";
+$signupPath = "Frontend/templates/signup.php";
+$homePath = "Frontend/templates/homepage.php";
 
 ?>
