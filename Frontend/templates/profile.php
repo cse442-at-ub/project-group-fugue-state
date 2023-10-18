@@ -37,84 +37,98 @@
                 <div class="interests-tab">
                     <div class="font">Preferences</div>
                 </div>
-                <div class="profile-box">
-                    <div class="font">Username: </div>
-                    <input class="text-box" type="email" id="user" name="user" placeholder="User123">
-                    <div class="username-button">
-                        <input class="font3" type="submit" value="Save" />
-                    </div>
-                </div>
-                <div class="info-box">
-                    <div class="Email">
-                        <div class="font">Email: 
-                            <input class="text-box" type="email" id="email" name="email" placeholder="example@gamil.com">
+                <!-- Updates the Username for the user -->
+                <!-- Displays Username -->
+                <form action="../../profilebackend.php" method="post">
+                    <!-- PlaceHolder Displays Username-->
+                    <div class="profile-box">
+                        <div class="font">Username: </div>
+                        <input class="text-box" type="email" id="user" name="user" placeholder="User123">
+                        <div class="username-button">
+                            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
+                                    <input class="font3" type="submit" value="Save" />
+                                </a>
                         </div>
-                            <div class="email-button">
-                                <input class="font3" type="submit" value="Save" />
+                    </div>
+                </form>
+                <!-- Displays the Email and Password -->
+                <!-- Password Checks for Old Password -->
+                <form action="../../profilebackend.php" method="post">
+                    <div class="info-box">
+                        <div class="Email">
+                            <!-- Placehodler displays email -->
+                            <div class="font">Email: 
+                                <input class="text-box" type="email" id="email" name="email" placeholder="example@gamil.com">
                             </div>
-                    </div>
-                    <div class="Password">
-                        <div class="font">New Password: 
-                            <input class="text-box" type="password" id="password" name="password" placeholder="">
                         </div>
-                        
-                        <div class="font">Confirm Password:
-                            <input class="text-box" type="password" id="password" name="password" placeholder="">
-                        </div>
-                        <div class="password-button">
-                            <input class="font3" type="submit" value="Save" />
-                        </div>
-                    </div>
-                </div>
-                <div class="interests-box">
-                    <div class="font">Music Type</div>
-                    <div class="first-row">
-                        <div>
-                            <input type="checkbox" id="Rock" name="Rock" />
-                            <label class="font" for="Rock">Rock</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="Pop" name="Pop" />
-                            <label class="font" for="Pop">Pop</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="Country" name="Country" />
-                            <label class="font" for="Country">Country</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="Jazz" name="Jazz" />
-                            <label class="font" for="Jazz">Jazz</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="Classical" name="Classical" />
-                            <label class="font" for="Classical">Classical</label>
+                        <div class="Password">
+                            <div class="font">Old Password: 
+                                <input class="text-box" type="password" id="password" name="password" placeholder="">
+                            </div>
+                            
+                            <div class="font">New Password:
+                                <input class="text-box" type="password" id="password" name="password" placeholder="">
+                            </div>
+                            <div class="password-button">
+                                <<a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
+                                    <input class="font3" type="submit" value="Save" />
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="second-row">
-                        <div>
-                            <input type="checkbox" id="Folk" name="Folk" />
-                            <label class="font" for="Folk">Folk</label>
+                </form >
+                <form action="../../profilebackend.php" method="post">
+                    <div class="interests-box">
+                        <div class="font">Music Type</div>
+                        <div class="first-row">
+                            <div>
+                                <input type="checkbox" id="Rock" name="Rock" />
+                                <label class="font" for="Rock">Rock</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Pop" name="Pop" />
+                                <label class="font" for="Pop">Pop</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Country" name="Country" />
+                                <label class="font" for="Country">Country</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Jazz" name="Jazz" />
+                                <label class="font" for="Jazz">Jazz</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Classical" name="Classical" />
+                                <label class="font" for="Classical">Classical</label>
+                            </div>
                         </div>
-                        <div>
-                            <input type="checkbox" id="Indie" name="Indie" />
-                            <label class="font" for="Indie">Indie</label>
+                        <div class="second-row">
+                            <div>
+                                <input type="checkbox" id="Folk" name="Folk" />
+                                <label class="font" for="Folk">Folk</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Indie" name="Indie" />
+                                <label class="font" for="Indie">Indie</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Alt" name="Alt" />
+                                <label class="font" for="Alt">Alt</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Metal" name="Metal" />
+                                <label class="font" for="Metal">Metal</label>
+                            </div>
                         </div>
-                        <div>
-                            <input type="checkbox" id="Alt" name="Alt" />
-                            <label class="font" for="Alt">Alt</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="Metal" name="Metal" />
-                            <label class="font" for="Metal">Metal</label>
+                        <div class="submit-row">
+                            <div>
+                                <a href= "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
+                                    <input class="font3" type="submit" value="Submit" />
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="submit-row">
-                        <div>
-                            <input class="font3" type="submit" value="Submit" />
-                        </div>
-                    </div>
-                </div>
-
+                </form>
             </div>
         </div>
     </body>

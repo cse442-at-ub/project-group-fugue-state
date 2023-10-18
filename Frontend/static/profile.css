@@ -57,10 +57,6 @@
     height: 50px;
 }
 
-.email-button {
-    margin-top: 10px;
-}
-
 .password-button {
     margin-top: 10px;
 }
@@ -111,21 +107,4 @@
 
 .submit-row {
     margin-top: 10px;
-}
-
-.profile-tab:hover {
-    background-color: lightgray;
-}
-.info-tab:hover {
-    background-color: lightgray;
-}
-
-.profile-box:hover {
-    background-color: lightgray;
-}
-.info-box:hover {
-    background-color: lightgray;
-}
-.interests-box:hover {
-    background-color: lightgray;
 }
