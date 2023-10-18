@@ -23,8 +23,8 @@
                         <img class="img" src= "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/ellipse-4-2.svg" />
                     </div>
                 </a>
-                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/home.php" class='logo-icon'>
-                    <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/static/img/logo.png" />
+                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
+                    <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
                 </a>
                 <div class="rectangle-4"></div>
                 <div class="profile-tab">
