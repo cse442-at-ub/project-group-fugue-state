@@ -70,13 +70,14 @@
                                 <input class="text-box" type="password" id="password" name="password" placeholder="">
                             </div>
                             <div class="password-button">
-                                <<a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
+                                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
                                     <input class="font3" type="submit" value="Save" />
                                 </a>
                             </div>
                         </div>
                     </div>
                 </form >
+                <!--if you add the word checked in the <input ..... checked> it would show up as if the box was checked -->
                 <form action="../../profilebackend.php" method="post">
                     <div class="interests-box">
                         <div class="font">Music Type</div>
