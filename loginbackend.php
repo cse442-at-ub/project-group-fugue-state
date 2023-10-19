@@ -12,22 +12,30 @@ require "connect.php";
 //    return $sql;
 //}
 
-//This function will take in a username and password string and check if it exists in the database. If it 
-//does, it will return true, if not, it will return false.
+//This function checks if any of the fields are empty and creates an error popup if any are
 
-function loginSQL(){
-    global $homePath;
+function missingFields($username,$password){
     global $loginPath;
-    $username = getInfo("username");
-    $password = getInfo("password");
     if (strlen($username) == 0 || strlen($password) == 0){
         $message = "Please fill out all fields";
         popUp($message);
         redirectPage($loginPath);
         //exit();
     }
-    $hashed_password = hash("sha256",$password);
+}
+
+//This function will take in a username and password string and check if it exists in the database. If it 
+//does, it will return true, if not, it will return false.
+
+function loginSQL(){
+    global $homePath;
+    global $loginPath;
     global $conn;
+    $username = getInfo("username");
+    $password = getInfo("password");
+    missingFields($username,$password);
+
+    $hashed_password = hash("sha256",$password);
     $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$hashed_password'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
