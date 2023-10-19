@@ -39,7 +39,7 @@ function usernameMatch($username){
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
 
-function SQL(){
+function profileNewUserSQL(){
     global $profilePath;
     global $conn;
     $oldusername = getInfo("old_username");
@@ -66,7 +66,7 @@ function SQL(){
 
 
 $conn = connect();
-signUpSQL();
+profileNewUserSQL();
 
 
 ?>
