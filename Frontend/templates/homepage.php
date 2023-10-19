@@ -96,8 +96,9 @@
         </a>
 	<style>
 	  form {
+	  position: relative;
 	  background-color: #d9d9d9;
-	  width: 878px;
+	  width: 870px;
 	  height: 53px;
 	  border-radius: 43px;
 	  border: 0.5px solid;
@@ -105,6 +106,14 @@
 	  box-shadow: 0px 4px 4px #00000040;
 	  top: 107px;
 	  left: 345px; 
+	  }
+	  Input {
+	  position: relative;
+	  background-color: #d9d9d9;
+          width: 860px;
+          height: 53px;
+          top: 107px;
+          left: 355px;
 	  }
 	</style>
         <form id="search-bar"> 
