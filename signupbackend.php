@@ -23,30 +23,77 @@ function generateID(){
 //lower case letters, upper case letters, numbers, and special characters. 
 
 function passwordStrength($password){
-    global $signupPath;
+    $message = "Password does not meet requirements";
     if (strlen($password) < 8){
-        $message = "password is too short";
-        popUp($message,$signupPath);    
+        //$message = "password is too short";
+        popUp($message);    
         return false;
     }
     if (preg_match('/[A-Z]/', $password) == false){
-        $message = "password does not contain uppercase letters";;
-        popUp($message,$signupPath);
+        //$message = "password does not contain uppercase letters";;
+        popUp($message);
         return false;
     }
     if (preg_match('/[a-z]/', $password) == false){
-        $message = "password does not contain lowercase letters";
-        popUp($message,$signupPath);
+        //$message = "password does not contain lowercase letters";
+        popUp($message);
         return false;
     }
     if (preg_match('/[0-9]/', $password) == false){
-        $message = "password does not contain numbers";
-        popUp($message,$signupPath);
+        //$message = "password does not contain numbers";
+        popUp($message);
         return false;
     }
     if (preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $password) == false){
-        $message = "password does not contain special characters";
-        popUp($message,$signupPath);
+        //$message = "password does not contain special characters";
+        popUp($message);
+        return false;
+    }
+    return true;
+}
+
+
+//This function checks if the email or username is already taken and returns false if it is
+
+function takenInfo($username,$email){
+    global $conn;
+    $sql = "SELECT username FROM logins WHERE username = '$username'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0){
+        $message = "This username is already taken";
+        popUp($message);
+        return false;
+    }
+    $sql = "SELECT email FROM logins WHERE email = '$email'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0){
+        $message = "This email is already registered to another user";
+        popUp($message);
+        return false;
+    }   
+    return true;
+}
+
+
+//This function checks if any of the fields are empty and returns false if they are
+
+
+function missingFields($username,$password,$email){
+    if (strlen($username) == 0 || strlen($password) == 0 || strlen($email) == 0){
+        $message = "Please fill out all fields";
+        popUp($message);
+        return false;
+    }  
+    return true;
+}
+
+//This function makes sure that the password and confirm password match and if they dont
+//creates a popup error and returns false
+
+function confirmPassword($password,$confirm_password){
+    if ($password != $confirm_password){
+        $message = "Passwords do not match";
+        popUp($message);
         return false;
     }
     return true;
@@ -57,46 +104,33 @@ function passwordStrength($password){
 
 
 function signUpSQL(){
-    global $signupPath;
     global $loginPath;
+    global $signupPath;
+    global $conn;
     $username = getInfo("username");
     $password = getInfo("password");
-    if (passwordStrength($password) == false){
-        exit();
-    }
-    $hashed_password = hash("sha256",$password);
+    $confirm_password = getInfo("confirm_password");
     $email = getInfo("email");
-    global $conn;
-    $sql = "SELECT username FROM logins WHERE username = '$username'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0){
-        $message = "This username is already taken";
-        popUp($message,$signupPath);
-        exit();
-    }
-    if (strlen($username) == 0 || strlen($password) == 0 || strlen($email) == 0){
-        $message = "Please fill out all fields";
-        popUp($message,$signupPath);
-        exit();
-    }
-    $sql = "SELECT email FROM logins WHERE email = '$email'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0){
-        $message = "This email is already registered to another user";
-        popUp($message,$signupPath);
-        exit();
-    }
-    $randID = generateID();
-    $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$hashed_password', '$email', '$randID')";
-    $result = $conn->query($sql);
-    if ($result === TRUE) {
-        $message = "New user created succsessfully";
-        popUp($message,$loginPath);
-        exit();
-    } else {
-        $message = "Unsuccsessful signup";
-        popUp($message,$signupPath);    
-        exit();
+    if (missingFields($username,$password,$email) == false || takenInfo($username,$email) == false
+        || passwordStrength($password) == false || confirmPassword($password,$confirm_password) == false){
+        redirectPage($signupPath);
+        //exit();
+    }else{
+        $hashed_password = hash("sha256",$password);
+        $randID = generateID();
+        $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$hashed_password', '$email', '$randID')";
+        $result = $conn->query($sql);
+        if ($result === TRUE) {
+            $message = "New user created succsessfully";
+            popUp($message);
+            redirectPage($loginPath);
+            exit();
+        } else {
+            $message = "Unsuccsessful signup";
+            popUp($message);  
+            redirectPage($signupPath);
+            exit();
+        }
     }
 }
 
