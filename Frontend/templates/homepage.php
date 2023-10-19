@@ -94,7 +94,20 @@
             <div class="ellipse"></div>
           </div>
         </a>
-        <form id="search-bar-w-radio"> 
+	<style>
+	  form {
+	  background-color: #d9d9d9;
+	  width: 878px;
+	  height: 53px;
+	  border-radius: 43px;
+	  border: 0.5px solid;
+	  border-color: #cbc2c2;
+	  box-shadow: 0px 4px 4px #00000040;
+	  top: 107px;
+	  left: 345px; 
+	  }
+	</style>
+        <form id="search-bar"> 
 	  <input type="search" id="query" name="q" 
 		 placeholder="Search..." 
 		 aria-label="Search through site content">
