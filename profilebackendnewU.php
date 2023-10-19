@@ -54,7 +54,7 @@ function SQL(){
             $message = "Username Updated";
             popUp($message);
             redirectPage($profilePath);
-            exit();
+            //exit();
         } else {
             $message = "Unsuccsessful";
             popUp($message);  
