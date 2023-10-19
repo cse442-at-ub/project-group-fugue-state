@@ -115,7 +115,7 @@ function profileNewPSQL(){
             $message = "Password Updated";
             popUp($message);
             redirectPage($profilePath);
-            exit();
+            //exit();
         } else {
             $message = "Unsuccsessful";
             popUp($message);  

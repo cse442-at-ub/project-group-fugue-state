@@ -59,7 +59,7 @@ function SQL(){
             $message = "Unsuccsessful";
             popUp($message);  
             redirectPage($profilePath);
-            exit();
+            //exit();
         }
     }
 }
