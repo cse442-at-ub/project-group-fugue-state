@@ -83,43 +83,46 @@
                 <form action="../../profilebackendaddPref.php" method="post">
                     <div class="interests-box">
                         <div class="font">Music Type</div>
+                        <div class="font">Username:
+                            <input class="text-box" type="text" id="username" name="username" placeholder="">
+                        </div>
                         <div class="first-row">
                             <div>
-                                <input type="checkbox" id="Rock" name="Rock" />
+                                <input type="checkbox" id="Rock" name="Rock" value="Yes"/>
                                 <label class="font" for="Rock">Rock</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="Pop" name="Pop" />
+                                <input type="checkbox" id="Pop" name="Pop" value="Yes" />
                                 <label class="font" for="Pop">Pop</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="Country" name="Country" />
+                                <input type="checkbox" id="Country" name="Country" value="Yes"/>
                                 <label class="font" for="Country">Country</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="Jazz" name="Jazz" />
+                                <input type="checkbox" id="Jazz" name="Jazz" value="Yes"/>
                                 <label class="font" for="Jazz">Jazz</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="Classical" name="Classical" />
+                                <input type="checkbox" id="Classical" name="Classical" value="Yes"/>
                                 <label class="font" for="Classical">Classical</label>
                             </div>
                         </div>
                         <div class="second-row">
                             <div>
-                                <input type="checkbox" id="Folk" name="Folk" />
+                                <input type="checkbox" id="Folk" name="Folk" value="Yes"/>
                                 <label class="font" for="Folk">Folk</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="Indie" name="Indie" />
+                                <input type="checkbox" id="Indie" name="Indie" value="Yes/>
                                 <label class="font" for="Indie">Indie</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="Alt" name="Alt" />
+                                <input type="checkbox" id="Alt" name="Alt" value="Yes"/>
                                 <label class="font" for="Alt">Alt</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="Metal" name="Metal" />
+                                <input type="checkbox" id="Metal" name="Metal" value="Yes"/>
                                 <label class="font" for="Metal">Metal</label>
                             </div>
                         </div>
