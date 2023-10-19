@@ -96,7 +96,7 @@ function redundantPassword($oldpassword,$password){
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
 
-function signUpSQL(){
+function profileNewPSQL(){
     global $profilePath;
     global $conn;
     $oldpassword = getInfo("oldpassword");
@@ -127,7 +127,7 @@ function signUpSQL(){
 
 
 $conn = connect();
-signUpSQL();
+profileNewPSQL();
 
 
 ?>

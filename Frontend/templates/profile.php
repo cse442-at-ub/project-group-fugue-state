@@ -42,8 +42,10 @@
                 <form action="../../profilebackend.php" method="post">
                     <!-- PlaceHolder Displays Username-->
                     <div class="profile-box">
+                        <div class="font">Old Username: </div>
+                        <input class="text-box" type="email" id="username" name="old_username" placeholder="User123">
                         <div class="font">Username: </div>
-                        <input class="text-box" type="email" id="user" name="user" placeholder="User123">
+                        <input class="text-box" type="email" id="username" name="username" placeholder="User123">
                         <div class="username-button">
                             <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
                                     <input class="font3" type="submit" value="Save" />
