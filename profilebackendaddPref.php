@@ -49,7 +49,6 @@ function accountIDlookup($username){
 
 function updatePreferences($rock,$pop,$country,$jazz,$classical,$folk,$indie,$alt,$metal,$account_id,$type){
     global $conn;
-    global $profilePath;
     if ($type == "ADD"){
         $sql = "INSERT INTO preferences (account_id, rock, pop, country, jazz, classical, folk, indie, alt, metal) 
         VALUES ('$account_id', '$rock', '$pop', '$country', '$jazz', '$classical', '$folk', '$indie', '$alt', '$metal')";
@@ -92,9 +91,8 @@ function updatePreferences($rock,$pop,$country,$jazz,$classical,$folk,$indie,$al
 //in the database. If the user already exists, it will return false, it will not create a new user.
 
 
-function profileNewPSQL(){
+function profileAddPrefPSQL(){
     global $profilePath;
-    global $conn;
     $username = getInfo("username");
     $rock = getInfo("Rock");
     $pop = getInfo("Pop");
@@ -106,6 +104,7 @@ function profileNewPSQL(){
     $alt = getInfo("Alt");
     $metal = getInfo("Metal");
     $account_id = accountIDlookup($username);
+    popUp("'$account_id'" . $account_id);
     if ($account_id == false){
         updatePreferences($rock,$pop,$country,$jazz,$classical,$folk,$indie,$alt,$metal,$account_id,"ADD");
     }else{
@@ -118,7 +117,7 @@ function profileNewPSQL(){
 
 
 $conn = connect();
-profileNewPSQL();
+profileAddPrefPSQL();
 
 
 ?>
