@@ -36,7 +36,7 @@
 
 .info-tab{
     position: absolute;
-    top: 395px;
+    top: 440px;
     left: 320px;
     width: 240px;
     height: 50px;
@@ -44,7 +44,7 @@
 
 .interests-tab{
     position: absolute;
-    top: 590px;
+    top: 620px;
     left: 320px;
     width: 240px;
     height: 50px;
@@ -61,7 +61,7 @@
 .info-box {
     position: absolute;
     left: 570px;
-    top: 390px;
+    top: 435px;
     width: 650px;
     height: 150px;
 }
@@ -69,7 +69,7 @@
 .interests-box {
     position: absolute;
     left: 570px;
-    top: 590px;
+    top: 620px;
     width: 650px;
     height: 150px;
 }
@@ -100,7 +100,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=user],input[type=password], input[type=email],
+input[type=user],input[type=password], input[type=email], input[type = text],
 select {
     width: 50%;
     padding: 12px 20px;

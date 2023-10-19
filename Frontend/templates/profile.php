@@ -44,11 +44,11 @@
                     <div class="profile-box">
                         <div class="font">Current Username: </div>
                         <input class="text-box" type="text" id="username" name="old_username" placeholder="User123">
-                        <div class="font">Username: </div>
+                        <div class="font">New Username: </div>
                         <input class="text-box" type="text" id="username" name="username" placeholder="User123">
                         <div class="username-button">
                             <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
-                                    <input class="font3" type="submit" value="Save" />
+                                    <input type="submit" value="Save" />
                                 </a>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="Email">
                             <!-- Placehodler displays email -->
                             <div class="font">Email: 
-                                <input class="text-box" type="email" id="email" name="email" placeholder="example@gamil.com">
+                                <input class="text-box" type="email" id="email" name="email" placeholder="example@gmail.com">
                             </div>
                         </div>
                         <div class="Password">
