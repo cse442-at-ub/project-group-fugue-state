@@ -37,6 +37,7 @@
             }
             input[type=password]:focus {
               background-color: lightblue;
+            }
           </style>
           <style>
             h1 {

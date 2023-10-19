@@ -93,6 +93,9 @@
                   <input type="submit" value="Sign up">
                 </a>
             </form>
+            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
+                  <input type="submit" value="Login">
+            </a>
           </div>
       </div>
     </div>
