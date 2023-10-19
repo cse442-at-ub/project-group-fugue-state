@@ -39,7 +39,7 @@
                 </div>
                 <!-- Updates the Username for the user -->
                 <!-- Displays Username -->
-                <form action="../../profilebackend.php" method="post">
+                <form action="../../profilebackendnewU.php" method="post">
                     <!-- PlaceHolder Displays Username-->
                     <div class="profile-box">
                         <div class="font">Current Username: </div>
@@ -55,7 +55,7 @@
                 </form>
                 <!-- Displays the Email and Password -->
                 <!-- Password Checks for Old Password -->
-                <form action="../../profilebackend.php" method="post">
+                <form action="../../profilebackendnewP.php" method="post">
                     <div class="info-box">
                         <div class="Email">
                             <!-- Placehodler displays email -->
@@ -80,7 +80,7 @@
                     </div>
                 </form >
                 <!--if you add the word checked in the <input ..... checked> it would show up as if the box was checked -->
-                <form action="../../profilebackend.php" method="post">
+                <form action="../../profilebackendaddPref.php" method="post">
                     <div class="interests-box">
                         <div class="font">Music Type</div>
                         <div class="first-row">
