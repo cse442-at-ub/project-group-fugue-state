@@ -114,7 +114,7 @@
                                 <label class="font" for="Folk">Folk</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="Indie" name="Indie" value="Yes/>
+                                <input type="checkbox" id="Indie" name="Indie" value="Yes"/>
                                 <label class="font" for="Indie">Indie</label>
                             </div>
                             <div>
