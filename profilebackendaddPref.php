@@ -8,8 +8,8 @@ require "connect.php";
 //This function checks if any of the fields are empty and returns false if they are
 
 
-function missingFields($oldpassword,$password,$email){
-    if (strlen($oldpassword) == 0 || strlen($password) == 0 || strlen($email) == 0){
+function missingFields($username){
+    if (strlen($username) == 0){
         $message = "Please fill out all fields";
         popUp($message);
         return false;
@@ -18,16 +18,6 @@ function missingFields($oldpassword,$password,$email){
 }
 
 
-//This function makes sure the new password doesnt match the old password 
-
-function redundantPassword($oldpassword,$password){
-    $message = "New password cannot be the same as old password";
-    if ($oldpassword == $password){
-        popUp($message);
-        return false;
-    }
-    return true;
-}
 
 //This function gets the account_id of the user from the database
 
@@ -39,8 +29,6 @@ function accountIDlookup($username){
     	$row = $result->fetch_assoc();
         $account_id = $row["account_id"];
         return $account_id;
-    }else{
-        return false;
     }
 }
 
@@ -93,7 +81,12 @@ function updatePreferences($rock,$pop,$country,$jazz,$classical,$folk,$indie,$al
 
 function profileAddPrefPSQL(){
     global $profilePath;
+    global $conn;
     $username = getInfo("username");
+    if (missingFields($username) == false) {
+        redirectPage($profilePath);
+    }
+    
     $rock = getInfo("Rock");
     $pop = getInfo("Pop");
     $country = getInfo("Country");
@@ -104,12 +97,15 @@ function profileAddPrefPSQL(){
     $alt = getInfo("Alt");
     $metal = getInfo("Metal");
     $account_id = accountIDlookup($username);
-    popUp("'$account_id'" . $account_id);
-    if ($account_id == false){
-        updatePreferences($rock,$pop,$country,$jazz,$classical,$folk,$indie,$alt,$metal,$account_id,"ADD");
+
+    $sql = "SELECT account_id FROM preferences WHERE account_id = '$account_id'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0){
+        updatePreferences($rock,$pop,$country,$jazz,$classical, $folk,$indie,$alt,$metal,$account_id,"UPDATES"); 
     }else{
-        updatePreferences($rock,$pop,$country,$jazz,$classical, $folk,$indie,$alt,$metal,$account_id,"UPDATES");
+        updatePreferences($rock,$pop,$country,$jazz,$classical,$folk,$indie,$alt,$metal,$account_id,"ADD");
     }
+
     $message = "Preferences Updated";
     popUp($message);
     redirectPage($profilePath);
