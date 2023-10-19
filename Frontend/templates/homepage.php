@@ -96,55 +96,46 @@
         </a>
 	<style>
 	  form {
-	    position: relative;
-	    background-color: #d9d9d9;
-	    width: 860px;
-	    height: 53px;
-	    border-radius: 43px;
-	    border: 0.5px solid;
-	    border-color: #cbc2c2;
-	    box-shadow: 0px 4px 4px #00000040;
-	    top: 107px;
-	    left: 345px;
-	  }
+	      position: relative;
+	      background-color: #d9d9d9;
+	      width: 860px;
+	      height: 53px;
+	      border-radius: 43px;
+	      border: 0.5px solid;
+	      border-color: #cbc2c2;
+	      top: 107px;
+	      left: 345px;
+	    }
 
-	  input {
-	    position: relative;
-	    background-color: #d9d9d9;
-	    width: 855px;
-	    height: 53px;
-	    border-radius: 43px;
-	    border: 0.5px solid;
-	    border-color: #cbc2c2;
-	    box-shadow: 0px 4px 4px #00000040;
-	    top: 107px;
-	    left: 350px; 
-	  }
+	    input {
+	      position: absolute;
+	      background-color: #d9d9d9;
+	      width: 820px;
+	      height: 53px;
+	      border-radius: 43px;
+	      border-color: #d9d9d9;
+	      top: 0px;
+	      left: 40px;
+	  
+	    }
 
-	  button {
-	    position: relative;
-	    top: 107px;
-	    left: 1205px;
-	    background-color: #d9d9d9;
-	  }
+	    button {
+	      position: absolute;
+	      top: 5px;
+	      left: 860px;
+	      background-color: #d9d9d9;
+	      border-radius: 43px;
+	      border: 0.5px solid;
+	      border-color: #cbc2c2;
+	    }
+	  
 	</style>
         <form id="search-bar"> 
 	  <input type="search" id="query" name="q" 
 		 placeholder="Search..." 
 		 aria-label="Search through site content">
-	  <button> 
-	    <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
-	  </button>
-	  <!--<button>Search</button>-->
+	  <button>Search</button>
 	</form>
-        <!--<div class="search-bar-w-radio">
-          <div class="lens">
-            <div class="overlap-group-2">
-              <div class="ellipse-2"></div>
-              <img class="line" src= "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/line-1-5.svg" />              
-            </div>
-          </div>
-        </div>-->
         <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
           <div class="overlap-4">
             <div class="ellipse-3"></div>
