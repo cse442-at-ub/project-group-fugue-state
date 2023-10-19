@@ -1,0 +1,63 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, white 0%, #91AADC 100%);
+}
+
+.header {
+    height: 190px;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+.logo {
+    background-color: lightblue;
+}
+
+.profile-icon {
+    background-color: lightpink;
+    width: 200px;
+}
+
+.sign-out {
+    background-color: lightblue;
+    width: 200px;
+}
+
+.sidebar {
+    position: sticky;
+    left: 300px;
+    bottom: 0;
+    top: 300px;
+    width: 200px;
+}
+
+.sidebar-link{
+    height: 50px;
+    margin-bottom: 1px;
+    
+}
+
+.sidebar-link:hover {
+    background-color: lightgray;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: black;
+    top: 210px;
+    width: 400px;
+    left: 500px;
+}
+
+.boxbox {
+    height: 500px;
+    margin-bottom: 10px;
+}
