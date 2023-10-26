@@ -49,8 +49,5 @@ $signupPath = "Frontend/templates/signup.php";
 $homePath = "Frontend/templates/homepage.php";
 $profilePath = "Frontend/templates/profile.php";
 
-session_start();
-$_SESSION["logged_in"] = false;
-$_SESSION["username"] = "None";
 
 ?>
