@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,7 +34,7 @@
                 <div class="rectangle-4"></div>
                 <div class="profile-tab">
                     <div class="font">Profile</div>
-                    <div class="font2">Your usename will be displayed to other users</div>
+                    <div class="font2">Your username will be displayed to other users</div>
                 </div>
                 <div class="info-tab">
                     <div class="font">Personal Information</div>
