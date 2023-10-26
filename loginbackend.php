@@ -42,6 +42,13 @@ function loginSQL(){
         $message = "Login succsessful";
         popUp($message);
         redirectPage($homePath);
+        session_start();
+        $_SESSION["username"] = $username;
+        $sql = "SELECT account_id FROM logins WHERE username = '$username'";
+        $result = $conn->query($sql);
+        $account_id = $result->fetch_assoc()["account_id"];
+        $_SESSION['account_id'] = $account_id;
+        $_SESSION['logged_in'] = true;
         exit();
     } else {
         $message = "Incorrect login information";
