@@ -16,8 +16,6 @@ session_start();
             <div class="div">
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
                     <div class="text-wrapper-2">Sign out</div>
-                    <form action="../../logoutbackend.php" method="post">
-                        <input type="hidden" name="logout" value="true">
                 </a>
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
                     <div class="ellipse-wrapper">
