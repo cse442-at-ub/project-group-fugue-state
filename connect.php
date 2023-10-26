@@ -49,4 +49,7 @@ $signupPath = "Frontend/templates/signup.php";
 $homePath = "Frontend/templates/homepage.php";
 $profilePath = "Frontend/templates/profile.php";
 
+session_start();
+
+
 ?>
