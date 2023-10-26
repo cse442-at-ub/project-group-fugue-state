@@ -47,6 +47,7 @@ function loginSQL(){
         $result = $conn->query($sql);
         $account_id = $result->fetch_assoc()["account_id"];
         $_SESSION["account_id"] = $account_id;
+        $_SESSION["logged_in"] = true;
         exit();
     } else {
         $message = "Incorrect login information";

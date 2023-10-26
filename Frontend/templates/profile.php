@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/profile.css">
     </head>
         <body>
+            <p>This is the username logged in currently: <?php echo $_SESSION['username']; ?></p>
         <div class="desktop-home-page">
             <div class="div">
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
