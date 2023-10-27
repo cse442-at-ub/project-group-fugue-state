@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if ($_SESSION["logged_in"] == false){
+  $_SESSION["username"] = "No one is logged in";
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/style.css"> 
   </head>
   <body>
+    <p>Logged in As: <?php echo $_SESSION["username"]; ?> </p>
     <div class="desktop-home-page">
       <div class="div">
         <div class="overlap">
