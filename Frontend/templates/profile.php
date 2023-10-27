@@ -19,9 +19,14 @@ if ($_SESSION["logged_in"] == true){
         <body>
         <div class="desktop-home-page">
             <div class="div">
-                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
+                <!-- <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
                     <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
-                </a>
+                </a> -->
+                <form action="../../logoutbackend.php" method="post">
+                    <div class="sign-in">
+                        <input class="text-wrapper-2" type="submit" value="<?php echo $_SESSION["button"]; ?>" />
+                    </div>
+                </form>
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
                     <div class="ellipse-wrapper">
                         <div class="ellipse"></div>
