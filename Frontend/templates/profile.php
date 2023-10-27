@@ -6,7 +6,7 @@ if ($_SESSION["logged_in"] == true){
     $_SESSION["redirect"] = "../../logoutbackend.php";
 }else{
     $_SESSION["button"] = "Sign in";
-    $_SESSION["redirect"] = "../../login.php";
+    $_SESSION["redirect"] = "login.php"; #replace with global filepath not relative
 }
 ?>
 
@@ -26,8 +26,7 @@ if ($_SESSION["logged_in"] == true){
                 </a> -->
                 <form action=<?php echo $_SESSION["redirect"]; ?> method="post">
                     <div class="sign-in">
-                        <input class="text-wrapper-2" type="submit" value="true" />
-                        <?php echo $_SESSION["button"]; ?>
+                        <input class="text-wrapper-2" type="submit" id="true" name = "true" value=<?php echo $_SESSION["button"]; ?> />
                     </div>
                 </form>
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
