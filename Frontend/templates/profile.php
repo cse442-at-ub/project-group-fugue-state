@@ -2,11 +2,11 @@
 session_start();
 
 if ($_SESSION["logged_in"] == true){
-    $_SESSION["button"] = "Sign out";
-    $_SESSION["redirect"] = "../../logoutbackend.php";
+    $_SESSION["button"] = "Out";
+    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
 }else{
-    $_SESSION["button"] = "Sign in";
-    $_SESSION["redirect"] = "login.php"; #replace with global filepath not relative
+    $_SESSION["button"] = "In";
+    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php"; #replace with global filepath not relative
 }
 ?>
 
