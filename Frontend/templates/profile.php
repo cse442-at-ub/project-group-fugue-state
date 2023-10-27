@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if ($_SESSION['logged_in'] != true) {
+   $_SESSION["button"] = "Sign In";
+}else{
+    $_SESSION["button"] = "Sign Out";
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,16 +21,11 @@ session_start();
         <div class="desktop-home-page">
             <div class="div">
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
-                    <div class="text-wrapper-2">Sign out</div>
+                    <div class="text-wrapper-2"><?php $_SESSION["button"] ?></div>
                 </a>
-                <form action="../../logoutbackend.php" method="post">
-                    <input type="hidden" name="logout" value="true">
-                    <input type="submit" value="Logout" />
-                    <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
-                        <div class="ellipse-wrapper">
-                            <div class="ellipse"></div>
-                        </div>
-                    </a>
+                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
+                        <div class="ellipse"></div>
+                </a>
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
                     <div class="overlap-4">
                         <div class="ellipse-3"></div>
