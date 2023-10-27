@@ -28,6 +28,7 @@ if ($_SESSION["logged_in"] == true){
                     <div class="sign-in">
                         <input class="text-wrapper-2" type="submit" id="true" name = "true" value=<?php echo $_SESSION["button"]; ?> />
                     </div>
+                    <input type="hidden" name="logout" value="true">
                 </form>
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
                     <div class="ellipse-wrapper">
