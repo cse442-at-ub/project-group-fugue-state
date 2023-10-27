@@ -1,10 +1,10 @@
-<?php
+<?php 
 session_start();
 
-if ($_SESSION['logged_in'] != true) {
-   $_SESSION["button"] = "Sign In";
+if ($_SESSION["logged_in"] == true){
+    $_SESSION["button"] = "Sign out";
 }else{
-    $_SESSION["button"] = "Sign Out";
+    $_SESSION["button"] = "Sign in";
 }
 ?>
 
@@ -17,14 +17,15 @@ if ($_SESSION['logged_in'] != true) {
         <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/profile.css">
     </head>
         <body>
-            <p>This is the username logged in currently: <?php echo $_SESSION['username']; ?></p>
         <div class="desktop-home-page">
             <div class="div">
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
-                    <div class="text-wrapper-2"><?php $_SESSION["button"] ?></div>
+                    <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
                 </a>
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
+                    <div class="ellipse-wrapper">
                         <div class="ellipse"></div>
+                    </div>
                 </a>
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
                     <div class="overlap-4">
@@ -38,7 +39,7 @@ if ($_SESSION['logged_in'] != true) {
                 <div class="rectangle-4"></div>
                 <div class="profile-tab">
                     <div class="font">Profile</div>
-                    <div class="font2">Your username will be displayed to other users</div>
+                    <div class="font2">Your usename will be displayed to other users</div>
                 </div>
                 <div class="info-tab">
                     <div class="font">Personal Information</div>
