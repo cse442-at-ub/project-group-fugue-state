@@ -44,10 +44,13 @@ function redirectPage($redirect){
     echo '</script>';
 }
 
-$loginPath = "Frontend/templates/login.php";
-$signupPath = "Frontend/templates/signup.php";
-$homePath = "Frontend/templates/homepage.php";
-$profilePath = "Frontend/templates/profile.php";
+$loginPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php";
+$signupPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php";
+$homePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php";
+$profilePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php";
+
+session_start();
+$_SESSION["logged_in"] = false; 
 
 
 ?>
