@@ -24,8 +24,22 @@ function missingFields($username,$password){
     }
 }
 
+//This function will take in a username and initialize a session with it for other html pages to use session variables.
+
+function initializeSession($username){
+    global $conn;
+    session_start();
+    $_SESSION["username"] = $username;
+    $sql = "SELECT account_id FROM logins WHERE username = '$username'";
+    $result = $conn->query($sql);
+    $account_id = $result->fetch_assoc()["account_id"];
+    $_SESSION['account_id'] = $account_id;
+    $_SESSION['logged_in'] = true; 
+}
+
 //This function will take in a username and password string and check if it exists in the database. If it 
 //does, it will return true, if not, it will return false.
+
 
 function loginSQL(){
     global $homePath;
@@ -42,13 +56,7 @@ function loginSQL(){
         $message = "Login succsessful";
         popUp($message);
         redirectPage($homePath);
-        session_start();
-        $_SESSION["username"] = $username;
-        $sql = "SELECT account_id FROM logins WHERE username = '$username'";
-        $result = $conn->query($sql);
-        $account_id = $result->fetch_assoc()["account_id"];
-        $_SESSION['account_id'] = $account_id;
-        $_SESSION['logged_in'] = true;
+        initializeSession($username);
         exit();
     } else {
         $message = "Incorrect login information";
