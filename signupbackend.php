@@ -121,6 +121,11 @@ function signUpSQL(){
         $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$hashed_password', '$email', '$randID')";
         $result = $conn->query($sql);
         if ($result === TRUE) {
+            // Make folder path
+            $userPath = "./Users/";
+            $userPath .= $username;
+            // Create folder for new user
+            mkdir($userPath);
             $message = "New user created succsessfully";
             popUp($message);
             redirectPage($loginPath);
