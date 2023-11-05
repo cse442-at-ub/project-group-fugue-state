@@ -123,9 +123,10 @@ function signUpSQL(){
         $result = $conn->query($sql);
         if ($result === TRUE) {
              // Make folder path
-             $userPath = $usersPath . strval($randID) . "/";
+             //$userPath = $usersPath . strval($randID) . "/";
+             $individualPath = $usersPath . $username . "/";
              // Create folder for new user
-             mkdir($userPath);
+             mkdir($individualPath);
              $message = "New user created succsessfully";
              popUp($message);
              redirectPage($loginPath);
