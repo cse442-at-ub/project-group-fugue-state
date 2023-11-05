@@ -48,7 +48,7 @@ $loginPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/
 $signupPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php";
 $homePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php";
 $profilePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php";
-$usersPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Users/";
+$usersPath = "/CSE442-542/2023-Fall/cse-442o/Users/";
 
 session_start();
 $_SESSION["logged_in"] = false; 
