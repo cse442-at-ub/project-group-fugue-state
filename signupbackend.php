@@ -107,6 +107,7 @@ function signUpSQL(){
     global $loginPath;
     global $signupPath;
     global $conn;
+    global $usersPath;
     $username = getInfo("username");
     $password = getInfo("password");
     $confirm_password = getInfo("confirm_password");
@@ -121,10 +122,15 @@ function signUpSQL(){
         $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$hashed_password', '$email', '$randID')";
         $result = $conn->query($sql);
         if ($result === TRUE) {
-            $message = "New user created succsessfully";
-            popUp($message);
-            redirectPage($loginPath);
-            exit();
+             // Make folder path
+             $userPath = $usersPath;
+             $userPath = $username;
+             // Create folder for new user
+             mkdir($userPath);
+             $message = "New user created succsessfully";
+             popUp($message);
+             redirectPage($loginPath);
+             exit();
         } else {
             $message = "Unsuccsessful signup";
             popUp($message);  
