@@ -128,30 +128,50 @@ function signUpSQL(){
              // Create folder for new user
              $a = mkdir($individualPath,0777);
 
-             popUp(strval($a));
+            if ($a == false){
+                $message = "Unsuccsessful directory creation";
+                popUp($message);  
+                redirectPage($signupPath);
+                exit();
+            }
 
              $individualPath = $usersPath . strval($randID);
              // Create folder for new user
              $b = mkdir($individualPath,0777);
 
-            popUp(strval($b));
+            if ($b == false){
+                $message = "Unsuccsessful directory creation";
+                popUp($message);  
+                redirectPage($signupPath);
+                exit();
+            }
 
              $individualPath = $usersPath . $username . "/";
              // Create folder for new user
             $c = mkdir($individualPath,0775);
 
-            popUp(strval($c));
+            if ($c == false){
+                $message = "Unsuccsessful directory creation";
+                popUp($message);  
+                redirectPage($signupPath);
+                exit();
+            }
 
-             $individualPath = $usersPath . $username;
+            $individualPath = $usersPath . $username;
              // Create folder for new user
             $d = mkdir($individualPath,0775);
 
-            popUp(strval($d));
+            if ($d == false){
+                $message = "Unsuccsessful directory creation";
+                popUp($message);  
+                redirectPage($signupPath);
+                exit();
+            }
 
-             $message = "New user created succsessfully";
-             popUp($message);
-             redirectPage($loginPath);
-             exit();
+            $message = "New user created succsessfully";
+            popUp($message);
+            redirectPage($loginPath);
+            exit();
         } else {
             $message = "Unsuccsessful signup";
             popUp($message);  
