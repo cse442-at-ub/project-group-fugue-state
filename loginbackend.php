@@ -4,6 +4,7 @@
 //ini_set('display_errors', 1);
 
 require "connect.php";
+require "helperfunctions.php";
 
 //This function will take in a JSON object and convert it to a SQL query.
 
@@ -28,7 +29,7 @@ function missingFields($username,$password){
 
 function initializeSession($username){
     global $conn;
-    //session_start();
+    session_start();
     $_SESSION["username"] = $username;
     $sql = "SELECT account_id FROM logins WHERE username = '$username'";
     $result = $conn->query($sql);
@@ -67,7 +68,6 @@ function loginSQL(){
 }
 
 
-$conn = connect();
 loginSQL();
 
 ?>
