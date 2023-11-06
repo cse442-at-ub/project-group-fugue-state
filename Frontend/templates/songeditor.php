@@ -41,14 +41,28 @@
               <a href="">
                 <input type="submit" value="submit">
               </a>
-          </div>
+          <div>
           <style>
             div.section{
               position: relative;
-              top: 10px;
-              left: 100px;
+              top: 450px;
+              left: 400px;
             }
-            
+            div.key{
+              position: relative;
+              top: 450px;
+              left: 400px;
+            }
+            div.lineChords{
+              position: relative;
+              top: 450px;
+              left: 400px;
+            }
+            div.lyrics{
+              position: relative;
+              top: 450px;
+              left: 400px;
+            }
           </style>
           <div class="lineEditor">
             </form>
@@ -62,8 +76,8 @@
                   <option value="verse">verse</option>
                   <option value="bridge">bridge</option>
                 </select>
-              </div>
-              <div class = "key">
+                <div>
+                <div class = "key">
                 <label for="key">Key:</label>
                 <select id="key" name="key">
                   <option value="A">A</option>
@@ -74,8 +88,8 @@
                   <option value="Major">Major</option>
                   <option value="Minor">Minor</option>
                 </select>
-              </div>
-              <div class = "lineChords">
+                <div>
+                <div class = "lineChords">
                 <label for="chord">chord:</label>
                 <select id="col1" name="col1">
                   <option value="A">A</option>
@@ -117,17 +131,16 @@
                   <option value="A">A</option>
                   <option value="C">C</option>
                 </select>
-              </div>
-              <div class = "lyrics">
+                <div>
+                <div class = "lyrics">
                 <input type="input" id="title" name="title" placeholder="Title" value=""><br>
-              </div>
+                <div>
                <a href="">
                 <input type="submit" value="submit">
                </a>
             </form>
 
             </a>
-          </div>
       </div>
     </div>
   </body>
