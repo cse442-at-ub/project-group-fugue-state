@@ -122,51 +122,13 @@ function signUpSQL(){
         $sql = "INSERT INTO logins (username, password, email, account_id) VALUES ('$username', '$hashed_password', '$email', '$randID')";
         $result = $conn->query($sql);
         if ($result === TRUE) {
+
              // Make folder path
              //$userPath = $usersPath . strval($randID) . "/";
-             $individualPath = $usersPath . strval($randID) . "/";
+            $individualPath = $usersPath . strval($randID);
              // Create folder for new user
-             $a = mkdir($individualPath,0777);
-
-            if ($a == false){
-                $message = "Unsuccsessful directory creation";
-                popUp($message);  
-                redirectPage($signupPath);
-                exit();
-            }
-
-             $individualPath = $usersPath . strval($randID);
-             // Create folder for new user
-             $b = mkdir($individualPath,0777);
-
-            if ($b == false){
-                $message = "Unsuccsessful directory creation";
-                popUp($message);  
-                redirectPage($signupPath);
-                exit();
-            }
-
-             $individualPath = $usersPath . $username . "/";
-             // Create folder for new user
-            $c = mkdir($individualPath,0775);
-
-            if ($c == false){
-                $message = "Unsuccsessful directory creation";
-                popUp($message);  
-                redirectPage($signupPath);
-                exit();
-            }
-
-            $individualPath = $usersPath . $username;
-             // Create folder for new user
-            $d = mkdir($individualPath,0775);
-
-            if ($d == false){
-                $message = "Unsuccsessful directory creation";
-                popUp($message);  
-                redirectPage($signupPath);
-                exit();
-            }
+             
+            mkdir($individualPath, 0777);
 
             $message = "New user created succsessfully";
             popUp($message);
@@ -187,3 +149,6 @@ signUpSQL();
 
 
 ?>
+
+
+
