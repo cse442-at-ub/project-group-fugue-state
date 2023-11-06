@@ -63,6 +63,11 @@
               top: 450px;
               left: 400px;
             }
+            h2{
+              position: relative;
+              top: 450px;
+              left: 400px;
+            }
           </style>
           <div class="lineEditor">
             </form>
