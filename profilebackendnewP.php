@@ -1,7 +1,7 @@
 <?php 
 
 require "connect.php";
-
+session_start();
 
 //This function quantifies the strength of the password, making sure the user includes 
 //lower case letters, upper case letters, numbers, and special characters. 
@@ -42,8 +42,8 @@ function passwordStrength($password){
 //This function checks if any of the fields are empty and returns false if they are
 
 
-function missingFields($oldpassword,$password,$email){
-    if (strlen($oldpassword) == 0 || strlen($password) == 0 || strlen($email) == 0){
+function missingFields($oldpassword,$password){
+    if (strlen($oldpassword) == 0 || strlen($password) == 0){
         $message = "Please fill out all fields";
         popUp($message);
         return false;
@@ -65,10 +65,10 @@ function confirmPassword($password,$confirm_password){
 
 //This function makes sure that the old password matches in the database for the users email 
 
-function passwordMatch($oldpassword,$email){
+function passwordMatch($oldpassword){
     global $conn;
-    global $profilePath;
-    $sql = "SELECT username, password FROM logins WHERE email = '$email' AND password = '$oldpassword'";
+    $username = $_SESSION["username"];
+    $sql = "SELECT username, password FROM logins WHERE username = '$username' AND password = '$oldpassword'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         return true;
@@ -99,17 +99,25 @@ function redundantPassword($oldpassword,$password){
 function profileNewPSQL(){
     global $profilePath;
     global $conn;
+
+    if ($_SESSION["logged_in"] == false){
+        $message = "Please login to access this page";
+        popUp($message);
+        redirectPage($profilePath);
+        //exit();
+    }
+    $username = $_SESSION["username"];
+
     $oldpassword = getInfo("oldpassword");
     $password = getInfo("password");
     $hashed_oldpassword = hash("sha256",$oldpassword);
     $hashed_password = hash("sha256",$password);
-    $email = getInfo("email");
-    if (missingFields($oldpassword,$password,$email) == false || passwordStrength($password) == false
-    || passwordMatch($hashed_oldpassword,$email) == false || redundantPassword($oldpassword,$password) == false){
+    if (missingFields($oldpassword,$password) == false || passwordStrength($password) == false
+    || passwordMatch($hashed_oldpassword) == false || redundantPassword($oldpassword,$password) == false){
         redirectPage($profilePath);
         //exit();
     }else{
-        $sql = "UPDATE logins SET password='$hashed_password' WHERE email='$email'";
+        $sql = "UPDATE logins SET password='$hashed_password' WHERE username='$username' AND password='$hashed_oldpassword'";
         $result = $conn->query($sql);
         if ($result === TRUE) {
             $message = "Password Updated";
