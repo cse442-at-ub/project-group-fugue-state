@@ -60,8 +60,6 @@ if ($_SESSION["logged_in"] == true){
                 <form action="../../profilebackendnewU.php" method="post">
                     <!-- PlaceHolder Displays Username-->
                     <div class="profile-box">
-                        <div class="font">Current Username: </div>
-                        <input class="text-box" type="text" id="username" name="old_username" placeholder="User123">
                         <div class="font">New Username: </div>
                         <input class="text-box" type="text" id="username" name="username" placeholder="User123">
                         <div class="username-button">
@@ -77,9 +75,6 @@ if ($_SESSION["logged_in"] == true){
                     <div class="info-box">
                         <div class="Email">
                             <!-- Placehodler displays email -->
-                            <div class="font">Email: 
-                                <input class="text-box" type="email" id="email" name="email" placeholder="example@gmail.com">
-                            </div>
                         </div>
                         <div class="Password">
                             <div class="font">Current Password: 
@@ -101,9 +96,6 @@ if ($_SESSION["logged_in"] == true){
                 <form action="../../profilebackendaddPref.php" method="post">
                     <div class="interests-box">
                         <div class="font">Music Type</div>
-                        <div class="font">Username:
-                            <input class="text-box" type="text" id="username" name="username" placeholder="">
-                        </div>
                         <div class="first-row">
                             <div>
                                 <input type="checkbox" id="Rock" name="Rock" value="Yes"/>
