@@ -67,6 +67,9 @@
               position: relative;
               top: 10px;
               left: 0px;
+              
+              width: 50%;
+
             }
             
           </style>
@@ -139,7 +142,7 @@
                 </select>
                 <div>
                 <div class = "lyrics">
-                <input type="input" id="title" name="title" placeholder="Title" value=""><br>
+                <input type="input" id="lyrics" name="lyrics" placeholder="lyrics" value=""><br>
                 <div>
                <a href="">
                 <input type="submit" value="submit">
