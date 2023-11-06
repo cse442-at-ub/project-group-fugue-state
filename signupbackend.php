@@ -125,7 +125,7 @@ function signUpSQL(){
 
              // Make folder path
              //$userPath = $usersPath . strval($randID) . "/";
-            $individualPath = $usersPath . strval($randID);
+            $individualPath = $usersPath . $username;
              // Create folder for new user
              
             mkdir($individualPath, 0777);
@@ -149,6 +149,5 @@ signUpSQL();
 
 
 ?>
-
 
 
