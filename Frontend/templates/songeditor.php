@@ -43,31 +43,32 @@
               </a>
           <div>
           <style>
-            div.section{
-              position: relative;
-              top: 450px;
-              left: 400px;
-            }
-            div.key{
-              position: relative;
-              top: 450px;
-              left: 400px;
-            }
-            div.lineChords{
-              position: relative;
-              top: 450px;
-              left: 400px;
-            }
-            div.lyrics{
-              position: relative;
-              top: 450px;
-              left: 400px;
-            }
             h2{
               position: relative;
               top: 450px;
-              left: 400px;
+              left: 100px;
             }
+            div.section{
+              position: relative;
+              top: 10px;
+              left: 0px;
+            }
+            div.key{
+              position: relative;
+              top: 10px;
+              left: 0px;
+            }
+            div.lineChords{
+              position: relative;
+              top: 10px;
+              left: 0px;
+            }
+            div.lyrics{
+              position: relative;
+              top: 10px;
+              left: 0px;
+            }
+            
           </style>
           <div class="lineEditor">
             </form>
