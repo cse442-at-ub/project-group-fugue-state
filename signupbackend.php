@@ -126,19 +126,19 @@ function signUpSQL(){
              //$userPath = $usersPath . strval($randID) . "/";
              $individualPath = $usersPath . strval($randID) . "/";
              // Create folder for new user
-             mkdir($individualPath);
+             mkdir($individualPath,0777);
 
              $individualPath = $usersPath . strval($randID);
              // Create folder for new user
-             mkdir($individualPath);
+             mkdir($individualPath,0777);
 
              $individualPath = $usersPath . $username . "/";
              // Create folder for new user
-             mkdir($individualPath);
+             mkdir($individualPath,0775);
 
              $individualPath = $usersPath . $username;
              // Create folder for new user
-             mkdir($individualPath);
+             mkdir($individualPath,0775);
 
              $message = "New user created succsessfully";
              popUp($message);
