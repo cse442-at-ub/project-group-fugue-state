@@ -1,7 +1,7 @@
 <?php 
 
 require "connect.php";
-
+session_start();
 
 
 
@@ -42,7 +42,13 @@ function usernameMatch($username){
 function profileNewUserSQL(){
     global $profilePath;
     global $conn;
-    $oldusername = getInfo("old_username");
+    if ($_SESSION["logged_in"] == false){
+        $message = "Please login to access this page";
+        popUp($message);
+        redirectPage($profilePath);
+        //exit();
+    }
+    $oldusername = $_SESSION["username"];
     $username = getInfo("username");
     if (missingFields($oldusername,$username) == false || usernameMatch($username) == false){
         redirectPage($profilePath);
