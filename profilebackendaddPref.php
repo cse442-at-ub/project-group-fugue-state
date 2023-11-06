@@ -1,6 +1,7 @@
 <?php 
 
 require "connect.php";
+require "helperfunctions.php";
 
 
 
@@ -117,7 +118,6 @@ function profileAddPrefPSQL(){
 }
 
 
-$conn = connect();
 profileAddPrefPSQL();
 
 

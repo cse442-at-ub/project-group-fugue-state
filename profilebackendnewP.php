@@ -1,6 +1,7 @@
 <?php 
 
 require "connect.php";
+require "helperfunctions.php";
 
 //This function quantifies the strength of the password, making sure the user includes 
 //lower case letters, upper case letters, numbers, and special characters. 
@@ -133,7 +134,6 @@ function profileNewPSQL(){
 }
 
 
-$conn = connect();
 profileNewPSQL();
 
 

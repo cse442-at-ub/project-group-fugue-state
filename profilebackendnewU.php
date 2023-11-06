@@ -1,7 +1,7 @@
 <?php 
 
 require "connect.php";
-
+require "helperfunctions.php";
 
 
 //This function checks if any of the fields are empty and returns false if they are
@@ -70,7 +70,6 @@ function profileNewUserSQL(){
 }
 
 
-$conn = connect();
 profileNewUserSQL();
 
 
