@@ -43,31 +43,34 @@
               </a>
           <div>
           <style>
-            div.section{
-              position: relative;
-              top: 450px;
-              left: 400px;
-            }
-            div.key{
-              position: relative;
-              top: 450px;
-              left: 400px;
-            }
-            div.lineChords{
-              position: relative;
-              top: 450px;
-              left: 400px;
-            }
-            div.lyrics{
-              position: relative;
-              top: 450px;
-              left: 400px;
-            }
             h2{
               position: relative;
               top: 450px;
-              left: 400px;
+              left: 100px;
             }
+            div.section{
+              position: relative;
+              top: 10px;
+              left: 0px;
+            }
+            div.key{
+              position: relative;
+              top: 10px;
+              left: 0px;
+            }
+            div.lineChords{
+              position: relative;
+              top: 10px;
+              left: 0px;
+            }
+            div.lyrics{
+              position: relative;
+              top: 10px;
+              left: 0px;
+
+              width: 50%;
+            }
+            
           </style>
           <div class="lineEditor">
             </form>
@@ -138,7 +141,7 @@
                 </select>
                 <div>
                 <div class = "lyrics">
-                <input type="input" id="title" name="title" placeholder="Title" value=""><br>
+                <input type="input" id="lyrics" name="lyrics" placeholder="lyrics" value=""><br>
                 <div>
                <a href="">
                 <input type="submit" value="submit">
