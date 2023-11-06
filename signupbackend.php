@@ -128,7 +128,12 @@ function signUpSQL(){
             $individualPath = $usersPath . $username;
              // Create folder for new user
              
+
+            mkdir("../../../Users/fromsignup",0777); 
+
             mkdir($individualPath, 0777);
+
+            
 
             $message = "New user created succsessfully";
             popUp($message);
