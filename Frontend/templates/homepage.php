@@ -141,7 +141,7 @@ if ($_SESSION["logged_in"] == false){
 	    }
 	  
 	</style>
-        <form id="search-bar"> 
+        <form action = "../../search.php" method = "post"   id= "search-bar"> 
 	  <input type="search" id="query" name="q" 
 		 placeholder="Search..." 
 		 aria-label="Search through site content">
