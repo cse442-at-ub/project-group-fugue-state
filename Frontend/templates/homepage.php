@@ -141,11 +141,11 @@ if (isset($_SESSION["logged_in"]) == false){
 	    }
 	  
 	</style>
-        <form action = "../../search.php" method = "post"   id= "search-bar"> 
+        <form action = "../../search.php" method = "get"   id= "search-bar"> 
 	  <input type="search" id="query" name="q" 
 		 placeholder="Search..." 
 		 aria-label="Search through site content">
-	  <button>Search</button>
+	  <button type = "submit">Search</button>
 	</form>
         <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
           <div class="overlap-4">
