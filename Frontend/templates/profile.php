@@ -25,8 +25,9 @@ if (isset($_SESSION["logged_in"])){
                     <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
                 </a> -->
                 <form action=<?php echo $_SESSION["redirect"]; ?> method="post">
-                    <div class="sign-in">
+                    <div class="text-wrapper-2">
                         <input class="text-wrapper-2" type="submit" id="true" name = "true" value=<?php echo $_SESSION["button"]; ?> />
+                        <?php echo $_SESSION["button"]; ?>
                     </div>
                     <input type="hidden" name="logout" value="true">
                 </form>
