@@ -82,7 +82,7 @@ function updatePreferences($rock,$pop,$country,$jazz,$classical,$folk,$indie,$al
 function profileAddPrefPSQL(){
     global $profilePath;
     global $conn;
-    if (isset($_SESSION["logged_in"])){
+    if (isset($_SESSION["logged_in"]) == false){
         $message = "Please login to access this page";
         popUp($message);
         redirectPage($profilePath);
