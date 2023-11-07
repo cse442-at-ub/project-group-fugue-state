@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION["logged_in"] == false){
+if (isset($_SESSION["logged_in"]) == false){
   $_SESSION["username"] = "No one is logged in";
 }
 ?>
