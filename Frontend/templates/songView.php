@@ -73,7 +73,8 @@ if ($_SESSION["logged_in"] == false){
         }
         fetch('../../displayBackend.php')
         //get varaibles 
-        generateSection(section,key,maj_min,chords,lyrics,lines)
+        
+        generateSection()
     </script>
 
 </body>
