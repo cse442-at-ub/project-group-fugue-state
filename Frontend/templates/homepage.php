@@ -3,6 +3,16 @@ session_start();
 
 if ($_SESSION["logged_in"] == false){
   $_SESSION["username"] = "No one is logged in";
+  $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE username = $_SESSION["username"]"
+  $result = $conn->query($sql);
+  $song_1 = $result[0];
+  $song_2 = $result[1];
+  $song_3 = $result[2];
+}
+else{
+  $song_1 = "None";
+  $song_2 = "None";
+  $song_3 = "None;
 }
 ?>
 
@@ -158,6 +168,22 @@ if ($_SESSION["logged_in"] == false){
         </a>        
         <div class="rectangle-4"></div>
       </div>
+      <div class="recent-searches-tab-homepage">
+                    <div class="font">Recent Songs</div>
+                </div>
+                    <div class="recent-searches-box-homepage">
+                        <div class="font">* Bad Habit - Taylor Swift</div><br>
+                        <div class="font">* Blank Space (Taylor's Version) - Taylor Swift</div><br>
+                        <div class="font">* Temp Song - Temp Artist</div><br>
+<!--                      <div class="font"><?php echo $song_1; ?> </div>-->
+<!--                      <div class="font"><?php echo $song_2; ?> </div>-->
+<!--                      <div class="font"><?php echo $song_3; ?> </div>-->
+<!--                        To Implement:
+                              wait for search functionality to be done, when a user clicks on a song
+                              - once user clicks on song, add/overwrite that song in the user's recent song database
+                              -this code pulls each song from the database
+                              - default is "None" -->
+                    </div>
     </div>
   </body>
 </html>

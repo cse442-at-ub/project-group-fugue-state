@@ -4,10 +4,18 @@ session_start();
 if ($_SESSION["logged_in"] == true){
     $_SESSION["button"] = "Out";
     $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
+    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE username = $_SESSION["username"]"
+    $result = $conn->query($sql);
+    $song_1 = $result[0];
+    $song_2 = $result[1];
+    $song_3 = $result[2];
 }else{
     $_SESSION["button"] = "In";
     $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php"; #replace with global filepath not relative
-}
+    $song_1 = "None";
+    $song_2 = "None";
+    $song_3 = "None;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -153,6 +161,17 @@ if ($_SESSION["logged_in"] == true){
                         </div>
                     </div>
                 </form>
+                <div class="recent-searches-tab">
+                    <div class="font">Recent Songs</div>
+                </div>
+                    <div class="recent-searches-box">
+                        <div class="font">* Bad Habit - Taylor Swift</div><br>
+                        <div class="font">* Blank Space (Taylor's Version) - Taylor Swift</div><br>
+                        <div class="font">* Temp Song - Temp Artist</div><br>
+<!--                      <div class="font"><?php echo $song_1; ?> </div>&ndash;&gt;-->
+<!--                      <div class="font"><?php echo $song_2; ?> </div>-->
+<!--                      <div class="font"><?php echo $song_3; ?> </div>-->
+                    </div>
             </div>
         </div>
     </body>
