@@ -29,6 +29,7 @@ function missingFields($username,$password){
 function initializeSession($username){
     global $conn;
     session_start();
+    session_set_cookie_params(0);
     $_SESSION["username"] = $username;
     $sql = "SELECT account_id FROM logins WHERE username = '$username'";
     $result = $conn->query($sql);
