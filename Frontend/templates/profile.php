@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if ($_SESSION["logged_in"] == true){
+if (isset($_SESSION["logged_in"])){
     $_SESSION["button"] = "Out";
     $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
 }else{

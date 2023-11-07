@@ -41,7 +41,7 @@ function usernameMatch($username){
 function profileNewUserSQL(){
     global $profilePath;
     global $conn;
-    if ($_SESSION["logged_in"] == false){
+    if (isset($_SESSION["logged_in"])){
         $message = "Please login to access this page";
         popUp($message);
         redirectPage($profilePath);
