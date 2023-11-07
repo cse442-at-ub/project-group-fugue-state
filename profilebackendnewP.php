@@ -1,7 +1,7 @@
 <?php 
 
 require "connect.php";
-require "helperfunctions.php";
+session_start();
 
 //This function quantifies the strength of the password, making sure the user includes 
 //lower case letters, upper case letters, numbers, and special characters. 

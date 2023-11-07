@@ -1,7 +1,7 @@
 <?php 
 
 require "connect.php";
-require "helperfunctions.php";
+session_start();
 
 
 //This function checks if any of the fields are empty and returns false if they are
