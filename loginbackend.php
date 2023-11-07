@@ -4,7 +4,6 @@
 //ini_set('display_errors', 1);
 
 require "connect.php";
-require "helperfunctions.php";
 
 //This function will take in a JSON object and convert it to a SQL query.
 

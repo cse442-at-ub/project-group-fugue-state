@@ -51,8 +51,11 @@ $profilePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Fronten
 $usersPath = "../Users/";
 //$usersPath = "./Users/";
 
-session_start();
-$_SESSION["logged_in"] = false; 
+
+$conn = connect();
+
+//session_start();
+//$_SESSION["logged_in"] = false; 
 
 
 ?>
