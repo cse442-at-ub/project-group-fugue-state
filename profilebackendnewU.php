@@ -57,6 +57,7 @@ function profileNewUserSQL(){
         $result = $conn->query($sql);
         if ($result === TRUE) {
             $message = "Username Updated";
+            $_SESSION["username"] = $username;
             popUp($message);
             redirectPage($profilePath);
             //exit();
