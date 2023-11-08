@@ -2,11 +2,13 @@
 session_start();
 
 if (isset($_SESSION["logged_in"])){
-    $_SESSION["button"] = "Out";
-    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
+    $_SESSION["button"] = "Sign Out";
+    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php";
+    $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
 }else{
-    $_SESSION["button"] = "In";
+    $_SESSION["button"] = "Sign In";
     $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php"; #replace with global filepath not relative
+    $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php";
 }
 ?>
 
@@ -24,12 +26,15 @@ if (isset($_SESSION["logged_in"])){
                 <!-- <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
                     <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
                 </a> -->
-                <form action=<?php echo $_SESSION["redirect"]; ?> method="post">
-                    <div class="sign-in">
+
+                <div class="sign-in">
+                    <form action=<?php echo $_SESSION["redirect2"]; ?> method="post">
                         <input class="text-wrapper-2" type="submit" id="true" name = "true" value=<?php echo $_SESSION["button"]; ?> />
-                    </div>
-                    <input type="hidden" name="logout" value="true">
-                </form>
+                        <input class="text-wrapper-2" type="hidden" name="logout" value="true">
+                    </form>
+                </div>
+
+
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
                     <div class="ellipse-wrapper">
                         <div class="ellipse"></div>

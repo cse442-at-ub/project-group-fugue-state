@@ -1,5 +1,6 @@
 <?php
 require "connect.php"
+require "helperfunctions.php"
 
 session_start();
 
