@@ -35,12 +35,15 @@ if ($_SESSION["logged_in"] == true){
                 <!-- <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
                     <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
                 </a> -->
-                <form action=<?php echo $_SESSION["redirect"]; ?> method="post">
-                    <div class="sign-in">
+
+                <div class="sign-in">
+                    <form action=<?php echo $_SESSION["redirect2"]; ?> method="post">
                         <input class="text-wrapper-2" type="submit" id="true" name = "true" value=<?php echo $_SESSION["button"]; ?> />
-                    </div>
-                    <input type="hidden" name="logout" value="true">
-                </form>
+                        <input class="text-wrapper-2" type="hidden" name="logout" value="true">
+                    </form>
+                </div>
+
+
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
                     <div class="ellipse-wrapper">
                         <div class="ellipse"></div>
@@ -71,8 +74,6 @@ if ($_SESSION["logged_in"] == true){
                 <form action="../../profilebackendnewU.php" method="post">
                     <!-- PlaceHolder Displays Username-->
                     <div class="profile-box">
-                        <div class="font">Current Username: </div>
-                        <input class="text-box" type="text" id="username" name="old_username" placeholder="User123">
                         <div class="font">New Username: </div>
                         <input class="text-box" type="text" id="username" name="username" placeholder="User123">
                         <div class="username-button">
@@ -88,9 +89,6 @@ if ($_SESSION["logged_in"] == true){
                     <div class="info-box">
                         <div class="Email">
                             <!-- Placehodler displays email -->
-                            <div class="font">Email: 
-                                <input class="text-box" type="email" id="email" name="email" placeholder="example@gmail.com">
-                            </div>
                         </div>
                         <div class="Password">
                             <div class="font">Current Password: 
@@ -112,9 +110,6 @@ if ($_SESSION["logged_in"] == true){
                 <form action="../../profilebackendaddPref.php" method="post">
                     <div class="interests-box">
                         <div class="font">Music Type</div>
-                        <div class="font">Username:
-                            <input class="text-box" type="text" id="username" name="username" placeholder="">
-                        </div>
                         <div class="first-row">
                             <div>
                                 <input type="checkbox" id="Rock" name="Rock" value="Yes"/>
