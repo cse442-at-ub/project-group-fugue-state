@@ -2,7 +2,7 @@
 
 require "connect.php";
 
-if (getInfo("logout") == "true"){
+if (getInfo("logout") == "true" || $_SESSION["logged_out"] == true){
     global $homePath;
     session_start();
     session_unset();
