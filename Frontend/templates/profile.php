@@ -37,7 +37,6 @@ if (isset($_SESSION["logged_in"])){
                 <a href="<?php echo $_SESSION['redirect']; ?>" class='sign-in'>
                     <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
                     <form action=<?php echo $_SESSION["redirect2"]; ?> method="post">
-                        <?php echo $_SESSION["button"]; ?>
                         <input class="text-wrapper-2" type="hidden" id="true" name="true" value="true">
                     </form>
                 </a>
@@ -54,7 +53,7 @@ if (isset($_SESSION["logged_in"])){
                 </a>
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
                     <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
-                </a>
+             a   </a>
                 <div class="rectangle-4"></div>
                 <div class="profile-tab">
                     <div class="font">Profile</div>
