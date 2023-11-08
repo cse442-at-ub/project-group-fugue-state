@@ -2,20 +2,23 @@
 require “connect.php”
 session_start();
 
-global $conn
+global $conn;
 
 if (isset($_SESSION["logged_in"]) == false){
   $_SESSION["username"] = "No one is logged in";
-  $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE username = $_SESSION["username"]"
-  $result = $conn->query($sql);
-  $song_1 = $result[0];
-  $song_2 = $result[1];
-  $song_3 = $result[2];
-}
-else{
   $song_1 = "None";
   $song_2 = "None";
-  $song_3 = "None;
+  $song_3 = "None";
+
+}
+else{
+    $username = $_SESSION["username"];
+    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE username = '$username'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $song_1 = $row["song_1"];
+    $song_2 = $row["song_2"];
+    $song_3 = $row["song_3"];
 }
 ?>
 
