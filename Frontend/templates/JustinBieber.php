@@ -35,8 +35,11 @@
                         src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
                 </a>
                 <div class="first_song">
-                    <img class="first_pic"
-                        src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/JustinBieber/G.png" />
+                    <form action = "../../song_id.php" method = "GET">
+                        <input type = "hidden" name = "song_id" value = "7">
+                        <img class="first_pic"
+                            src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/JustinBieber/G.png" />
+                    </form>
                 </div>
                 <div class="first_song_des">
                     <div class="title">
@@ -50,8 +53,11 @@
                     </div>
                 </div>
                 <div class="second_song">
-                    <img class="second_pic"
-                        src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/JustinBieber/NSN.png" />
+                    <form action = "../../song_id.php" method = "GET">
+                        <input type = "hidden" name = "song_id" value = "8">
+                        <img class="second_pic"
+                            src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/JustinBieber/NSN.png" />
+                    </form>
                 </div>
                 <div class="second_song_des">
                     <div class="title">
@@ -65,8 +71,11 @@
                     </div>
                 </div>
                 <div class="third_song">
-                    <img class="third_pic"
-                        src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/JustinBieber/B.png" />
+                    <form action = "../../song_id.php" method = "GET">
+                        <input type = "hidden" name = "song_id" value = "9">
+                        <img class="third_pic"
+                            src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/JustinBieber/B.png" />
+                    </form>
                 </div>
                 <div class="third_song_des">
                     <div class="title">
