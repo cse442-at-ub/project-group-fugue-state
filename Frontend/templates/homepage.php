@@ -103,50 +103,50 @@ if (isset($_SESSION["logged_in"]) == false){
             <div class="ellipse"></div>
           </div>
         </a>
-	<style>
-	  form {
-	      position: relative;
-	      background-color: #d9d9d9;
-	      width: 820px;
-	      height: 53px;
-	      border-radius: 43px;
-	      border: 0.5px solid;
-	      border-color: #cbc2c2;
-	      top: 107px;
-	      left: 345px;
-	    }
+        <style>
+          form {
+            position: relative;
+            background-color: #d9d9d9;
+            width: 820px;
+            height: 53px;
+            border-radius: 43px;
+            border: 0.5px solid;
+            border-color: #cbc2c2;
+            top: 107px;
+            left: 345px;
+          }
 
-	    input {
-	      position: absolute;
-	      background-color: #d9d9d9;
-	      width: 820px;
-	      height: 53px;
-	      border-radius: 43px;
-	      border-color: #d9d9d9;
-	      top: 0px;
-	      left: 0px;
-	      box-shadow: 0px 4px 4px #00000040;
-              padding: 20px;
-	    }
+          input {
+            position: absolute;
+            background-color: #d9d9d9;
+            width: 820px;
+            height: 53px;
+            border-radius: 43px;
+            border-color: #d9d9d9;
+            top: 0px;
+            left: 0px;
+            box-shadow: 0px 4px 4px #00000040;
+            padding: 20px;
+          }
 
-	    button {
-	      position: absolute;
-	      top: 5px;
-	      left: 860px;
-	      background-color: #d9d9d9;
-	      border-radius: 43px;
-	      border: 0.5px solid;
-	      border-color: #cbc2c2;
-              height: 53px;
-	    }
-	  
-	</style>
+          button {
+            position: absolute;
+            top: 5px;
+            left: 860px;
+            background-color: #d9d9d9;
+            border-radius: 43px;
+            border: 0.5px solid;
+            border-color: #cbc2c2;
+            height: 53px;
+          }
+          
+        </style>
         <form action = "../../search.php" method = "get"   id= "search-bar"> 
-	  <input type="search" id="query" name="q" 
-		 placeholder="Search..." 
-		 aria-label="Search through site content">
-	  <button type = "submit">Search</button>
-	</form>
+          <input type="search" id="query" name="q" 
+          placeholder="Search..." 
+          aria-label="Search through site content">
+          <button type = "submit">Search</button>
+        </form>
         <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
           <div class="overlap-4">
             <div class="ellipse-3"></div>

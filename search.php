@@ -1,8 +1,8 @@
 <?php
 session_start():
 
-if (isset($_GET['query'])) {
-    $search_query = strtolower($_GET['query']);
+if (isset($_GET['q'])) {
+    $search_query = strtolower($_GET['q']);
 
     $artist_pages = [
         'taylor swift' => 'TaylorSwift.php',
