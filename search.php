@@ -1,4 +1,6 @@
 <?php
+require "connect.php"
+
 session_start():
 
 if (isset($_GET['q'])) {
@@ -19,15 +21,11 @@ if (isset($_GET['q'])) {
         exit();
 
         // Add page to user's recent searches list
-        $user_id = $_SESSION['user_id'];
-        $artist_name = $search_query;
+        $username = $_SESSION['username'];
+        $songname = $search_query;
 
-        // Create a database connection (you need to replace this with your database connection code)
-        //$pdo = new PDO('mysql:host=your_database_host;dbname=your_database_name', 'your_username', 'your_password');
-
-        // Prepare and execute the SQL query to insert the recent search record
-        //$stmt = $pdo->prepare("INSERT INTO recent_searches (user_id, artist_name) VALUES (?, ?)");
-        //$stmt->execute([$user_id, $artist_name]);
+        $sql = "INSERT INTO recent_searches (user_id, artist_name) VALUES ($username, $songname)");
+        $conn->query($sql)
     } else {
     }
 }
