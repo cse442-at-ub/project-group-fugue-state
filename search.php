@@ -1,5 +1,6 @@
 <?php
 require "connect.php"
+require "helperfunctions.php"
 
 session_start();
 
@@ -7,10 +8,10 @@ if (isset($_GET['q'])) {
     $search_query = strtolower($_GET['q']);
 
     $artist_pages = [
-        'taylor swift' => '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/TaylorSwift.php',
-        'ed sheeran' => '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/EdSheeran.php',
-        'lady gaga' => '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/LadyGaga.php',
-        'justin bieber' => '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/JustinBieber.php',
+        'taylor swift' => 'TaylorSwift.php',
+        'ed sheeran' => 'EdSheeran.php',
+        'lady gaga' => 'LadyGaga.php',
+        'justin bieber' => 'JustinBieber.php',
         // Add more artists as needed
     ];
 
@@ -21,11 +22,13 @@ if (isset($_GET['q'])) {
         exit();
 
         // Add page to user's recent searches list
+        global $conn;
         $username = $_SESSION['username'];
         $songname = $search_query;
+        recentSearches($username, $songname, $conn);
 
-        $sql = "INSERT INTO recent_searches (user_id, artist_name) VALUES ($username, $songname)");
-        $conn->query($sql)
+        $sql = "INSERT INTO recent_songs (account_id, song_1) VALUES ($username, $songname)");
+        $conn->query($sql);
     } else {
     }
 }
