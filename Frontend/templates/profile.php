@@ -34,14 +34,15 @@ if (isset($_SESSION["logged_in"])){
                     </form>
                 </div>
                 </a>-->
-                <a href="<?php echo $_SESSION['redirect'];?>"class='sign-in'>
-                    <div class="text-wrapper-2">
-                        <form action=<?php echo $_SESSION["redirect2"]; ?> method="post">
-                            <?php echo $_SESSION["button"]; ?>
-                            <input class="text-wrapper-2" type="hidden" id="true" name="logout" value="true">
-                        </form>
-                    </div>
-                </a>
+                <a href="<?php echo $_SESSION['redirect'];?>" class='sign-in' target="profile_frame"><?php echo $_SESSION["button"]; ?></a>
+                <form action=<?php echo $_SESSION["redirect2"]; ?> method="post" target="form_frame">
+                    <input class="text-wrapper-2" type="hidden" id="true" name="logout" value="true">
+                </form>
+
+                <iframe name="profile_frame" style="display: none;"></iframe>
+                <iframe name="form_frame" style="display: none;"></iframe>
+
+
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
                     <div class="ellipse-wrapper">
                         <div class="ellipse"></div>
