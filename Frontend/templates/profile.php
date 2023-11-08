@@ -34,12 +34,11 @@ if (isset($_SESSION["logged_in"])){
                     </form>
                 </div>
                 </a>-->
-                
                 <div class="text-wrapper-2">
                     <form action=<?php echo $_SESSION["redirect2"]; ?> method="post">
                         <?php echo $_SESSION["button"]; ?>
                         <input class="text-wrapper-2" type="hidden" id="true" name="true" value="true">
-                        <a href="<?php echo $_SESSION['redirect']; ?>" class='sign-in'>
+                        <a href="<?php echo $_SESSION['redirect']; ?>" class='sign-in'></a>
                     </form>
                 </div>
                 </a>   
