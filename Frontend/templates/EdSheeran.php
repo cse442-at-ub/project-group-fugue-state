@@ -35,11 +35,10 @@
                         src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
                 </a>
                 <div class="first_song">
-                    <form action = "../../song_id.php" method = "GET">
-                        <input type = "hidden" name = "song_id" value = "4">
+                    <a href = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/songView.php?song_id=4">
                         <img class="first_pic"
                             src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/EdSheeran/SOY.png" />
-                    <form>
+                    </a>
                 </div>
                 <div class="first_song_des">
                     <div class="title">
@@ -53,11 +52,10 @@
                     </div>
                 </div>
                 <div class="second_song">
-                    <form action = "../../song_id.php" method = "GET">
-                        <input type = "hidden" name = "song_id" value = "5">
+                    <a href = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/songView.php?song_id=5">
                         <img class="second_pic"
                             src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/EdSheeran/TOL.png" />
-                    </form>
+                    </a>
                 </div>
                 <div class="second_song_des">
                     <div class="title">
@@ -71,11 +69,10 @@
                     </div>
                 </div>
                 <div class="third_song">
-                    <form action = "../../song_id.php" method = "GET">
-                        <input type = "hidden" name = "song_id" value = "6">
+                    <a href = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/songView.php?song_id=6">
                         <img class="third_pic"
                             src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/EdSheeran/P.png" />
-                    </form>
+                    </a>
                 </div>
                 <div class="third_song_des">
                     <div class="title">

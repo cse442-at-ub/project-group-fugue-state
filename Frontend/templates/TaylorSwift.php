@@ -28,12 +28,9 @@
                     <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
                 </a>
                 <div class = "first_song">
-                    <form action = "../../song_id.php" method = "GET">
-                        <input type = "hidden" name = "song_id" value = "1">
-                        <a href = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/TS_BS.php">
-                            <img class="first_pic" src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/TaylorSwift/BS.png" />
-                        </a>
-                    </form>
+                    <a href = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/songView.php?song_id=1">
+                        <img class="first_pic" src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/TaylorSwift/BS.png" />
+                    </a>
                 </div>
                 <div class="first_song_des">
                     <div class = "title">
@@ -47,10 +44,9 @@
                     </div>
                 </div>
                 <div class = "second_song">
-                    <form action = "../../song_id.php" method = "GET">
-                        <input type = "hidden" name = "song_id" value = "2">
+                    <a href = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/songView.php?song_id=2">
                         <img class="second_pic" src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/TaylorSwift/CS.png" />
-                    </form>
+                    </a>
                 </div>
                 <div class="second_song_des">
                     <div class="title">
@@ -64,10 +60,9 @@
                     </div>
                 </div>
                 <div class = "third_song">
-                    <form action = "../../song_id.php" method = "GET">
-                        <input type = "hidden" name = "song_id" value = "3">
+                    <a href = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/songView.php?song_id=3">
                         <img class="third_pic" src="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/TaylorSwift/YBWM.png" />
-                    </form>
+                    </a>
                 </div>
                 <div class="third_song_des">
                     <div class="title">
