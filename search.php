@@ -8,10 +8,10 @@ if (isset($_GET['q'])) {
     $search_query = strtolower($_GET['q']);
 
     $artist_pages = [
-        'taylor swift' => 'TaylorSwift.php',
-        'ed sheeran' => 'EdSheeran.php',
-        'lady gaga' => 'LadyGaga.php',
-        'justin bieber' => 'JustinBieber.php',
+        'taylor swift' => '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/TaylorSwift.php',
+        'ed sheeran' => '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/EdSheeran.php',
+        'lady gaga' => '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/LadyGaga.php',
+        'justin bieber' => '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/JustinBieber.php',
         // Add more artists as needed
     ];
 
