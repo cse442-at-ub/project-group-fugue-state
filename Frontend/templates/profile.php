@@ -40,8 +40,7 @@ if (isset($_SESSION["logged_in"])){
                         <input class="text-wrapper-2" type="hidden" id="true" name="true" value="true">
                         <a href="<?php echo $_SESSION['redirect']; ?>" class='sign-in'></a>
                     </form>
-                </div>
-                </a>   
+                </div>  
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
                     <div class="ellipse-wrapper">
                         <div class="ellipse"></div>
