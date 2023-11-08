@@ -33,7 +33,7 @@ if (isset($_SESSION["logged_in"])){
                 </div>
                 </a>-->
                 
-                <a href=<?php echo $_SESSION["redirect"]; ?> class='sign-in'>
+                <a href="<?php echo $_SESSION['redirect']; ?>" class='sign-in'>
                     <div class="text-wrapper-2">
                         <?php echo $_SESSION["button"]; ?>
                         <form action=<?php echo $_SESSION["redirect"]; ?> method="post">
