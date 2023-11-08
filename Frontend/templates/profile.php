@@ -38,7 +38,7 @@ if (isset($_SESSION["logged_in"])){
                     <div class="text-wrapper-2">
                         <form action=<?php echo $_SESSION["redirect2"]; ?> method="post">
                             <?php echo $_SESSION["button"]; ?>
-                            <input class="text-wrapper-2" type="submit" id="true" name="true" value="true">
+                            <input class="text-wrapper-2" type="hidden" id="true" name="logout" value="true">
                         </form>
                     </div>
                 </div>
