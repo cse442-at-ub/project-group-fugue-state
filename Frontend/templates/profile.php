@@ -1,5 +1,8 @@
-<?php 
+<?php
+require “connect.php”
 session_start();
+
+global $conn
 
 if ($_SESSION["logged_in"] == true){
     $_SESSION["button"] = "Out";
@@ -165,12 +168,9 @@ if ($_SESSION["logged_in"] == true){
                     <div class="font">Recent Songs</div>
                 </div>
                     <div class="recent-searches-box">
-                        <div class="font">* Bad Habit - Taylor Swift</div><br>
-                        <div class="font">* Blank Space (Taylor's Version) - Taylor Swift</div><br>
-                        <div class="font">* Temp Song - Temp Artist</div><br>
-<!--                      <div class="font"><?php echo $song_1; ?> </div>&ndash;&gt;-->
-<!--                      <div class="font"><?php echo $song_2; ?> </div>-->
-<!--                      <div class="font"><?php echo $song_3; ?> </div>-->
+                      <div class="font"><?php echo $song_1; ?> </div>
+                      <div class="font"><?php echo $song_2; ?> </div>
+                      <div class="font"><?php echo $song_3; ?> </div>
                     </div>
             </div>
         </div>
