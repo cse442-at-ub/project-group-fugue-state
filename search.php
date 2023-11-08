@@ -1,7 +1,8 @@
 <?php
 require "connect.php"
+require "helperfunctions.php"
 
-session_start():
+session_start();
 
 if (isset($_GET['q'])) {
     $search_query = strtolower($_GET['q']);
@@ -21,11 +22,13 @@ if (isset($_GET['q'])) {
         exit();
 
         // Add page to user's recent searches list
+        global $conn;
         $username = $_SESSION['username'];
         $songname = $search_query;
+        recentSearches($username, $songname, $conn);
 
-        $sql = "INSERT INTO recent_searches (user_id, artist_name) VALUES ($username, $songname)");
-        $conn->query($sql)
+        $sql = "INSERT INTO recent_songs (account_id, song_1) VALUES ($username, $songname)");
+        $conn->query($sql);
     } else {
     }
 }
