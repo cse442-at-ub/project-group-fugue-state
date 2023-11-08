@@ -25,9 +25,6 @@ if (isset($_GET['q'])) {
         $username = $_SESSION['username'];
         $songname = $search_query;
         recentSearches($username, $songname, $conn);
-
-        $sql = "INSERT INTO recent_songs (account_id, song_1) VALUES ($username, $songname)");
-        $conn->query($sql);
     } else {
     }
 }
