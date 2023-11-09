@@ -40,13 +40,13 @@ if (isset($_SESSION["logged_in"])){
                 <!-- <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
                     <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
                 </a> -->
+                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php" id="inoroutlink" class='sign-in'>
+                    <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
+                </a> 
 
-                <div class="sign-in">
-                    <form action=<?php echo $_SESSION["redirect2"]; ?> method="post">
-                        <input class="text-wrapper-2" type="submit" id="true" name = "true" value=<?php echo $_SESSION["button"]; ?> />
-                        <input class="text-wrapper-2" type="hidden" name="logout" value="true">
-                    </form>
-                </div>
+                <form action=<?php echo $_SESSION["redirect2"]; ?> method="post" id="inoroutform">
+                    <input class="text-wrapper-2" type="hidden" name="logout" value="true">
+                </form>
 
 
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
@@ -174,6 +174,18 @@ if (isset($_SESSION["logged_in"])){
                     </div>
             </div>
         </div>
+
+        <script>
+                    function submitForm(){
+                        document.getElementById("inoroutform").submit();
+                    }
+
+                    document.getElementById("inoroutlink").addEventListener("click", function(event){
+                        event.preventDefault();
+                        submitForm();
+                    });
+
+        </script>
     </body>
 </html>
 
