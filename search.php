@@ -18,8 +18,6 @@ if (isset($_GET['q'])) {
         $artist_page = $artist_pages[$search_query];
         // Redirect to the artist's page
         header("Location: $artist_page");
-        exit();
-
         // Add page to user's recent searches list
         $account_id = $_SESSION['account_id'];
         $songname = $search_query;
@@ -53,6 +51,9 @@ if (isset($_GET['q'])) {
                           VALUES ('$account_id', '$song', 'None', 'None')";
             $conn->query($insertSql);
         }
+        exit();
+
+        
     } else {
         $homepage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php';
         header("Location: $homepage");
