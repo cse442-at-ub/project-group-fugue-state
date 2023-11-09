@@ -91,8 +91,3 @@ if ($_SESSION["logged_in"] == false){
   </script>
 </body>
 </html>
-
-
-    </div>
-  </body>
-</html>
