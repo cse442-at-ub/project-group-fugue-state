@@ -89,8 +89,15 @@ include '../../readSong.php';
     var arrangment = getArrangement($_GET['song_id'])
     var chords = getChords($_GET['song_id'])
     var lyrics = getLyrics($_GET['song_id'])
+
     var songContainer = document.getElementById("song");
+
+    songContainer.textContent = title;
+    songContainer.textContent = "by: " + artist;
+
+
     songContainer.appendChild(generatekey(keys[0], keys[1]));
+
 
     for (let i = 0; i < sections.length; i++) {
       var chunk = i > 0 ? lines[i - 1] : 0;
