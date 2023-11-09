@@ -58,7 +58,8 @@ function loginSQL(){
         popUp($message);
         redirectPage($homePath);
         initializeSession($username);
-        $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
+        $account_id = $_SESSION["account_id"];
+        $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$account_id'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $_SESSION["song_1"] = $row["song_1"];
