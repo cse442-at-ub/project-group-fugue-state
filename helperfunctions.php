@@ -1,25 +1,4 @@
-<?php
-
-//This function will read the database credentials from a csv file and return them as an array.
-
-function readCSV($csvfile){
-    $open = fopen($csvfile, 'r');
-    $line1 = fgetcsv($open, 1000, ",");
-    $line2 = fgetcsv($open, 1000, ",");
-    return $line2;
-}
-
-//This function connects to the database and returns the connection object.
-
-function connect(){
-    $creds = readCSV("../credentials.csv"); // ../../credentials.csv if in templates folder
-    $conn = new mysqli($creds[0], $creds[1], $creds[2], $creds[3]);
-    if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-    }
-    echo "Database Connection Status... Online || \n";
-    return $conn;
-}
+<?php 
 
 //These functions retrieve the username and password from the html form. For login and signup scripts.
 
@@ -51,14 +30,7 @@ $profilePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Fronten
 $usersPath = "../Users/";
 //$usersPath = "./Users/";
 
-
-$conn = connect();
-
-//session_start();
-//$_SESSION["logged_in"] = false;
-
-function recentSearches($username, $song){
-    global $conn;
+function recentSearches($username, $song, $conn){
     $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = $username";
     $result = $conn->query($sql);
 
@@ -78,7 +50,6 @@ function recentSearches($username, $song){
             $sql = "UPDATE recent_songs SET song_1 = '$song' WHERE account_id = $username";
         }
         $conn->query($sql);
-}
 }
 
 ?>

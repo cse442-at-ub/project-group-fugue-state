@@ -1,7 +1,7 @@
 <?php 
 
 require "connect.php";
-
+session_start();
 
 
 
@@ -82,7 +82,13 @@ function updatePreferences($rock,$pop,$country,$jazz,$classical,$folk,$indie,$al
 function profileAddPrefPSQL(){
     global $profilePath;
     global $conn;
-    $username = getInfo("username");
+    if (isset($_SESSION["logged_in"]) == false){
+        $message = "Please login to access this page";
+        popUp($message);
+        redirectPage($profilePath);
+        //exit();
+    }
+    $username = $_SESSION["username"];
     if (missingFields($username) == false) {
         redirectPage($profilePath);
     }
@@ -112,7 +118,6 @@ function profileAddPrefPSQL(){
 }
 
 
-$conn = connect();
 profileAddPrefPSQL();
 
 
