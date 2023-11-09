@@ -1,34 +1,37 @@
 <?php
-
-/**
- * This function will read a song .txt file and return location data
- * for displaying chord progressions and lyrics correctly.
- */
-function readSong($song){
-    // Check if filename passed is a directory and returns error if true
-    if (is_dir($song)) {
-        // Error message
-        echo "Error: song doesn't exist!";
-        return -1;
-    } else {
-        $fp = fopen($song, 'r');
-        if ($fp) {
-            // Extract song title
-            $title = fgets($fp);
-
-            // Extract song author
-            $author = fgets($fp);
-
-            // Extract song key
-            $songKey = fgets($fp);
-
-            // Extract remaining song info
-            while(!feof($fp)) {
-                // Extract subsection info
-            }
-        }
-        fclose($fp);
-        return 1;
+require "connect.php";
+//This function will read a song id and return the title
+function getTitle(int $songID){
+    global $conn;
+    $sql = "SELECT title FROM songs WHERE song_id = '$songID'";
+    $result = $conn->query($sql);
+    if($result->num_rows > 0){
+        return $result->fetch_assoc()["title"];
     }
+    return "";
 }
+
+// This function will read a song id and return the songwriter
+function getArtist(int $songID){
+    global $conn;
+    $sql = "SELECT songwriter FROM songs WHERE song_id = '$songID'";
+    $result = $conn->query($sql);
+    if($result->num_rows > 0){
+        return $result->fetch_assoc()["songwriter"];        
+    }
+    return "";
+}
+
+// This function will read a song id and return the keysignature
+function getKey(int $songID){
+    global $conn;
+    $sql = "SELECT keysig FROM songs WHERE song_id = '$songID'";
+    $result = $conn->query($sql);
+    if($result->num_rows > 0){
+        return $result->fetch_assoc()["keysig"];
+    }  
+    return "";
+}  
+
+$conn = connect();
 ?>
