@@ -180,7 +180,10 @@ if (isset($_SESSION["logged_in"])){
                         document.getElementById("inoroutform").submit();
                     }
 
-                    document.getElementById("inoroutlink").addEventListener("click", submitForm());
+                    document.getElementById("inoroutlink").addEventListener("click", function(event){
+                        event.preventDefault();
+                        submitForm();
+                    });
 
         </script>
     </body>
