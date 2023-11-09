@@ -1,6 +1,6 @@
 <?php
 // require "connect.php";
-require "loginbackend.php"
+require "loginbackend.php";
 session_start();
 
 if (isset($_SESSION["logged_in"]) == false){
