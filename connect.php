@@ -78,6 +78,6 @@ function recentSearches($username, $song, $conn){
         }
         $conn->query($sql);
 }
-
+}
 
 ?>
