@@ -51,6 +51,9 @@ if (isset($_GET['q'])) {
                           VALUES ('$account_id', '$song', 'None', 'None')";
             $conn->query($insertSql);
         }
+        $insertSql = "INSERT INTO recent_songs (account_id, song_1, song_2, song_3) 
+                          VALUES ('999999', '999999', 'None', 'None')";
+        $conn->query($insertSql);
         exit();
 
         
