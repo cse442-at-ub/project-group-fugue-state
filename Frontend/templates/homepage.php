@@ -4,12 +4,18 @@ session_start();
 
 if (isset($_SESSION["logged_in"]) == false){
   $_SESSION["username"] = "No one is logged in";
+  $_SESSION["button"] = "Sign In";
+  $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php"; #replace with global filepath not relative
+  $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php";
   // $song_1 = "None";
   // $song_2 = "None";
   // $song_3 = "None";
 
 }
 else{
+    $_SESSION["button"] = "Sign Out";
+    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php";
+    $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
     $username = $_SESSION["username"];
     // $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
     // $result = $conn->query($sql);
@@ -86,9 +92,14 @@ else{
             </div>
           </a>          
         </div>
-        <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php" class='sign-in'>
-          <div class="text-wrapper-2">Sign In</div>
-        </a>        
+        <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php" id="inoroutlink" class='sign-in'>
+          <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
+        </a> 
+
+        <form action=<?php echo $_SESSION["redirect2"]; ?> method="post" id="inoroutform">
+          <input class="text-wrapper-2" type="hidden" name="logout" value="true">
+        </form>    
+
         <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='button-sm'>
           <div class="overlap-3">
             <div class="rectangle-3"></div>
@@ -182,5 +193,16 @@ else{
                       <div class="font"><?php echo $_SESSION["song_3"]; ?> </div>
                     </div>
     </div>
+    <script>
+                    function submitForm(){
+                        document.getElementById("inoroutform").submit();
+                    }
+
+                    document.getElementById("inoroutlink").addEventListener("click", function(event){
+                        event.preventDefault();
+                        submitForm();
+                    });
+
+        </script>
   </body>
 </html>
