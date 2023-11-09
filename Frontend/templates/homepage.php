@@ -11,6 +11,7 @@ if (isset($_SESSION["logged_in"]) == false){
   // $song_1 = "None";
   // $song_2 = "None";
   // $song_3 = "None";
+  $_SESSION["redirect3"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php";
 
 }
 else{
@@ -24,6 +25,8 @@ else{
     // $song_1 = $row["song_1"];
     // $song_2 = $row["song_2"];
     // $song_3 = $row["song_3"];
+
+    $_SESSION["redirect3"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php";
 }
 ?>
 
@@ -174,7 +177,7 @@ else{
           aria-label="Search through site content">
           <button type = "submit">Search</button>
         </form>
-        <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
+        <a href="<?php echo $_SESSION["redirect3"]; ?>" class='profile-icon'>
           <div class="overlap-4">
             <div class="ellipse-3"></div>
             <img class="img" src= "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/ellipse-4-2.svg" />              
