@@ -5,12 +5,7 @@ if ($_SESSION["logged_in"] == false){
   $_SESSION["username"] = "No one is logged in";
 }
 
-if (isset($_GET['song_id']) && is_numeric($_GET['song_id'])) {
-    $selectedSongID = $_GET['song_id'];
-
-    $_SESSION['selected_song_id'] = $selectedSongID;
-
-}
+$song_id = $_GET['song_id'];
 include '../../readSong.php';
 ?>
 <!DOCTYPE html>
@@ -83,12 +78,12 @@ include '../../readSong.php';
     var lines = [2, 2, 2];
     */
     var keys = ["",""]
-    var title = getTitle($_GET['song_id'])
-    var artist = getArtist($_GET['song_id'])
-    keys[0]  = getKey($_GET['song_id'])
-    var arrangment = getArrangement($_GET['song_id'])
-    var chords = getChords($_GET['song_id'])
-    var lyrics = getLyrics($_GET['song_id'])
+    var title = getTitle(<?php echo $song_id; ?>)
+    var artist = getArtist(<?php echo $song_id; ?>)
+    keys[0]  = getKey(<?php echo $song_id; ?>)
+    var arrangment = getArrangement(<?php echo $song_id; ?>)
+    var chords = getChords(<?php echo $song_id; ?>)
+    var lyrics = getLyrics(<?php echo $song_id; ?>)
 
     var songContainer = document.getElementById("song");
 
