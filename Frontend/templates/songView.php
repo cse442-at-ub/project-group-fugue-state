@@ -11,6 +11,7 @@ if (isset($_GET['song_id']) && is_numeric($_GET['song_id'])) {
     $_SESSION['selected_song_id'] = $selectedSongID;
 
 }
+include '../../readSong.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,10 +41,7 @@ if (isset($_GET['song_id']) && is_numeric($_GET['song_id'])) {
     <div id="song"></div>
 
     <script>
-    // set session variable of the song ID 
-
-    // function call to create section divs
-    // inside that section create divs of key, chords, and lyrics from the variables received from displayBackend
+    
     function generatekey(key, maj_min) {
       var keyDiv = document.createElement("div");
       keyDiv.textContent = "Key: " + key + maj_min;
@@ -84,7 +82,13 @@ if (isset($_GET['song_id']) && is_numeric($_GET['song_id'])) {
     var lyrics = ["here comes the sun", "dodododod", "here comes the sun", "and I say", "It's alright", "done"];
     var lines = [2, 2, 2];
     */
-    // Display the key only once at the top of the song
+    var keys = ["",""]
+    var title = getTitle($_GET['song_id'])
+    var artist = getArtist($_GET['song_id'])
+    keys[0]  = getKey($_GET['song_id'])
+    var arrangment = getArrangement($_GET['song_id'])
+    var chords = getChords($_GET['song_id'])
+    var lyrics = getLyrics($_GET['song_id'])
     var songContainer = document.getElementById("song");
     songContainer.appendChild(generatekey(keys[0], keys[1]));
 
