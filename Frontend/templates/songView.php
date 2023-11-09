@@ -98,8 +98,3 @@ if (isset($_GET['song_id']) && is_numeric($_GET['song_id'])) {
   </script>
 </body>
 </html>
-
-
-    </div>
-  </body>
-</html>
