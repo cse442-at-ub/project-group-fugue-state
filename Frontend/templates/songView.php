@@ -77,13 +77,13 @@ include '../../readSong.php';
     var lyrics = ["here comes the sun", "dodododod", "here comes the sun", "and I say", "It's alright", "done"];
     var lines = [2, 2, 2];
     */
-    var keys = ["",""]
-    var title = getTitle(<?php echo $song_id; ?>)
-    var artist = getArtist(<?php echo $song_id; ?>)
-    keys[0]  = getKey(<?php echo $song_id; ?>)
-    var arrangment = getArrangement(<?php echo $song_id; ?>)
-    var chords = getChords(<?php echo $song_id; ?>)
-    var lyrics = getLyrics(<?php echo $song_id; ?>)
+    var keys = ["",""];
+    var title = getTitle(<?php echo $song_id?>);
+    var artist = getArtist(<?php echo $song_id?>);
+    keys[0]  = getKey(<?php echo $song_id?>);
+    var arrangment = getArrangement(<?php echo $song_id; ?>);
+    var chords = getChords(<?php echo $song_id?>);
+    var lyrics = getLyrics(<?php echo $song_id?>);
 
     var songContainer = document.getElementById("song");
 
