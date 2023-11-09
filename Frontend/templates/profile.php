@@ -168,9 +168,9 @@ if (isset($_SESSION["logged_in"])){
                     <div class="font">Recent Songs</div>
                 </div>
                     <div class="recent-searches-box">
-                      <div class="font"><?php echo $_SESSION["$song_1"]; ?> </div>
-                      <div class="font"><?php echo $_SESSION["$song_1"]; ?> </div>
-                      <div class="font"><?php echo $_SESSION["$song_1"]; ?> </div>
+                      <div class="font"><?php echo $_SESSION["song_1"]; ?> </div>
+                      <div class="font"><?php echo $_SESSION["song_2"]; ?> </div>
+                      <div class="font"><?php echo $_SESSION["song_3"]; ?> </div>
                     </div>
             </div>
         </div>
