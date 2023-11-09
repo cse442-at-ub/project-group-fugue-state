@@ -20,7 +20,7 @@ if (isset($_GET['q'])) {
         header("Location: $artist_page");
         // Add page to user's recent searches list
         $account_id = $_SESSION['account_id'];
-        $songname = $search_query;
+        $song = $search_query;
         // recentSearches($account_id, $songname); -------
         $checkSql = "SELECT COUNT(*) as count FROM recent_songs WHERE account_id = $account_id";
         $resultCheck = $conn->query($checkSql);
