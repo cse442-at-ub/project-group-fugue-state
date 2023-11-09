@@ -2,8 +2,6 @@
 require "connect.php";
 session_start();
 
-global $conn;
-
 if (isset($_SESSION["logged_in"]) == false){
   $_SESSION["username"] = "No one is logged in";
   $song_1 = "None";
@@ -13,7 +11,7 @@ if (isset($_SESSION["logged_in"]) == false){
 }
 else{
     $username = $_SESSION["username"];
-    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE username = '$username'";
+    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $song_1 = $row["song_1"];
