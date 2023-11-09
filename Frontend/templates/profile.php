@@ -8,12 +8,12 @@ if (isset($_SESSION["logged_in"])){
     $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
 
     $username = $_SESSION["username"];
-    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $song_1 = $row["song_1"];
-    $song_2 = $row["song_2"];
-    $song_3 = $row["song_3"];
+    // $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
+    // $result = $conn->query($sql);
+    // $row = $result->fetch_assoc();
+    // $song_1 = $row["song_1"];
+    // $song_2 = $row["song_2"];
+    // $song_3 = $row["song_3"];
 
 }else{
     $_SESSION["button"] = "Sign In";
@@ -168,7 +168,9 @@ if (isset($_SESSION["logged_in"])){
                     <div class="font">Recent Songs</div>
                 </div>
                     <div class="recent-searches-box">
-
+                      <!-- <div class="font"><?php echo $song_1; ?> </div>
+                      <div class="font"><?php echo $song_2; ?> </div>
+                      <div class="font"><?php echo $song_3; ?> </div> -->
                     </div>
             </div>
         </div>
