@@ -1,5 +1,5 @@
 <?php
-require "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/connect.php";
+// require "connect.php";
 session_start();
 
 if (isset($_SESSION["logged_in"]) == false){
