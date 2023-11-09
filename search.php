@@ -21,9 +21,9 @@ if (isset($_GET['q'])) {
         exit();
 
         // Add page to user's recent searches list
-        $username = $_SESSION['username'];
+        $account_id = $_SESSION['account_id'];
         $songname = $search_query;
-        recentSearches($username, $songname);
+        recentSearches($account_id, $songname);
     } else {
         $homepage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php';
         header("Location: $homepage");

@@ -56,29 +56,63 @@ $conn = connect();
 
 //session_start();
 //$_SESSION["logged_in"] = false;
-
-function recentSearches($username, $song){
+function recentSearches($account_id, $song){
     global $conn;
-    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = $username";
-    $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (empty($row["song_1"])) {
-            // If song_1 is empty, add the new song to it
-            $sql = "UPDATE recent_songs SET song_1 = '$song' WHERE account_id = $username";
-        } elseif (empty($row["song_2"])) {
-            // If song_1 is full but song_2 is empty, add the new song to song_2
-            $sql = "UPDATE recent_songs SET song_2 = '$song' WHERE account_id = $username";
-        } elseif (empty($row["song_3"])) {
-            // If song_1 and song_2 are full but song_3 is empty, add the new song to song_3
-            $sql = "UPDATE recent_songs SET song_3 = '$song' WHERE account_id = $username";
-        } else {
-            // If all song columns are full, overwrite the oldest song (song_1)
-            $sql = "UPDATE recent_songs SET song_1 = '$song' WHERE account_id = $username";
+    // Check if the account_id exists
+    $checkSql = "SELECT COUNT(*) as count FROM recent_songs WHERE account_id = $account_id";
+    $resultCheck = $conn->query($checkSql);
+    $row = $resultCheck->fetch_assoc();
+    $exists = $row['count'];
+
+    if ($exists > 0) {
+        // If the account_id exists, update the recent songs
+        $updateSql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = $account_id";
+        $result = $conn->query($updateSql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if ($row["song_1"] == "None") {
+                $sql = "UPDATE recent_songs SET song_1 = '$song' WHERE account_id = $account_id";
+            } elseif (($row["song_2"] == "None")) {
+                $sql = "UPDATE recent_songs SET song_2 = '$song' WHERE account_id = $account_id";
+            } elseif (($row["song_3"]) == "None") {
+                $sql = "UPDATE recent_songs SET song_3 = '$song' WHERE account_id = $account_id";
+            } else {
+                $sql = "UPDATE recent_songs SET song_1 = '$song' WHERE account_id = $account_id";
+            }
+            $conn->query($sql);
         }
-        $conn->query($sql);
+    } else {
+        // If the account_id does not exist, insert a new record
+        $insertSql = "INSERT INTO recent_songs (account_id, song_1, song_2, song_3) 
+                      VALUES ('$account_id', '$song', 'None', 'None')";
+        $conn->query($insertSql);
+    }
 }
-}
+
+// function recentSearches($account_id, $song){
+//     global $conn;
+//     $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = $account_id";
+//     $result = $conn->query($sql);
+
+//     if ($result->num_rows > 0) {
+//         $row = $result->fetch_assoc();
+//         if (empty($row["song_1"])) {
+//             // If song_1 is empty, add the new song to it
+//             $sql = "UPDATE recent_songs SET song_1 = '$song' WHERE account_id = $account_id";
+//         } elseif (empty($row["song_2"])) {
+//             // If song_1 is full but song_2 is empty, add the new song to song_2
+//             $sql = "UPDATE recent_songs SET song_2 = '$song' WHERE account_id = $account_id";
+//         } elseif (empty($row["song_3"])) {
+//             // If song_1 and song_2 are full but song_3 is empty, add the new song to song_3
+//             $sql = "UPDATE recent_songs SET song_3 = '$song' WHERE account_id = $account_id";
+//         } else {
+//             // If all song columns are full, overwrite the oldest song (song_1)
+//             $sql = "UPDATE recent_songs SET song_1 = '$song' WHERE account_id = $account_id";
+//         }
+//         $conn->query($sql);
+// }
+// }
 
 ?>
