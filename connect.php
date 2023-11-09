@@ -57,7 +57,8 @@ $conn = connect();
 //session_start();
 //$_SESSION["logged_in"] = false;
 
-function recentSearches($username, $song, $conn){
+function recentSearches($username, $song){
+    global $conn;
     $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = $username";
     $result = $conn->query($sql);
 
