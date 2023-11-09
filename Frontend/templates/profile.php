@@ -1,5 +1,5 @@
 <?php
-require "../connect.php";
+// require "connect.php";
 session_start();
 
 if (isset($_SESSION["logged_in"])){
@@ -8,21 +8,21 @@ if (isset($_SESSION["logged_in"])){
     $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
 
     $username = $_SESSION["username"];
-    $account_id = $_SESSION["account_id"];
-    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$account_id'";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $_SESSION["song_1"] = $row["song_1"];
-    $_SESSION["song_2"] = $row["song_2"];
-    $_SESSION["song_3"] = $row["song_3"];
+    // $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
+    // $result = $conn->query($sql);
+    // $row = $result->fetch_assoc();
+    // $song_1 = $row["song_1"];
+    // $song_2 = $row["song_2"];
+    // $song_3 = $row["song_3"];
+
 }else{
     $_SESSION["button"] = "Sign In";
     $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php"; #replace with global filepath not relative
     $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php";
 
-    $song_1 = "None";
-    $song_2 = "None";
-    $song_3 = "None";
+    // $song_1 = "None";
+    // $song_2 = "None";
+    // $song_3 = "None";
 }
 ?>
 
