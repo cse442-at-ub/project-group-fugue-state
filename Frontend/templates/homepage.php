@@ -1,22 +1,22 @@
 <?php
-require "connect.php";
+// require "connect.php";
 session_start();
 
 if (isset($_SESSION["logged_in"]) == false){
   $_SESSION["username"] = "No one is logged in";
-  $song_1 = "None";
-  $song_2 = "None";
-  $song_3 = "None";
+  // $song_1 = "None";
+  // $song_2 = "None";
+  // $song_3 = "None";
 
 }
 else{
     $username = $_SESSION["username"];
-    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $song_1 = $row["song_1"];
-    $song_2 = $row["song_2"];
-    $song_3 = $row["song_3"];
+    // $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
+    // $result = $conn->query($sql);
+    // $row = $result->fetch_assoc();
+    // $song_1 = $row["song_1"];
+    // $song_2 = $row["song_2"];
+    // $song_3 = $row["song_3"];
 }
 ?>
 
@@ -176,9 +176,9 @@ else{
                     <div class="font">Recent Songs</div>
                 </div>
                     <div class="recent-searches-box-homepage">
-                        <div class="font"><?php echo $song_1; ?> </div>
-                        <div class="font"><?php echo $song_2; ?> </div>
-                        <div class="font"><?php echo $song_3; ?> </div>
+                      <div class="font"><?php echo $_SESSION["song_1"]; ?> </div>
+                      <div class="font"><?php echo $_SESSION["song_2"]; ?> </div>
+                      <div class="font"><?php echo $_SESSION["song_3"]; ?> </div>
                     </div>
     </div>
   </body>
