@@ -20,9 +20,9 @@ if (isset($_SESSION["logged_in"])){
     $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php"; #replace with global filepath not relative
     $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php";
 
-    $song_1 = "None";
-    $song_2 = "None";
-    $song_3 = "None";
+    // $song_1 = "None";
+    // $song_2 = "None";
+    // $song_3 = "None";
 }
 ?>
 
@@ -168,9 +168,9 @@ if (isset($_SESSION["logged_in"])){
                     <div class="font">Recent Songs</div>
                 </div>
                     <div class="recent-searches-box">
-                      <!-- <div class="font"><?php echo $song_1; ?> </div>
-                      <div class="font"><?php echo $song_2; ?> </div>
-                      <div class="font"><?php echo $song_3; ?> </div> -->
+                      <div class="font"><?php echo $_SESSION["$song_1"]; ?> </div>
+                      <div class="font"><?php echo $_SESSION["$song_1"]; ?> </div>
+                      <div class="font"><?php echo $_SESSION["$song_1"]; ?> </div>
                     </div>
             </div>
         </div>
