@@ -2,15 +2,13 @@
 require "connect.php";
 session_start();
 
-global $conn;
-
 if (isset($_SESSION["logged_in"])){
     $_SESSION["button"] = "Sign Out";
     $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php";
     $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
 
     $username = $_SESSION["username"];
-    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE username = '$username'";
+    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $song_1 = $row["song_1"];
