@@ -58,6 +58,12 @@ function loginSQL(){
         popUp($message);
         redirectPage($homePath);
         initializeSession($username);
+        $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $_SESSION["song_1"] = $row["song_1"];
+        $_SESSION["song_2"] = $row["song_2"];
+        $_SESSION["song_3"] = $row["song_3"];
         exit();
     } else {
         $message = "Incorrect login information";
