@@ -33,50 +33,62 @@ if ($_SESSION["logged_in"] == false){
     <div id="song"></div>
 
     <script>
-      //set session variable of the song ID 
-      
-        //function call to create section divs
-        //inside that section create divs of key, chords and lyrics from the variables recieved from displayBackend
-        function generatekey(key,maj_min) {
-          var keyDiv = document.createElement("div");
-          keyDiv.textContent = "Key: "+key+maj_min;
-          return keyDiv
-        } 
-        function generatechords(chords) {
-          var chordsDiv = document.createElement("div");
-          chordsDiv.textContent = chords;
-          return chordsDiv
-        }
-        function generatelyrics(lyrics) {
-          var lyricsDiv = document.createElement("div");
-          lyricsDiv.textContent = chords;
-          return lyricsDiv
-        }      
-        function generateSection(section,key,maj_min,chords,lyrics,lines) {
-          var songContainer = document.getElementById("song");
+    // set session variable of the song ID 
 
-          var sectionDiv = document.createElement("div");
-          sectionDiv.textContent = section;
-          var keyDiv = generatekey(key,maj_min);
+    // function call to create section divs
+    // inside that section create divs of key, chords, and lyrics from the variables received from displayBackend
+    function generatekey(key, maj_min) {
+      var keyDiv = document.createElement("div");
+      keyDiv.textContent = "Key: " + key + maj_min;
+      return keyDiv;
+    } 
 
-          sectionDiv.appendChild(keyDiv);
-            
-          for (let i = 0; i < lines; i++) {
-            var chordDiv = generatechords(chords[i])
-            var lyricDiv = generatelyrics(lyrics[i])
-            sectionDiv.appendChild(chordsDiv);
-            sectionDiv.appendChild(lyricsDiv);
-          }
+    function generatechords(chords) {
+      var chordsDiv = document.createElement("div");
+      chordsDiv.textContent = chords;
+      return chordsDiv;
+    }
 
-          songContainer.appendChild(sectionDiv)
+    function generatelyrics(lyrics) {
+      var lyricsDiv = document.createElement("div");
+      lyricsDiv.textContent = lyrics;
+      return lyricsDiv;
+    }    
 
-        }
-        fetch('../../displayBackend.php')
-        //get varaibles 
-        
-        generateSection()
-    </script>
+    function generateSection(section, chords, lyrics, lines) {
+      var songContainer = document.getElementById("song");
 
+      var sectionDiv = document.createElement("div");
+      sectionDiv.textContent = section;
+
+      for (let i = 0; i < lines; i++) {
+        var chordDiv = generatechords(chords[i]);
+        var lyricDiv = generatelyrics(lyrics[i]);
+        sectionDiv.appendChild(chordDiv);
+        sectionDiv.appendChild(lyricDiv);
+      }
+
+      songContainer.appendChild(sectionDiv);
+    }
+    /*test code
+    var sections = ["verse", "chorus", "bridge"];
+    var keys = ["D", "minor"];
+    var chords = ["a   b", "something else", "test", "drive  her", "more testws", "afdklahfka"];
+    var lyrics = ["here comes the sun", "dodododod", "here comes the sun", "and I say", "It's alright", "done"];
+    var lines = [2, 2, 2];
+    */
+    // Display the key only once at the top of the song
+    var songContainer = document.getElementById("song");
+    songContainer.appendChild(generatekey(keys[0], keys[1]));
+
+    for (let i = 0; i < sections.length; i++) {
+      var chunk = i > 0 ? lines[i - 1] : 0;
+      var section_chords = chords.slice(chunk, chunk + lines[i]);
+      var section_lyrics = lyrics.slice(chunk, chunk + lines[i]);
+
+      generateSection(sections[i], section_chords, section_lyrics, lines[i]);
+    }
+  </script>
 </body>
 </html>
 
