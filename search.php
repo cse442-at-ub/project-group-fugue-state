@@ -4,6 +4,7 @@ require_once "connect.php";
 session_start();
 
 if (isset($_GET['q'])) {
+    global $conn;
     $search_query = strtolower($_GET['q']);
 
     $checkartist = "SELECT * FROM songs WHERE LOWER(songwriter) = '$search_query'";
