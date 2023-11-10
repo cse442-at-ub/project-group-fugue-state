@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 require_once "connect.php";
 require_once "readSong.php";
@@ -30,6 +28,9 @@ $song_id = 711880;//$_GET['song_id'];
       <link rel="stylesheet" href="style.css" />
     -->
   </head>
+  <style>
+    
+  </style>
   <body>
     <div class="desktop-home-page">
       <div class="div">
@@ -61,15 +62,16 @@ $song_id = 711880;//$_GET['song_id'];
 
     function generatechords(chords) {
       var chordsDiv = document.createElement("div");
-      chordsDiv.textContent = chords;
+  	  chordsDiv.innerHTML = chords.replace(/ /g, '&nbsp;');
       return chordsDiv;
     }
 
     function generatelyrics(lyrics) {
       var lyricsDiv = document.createElement("div");
-      lyricsDiv.textContent = lyrics;
+      lyricsDiv.innerHTML = lyrics.replace(/ /g, '&nbsp;');
       return lyricsDiv;
     }    
+
 
     function generateSection(section, chords, lyrics, lines) {
       var songContainer = document.getElementById("song");
