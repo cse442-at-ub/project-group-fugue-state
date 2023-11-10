@@ -88,9 +88,9 @@ $song_id = 711880;//$_GET['song_id'];
     var artist = <?php echo getArtist($song_id); ?>;
     keys[0]  = <?php echo getKey($song_id); ?>;
     
-    var arrangement = JSON.parse(<?php echo getArrangement($song_id); ?>);
-    var chords = JSON.parse(<?php echo getChords($song_id); ?>);
-    var lyrics = JSON.parse(<?php echo getLyrics($song_id); ?>);
+    var arrangement = <?php echo getArrangement($song_id); ?>;
+    var chords = <?php echo getChords($song_id); ?>;
+    var lyrics = <?php echo getLyrics($song_id); ?>;
 
 
     var songContainer = document.getElementById("song");
