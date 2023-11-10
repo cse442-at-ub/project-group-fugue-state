@@ -1,6 +1,6 @@
 <?php
-require '../../connect.php';
-require '../../readSong.php';
+require '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/connect.php';
+require '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/readSong.php';
 
 session_start();
 
