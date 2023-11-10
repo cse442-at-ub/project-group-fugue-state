@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/connect.php';
+require '../../connect.php';
 require '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/readSong.php';
 
 session_start();
