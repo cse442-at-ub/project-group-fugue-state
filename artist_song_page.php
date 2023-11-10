@@ -1,3 +1,7 @@
+<?php
+    require_once "connect.php";
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,9 +29,7 @@
                 </a>
                 <div class="rectangle-4"></div>
                 <?php
-                require_once "connect.php";
-
-                if(isset($_GET['artist'])){
+                //if(isset($_GET['artist'])){
                     global $conn;
                     $artist_name = urldecode($_GET['artist']);
                     $songs = "SELECT * FROM songs WHERE LOWER(songwriter) = LOWER('$artist_name')";
@@ -45,7 +47,7 @@
                         }
                         echo "</ul>";
                     }
-                }
+                //}
                 $conn->close();
                 ?>
             </div>
