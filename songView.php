@@ -11,6 +11,10 @@ if ($_SESSION["logged_in"] == false){
   $_SESSION["username"] = "No one is logged in";
 }
 
+//this is for when user searches up artist and then clicks on song a song
+//$song_id = $_GET['song_id'];
+//this is for when user searches up song title
+//$song_id = $_SESSION['current_song_id]
 $song_id = 711880;//$_GET['song_id'];
 
 ?>
