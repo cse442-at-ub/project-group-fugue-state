@@ -81,18 +81,19 @@ $song_id = 711880;//$_GET['song_id'];
     var title = <?php echo getTitle($song_id); ?>;
     var artist = <?php echo getArtist($song_id); ?>;
     keys[0]  = <?php echo getKey($song_id); ?>;
-    var arrangement = <?php echo json_decode(getArrangement($song_id)); ?>;
-    var chords = <?php echo json_decode(getChords($song_id)); ?>;
-    var lyrics = <?php echo json_decode(getLyrics($song_id)); ?>;
+    /*
+    var arrangement = <?php //echo json_decode(getArrangement($song_id)); ?>;
+    var chords = <?php //echo json_decode(getChords($song_id)); ?>;
+    var lyrics = <?php //echo json_decode(getLyrics($song_id)); ?>;
 
-
+*/
     var songContainer = document.getElementById("song");
 
     songContainer.innerHTML = title;
     songContainer.innerHTML += " by: " + artist;
 
     songContainer.appendChild(generatekey(keys[0], keys[1] || ""));
-
+/*
     var sections = [];
     var lines = [];
     for(let i = 0; i < arrangement.length; i++){
@@ -113,7 +114,7 @@ $song_id = 711880;//$_GET['song_id'];
       var section_lyrics = lyrics.slice(chunk, chunk + lines[i]);
 
       generateSection(sections[i], section_chords, section_lyrics, lines[i]);
-    }
+    }*/
   </script>
 </body>
 </html>
