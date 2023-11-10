@@ -6,9 +6,12 @@ session_start();
 if (isset($_GET['q'])) {
     // global $conn;
     $search_query = strtolower($_GET['q']);
+    //lady gaga 
+    //$search_query = '"'.$search_query.'"';
 
-    $checkartist = "SELECT * FROM songs WHERE LOWER(songwriter) = '$search_query'";
+    $checkartist = "SELECT * FROM songs WHERE songwriter = '$search_query'";
     $resultartist = $conn->query($checkartist);
+
     # DEBUG START ---
     // Add page to user's recent searches list
     $account_id = $_SESSION['account_id'];
