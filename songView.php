@@ -24,6 +24,9 @@ $song_id = 711880;//$_GET['song_id'];
       <link rel="stylesheet" href="style.css" />
     -->
   </head>
+  <style>
+    
+  </style>
   <body>
     <div class="desktop-home-page">
       <div class="div">
