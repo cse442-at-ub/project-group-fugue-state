@@ -73,20 +73,15 @@ $song_id = $_GET['song_id'];
 
       songContainer.appendChild(sectionDiv);
     }
-    /*test code
-    var sections = ["verse", "chorus", "bridge"];
-    var keys = ["D", "minor"];
-    var chords = ["a   b", "something else", "test", "drive  her", "more testws", "afdklahfka"];
-    var lyrics = ["here comes the sun", "dodododod", "here comes the sun", "and I say", "It's alright", "done"];
-    var lines = [2, 2, 2];
-    */
+    
     var keys = ["",""];
-    var title = JSON.parse(getTitle(<?php echo $song_id?>));
-    var artist = JSON.parse(getArtist(<?php echo $song_id?>));
-    keys[0]  = JSON.parse(getKey(<?php echo $song_id?>));
-    var arrangement = JSON.parse(getArrangement(<?php echo $song_id; ?>));
-    var chords = JSON.parse(getChords(<?php echo $song_id?>));
-    var lyrics = JSON.parse(getLyrics(<?php echo $song_id?>));
+    var title = "<?php echo json_decode(getTitle($song_id)); ?>";
+    var artist = "<?php echo json_decode(getArtist($song_id)); ?>";
+    keys[0]  = "<?php echo json_decode(getKey($song_id)); ?>";
+    var arrangement = "<?php echo json_decode(getArrangement($song_id)); ?>";
+    var chords = "<?php echo json_decode(getChords($song_id)); ?>";
+    var lyrics = "<?php echo json_decode(getLyrics($song_id)); ?>";
+    
     var sections = [];
     var lines = [];
     for(let i = 0; i < arrangement.length; i++){
@@ -94,14 +89,13 @@ $song_id = $_GET['song_id'];
       lines.push(obj['Lines']);
       sections.push(obj['Name']);
     }
+    
     var songContainer = document.getElementById("song");
 
     songContainer.textContent = title;
-    songContainer.textContent = "by: " + artist;
-
+    songContainer.textContent += " by: " + artist;
 
     songContainer.appendChild(generatekey(keys[0], keys[1]));
-
 
     for (let i = 0; i < sections.length; i++) {
       var chunk = i > 0 ? lines[i - 1] : 0;
