@@ -6,7 +6,8 @@ if ($_SESSION["logged_in"] == false){
 }
 
 $song_id = $_GET['song_id'];
-include '../../readSong.php';
+require '../../readSong.php';
+require '../../connect.php'
 ?>
 <!DOCTYPE html>
 <html>
