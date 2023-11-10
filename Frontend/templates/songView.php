@@ -78,13 +78,19 @@ include '../../readSong.php';
     var lines = [2, 2, 2];
     */
     var keys = ["",""];
-    var title = getTitle(<?php echo $song_id?>);
-    var artist = getArtist(<?php echo $song_id?>);
-    keys[0]  = getKey(<?php echo $song_id?>);
-    var arrangment = getArrangement(<?php echo $song_id; ?>);
-    var chords = getChords(<?php echo $song_id?>);
-    var lyrics = getLyrics(<?php echo $song_id?>);
-
+    var title = JSON.parse(getTitle(<?php echo $song_id?>));
+    var artist = JSON.parse(getArtist(<?php echo $song_id?>));
+    keys[0]  = JSON.parse(getKey(<?php echo $song_id?>));
+    var arrangement = JSON.parse(getArrangement(<?php echo $song_id; ?>));
+    var chords = JSON.parse(getChords(<?php echo $song_id?>));
+    var lyrics = JSON.parse(getLyrics(<?php echo $song_id?>));
+    var sections = [];
+    var lines = [];
+    for(let i = 0; i < arrangement.length; i++){
+      var obj = arrangement[i];
+      lines.push(obj['Lines']);
+      sections.push(obj['Name']);
+    }
     var songContainer = document.getElementById("song");
 
     songContainer.textContent = title;
