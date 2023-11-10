@@ -95,7 +95,7 @@ $song_id = 711880//$_GET['song_id'];
     
     var songContainer = document.getElementById("song");
 
-    ssongContainer.innerHTML = title;
+    songContainer.innerHTML = title;
     songContainer.innerHTML += " by: " + artist;
 
 
