@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require "connect.php";
-require "readSong.php";
+require_once "connect.php";
+require_once "readSong.php";
 
 session_start();
 

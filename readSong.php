@@ -1,5 +1,5 @@
 <?php
-require "connect.php";
+require_once "connect.php";
 //This function will read a song id and return the title
 function getTitle(int $songID){
     global $conn;

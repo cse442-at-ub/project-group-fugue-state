@@ -1,6 +1,6 @@
 <?php
 
-require "connect.php";
+require_once "connect.php";
 
 if (getInfo("logout") == "true"){
     session_start();
