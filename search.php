@@ -11,7 +11,7 @@ if (isset($_GET['q'])) {
     
     if ($resultartist->num_rows > 0) {
 
-        $artistpage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/artist_song_page?artist=' . urlencode($search_query);
+        $artistpage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/artist_song_page.php?artist=' . urlencode($search_query);
         
         // Add page to user's recent searches list
         $account_id = $_SESSION['account_id'];
@@ -49,8 +49,9 @@ if (isset($_GET['q'])) {
         // Redirect to the artist's page
         header("Location: $artistpage");
         exit();
+    }
         
-    $checktitle = "SELECT * FROM songs WhHERE LOWER(title) = '$search_query";
+    $checktitle = "SELECT * FROM songs WHERE LOWER(title) = '$search_query'";
     $resulttitle = $conn->query($checktitle);
 
     
@@ -58,7 +59,7 @@ if (isset($_GET['q'])) {
 
         $row = $resulttitle->fetch_assoc();
         $song_id = $row['song_id'];
-        $_SESSION['current_song_id'] = $song_id
+        $_SESSION['current_song_id'] = $song_id;
         
         // Add page to user's recent searches list
         $account_id = $_SESSION['account_id'];
@@ -97,14 +98,12 @@ if (isset($_GET['q'])) {
         $songViewPage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/songView.php';
         header("Location: $songViewPage");
         exit();
-
-
-
+    }
 
     } else {
         $homepage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php';
         header("Location: $homepage");
         exit();
     }
-}
+
 ?>
