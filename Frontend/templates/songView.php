@@ -75,9 +75,9 @@ $song_id = $_GET['song_id'];
     }
     
     var keys = ["",""];
-    var title = "<?php echo json_decode(getTitle($song_id)); ?>";
-    var artist = "<?php echo json_decode(getArtist($song_id)); ?>";
-    keys[0]  = "<?php echo json_decode(getKey($song_id)); ?>";
+    var title = getTitle($song_id);
+    var artist = getArtist($song_id);
+    keys[0]  = getKey($song_id);
     var arrangement = "<?php echo json_decode(getArrangement($song_id)); ?>";
     var chords = "<?php echo json_decode(getChords($song_id)); ?>";
     var lyrics = "<?php echo json_decode(getLyrics($song_id)); ?>";
