@@ -26,6 +26,15 @@ $song_id = 711880;//$_GET['song_id'];
   </head>
   <style>
     
+    .desktop-home-page .div {
+  background-color: rgba(255, 255, 255, 1);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(144.92, 170.5, 220.14) 100%);
+  width: 1440px;
+  height: 3000px;
+  position: relative;
+}
+
+  
   </style>
   <body>
     <div class="desktop-home-page">
