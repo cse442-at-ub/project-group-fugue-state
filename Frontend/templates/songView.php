@@ -1,4 +1,7 @@
 <?php
+require '../../connect.php';
+require '../../readSong.php';
+
 session_start();
 
 if ($_SESSION["logged_in"] == false){
@@ -6,8 +9,7 @@ if ($_SESSION["logged_in"] == false){
 }
 
 $song_id = $_GET['song_id'];
-require '../../readSong.php';
-require '../../connect.php';
+
 ?>
 <!DOCTYPE html>
 <html>
