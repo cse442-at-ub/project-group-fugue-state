@@ -38,7 +38,13 @@ $song_id = 711880;//$_GET['song_id'];
         </a>
         <!--<img class="logo" src="img/logo.png" />-->
 
-      
+    <style>
+      #song {
+    position: relative;
+    top:260px;
+    left: 400px;
+    }
+    </style>  
     <div id="song"></div>
 
     <script>
