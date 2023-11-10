@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/connect.php';
 require '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/readSong.php';
 
@@ -78,10 +81,10 @@ $song_id = $_GET['song_id'];
     var title = getTitle($song_id);
     var artist = getArtist($song_id);
     keys[0]  = getKey($song_id);
-    var arrangement = "<?php echo json_decode(getArrangement($song_id)); ?>";
-    var chords = "<?php echo json_decode(getChords($song_id)); ?>";
-    var lyrics = "<?php echo json_decode(getLyrics($song_id)); ?>";
-    
+    var arrangement = JSON.parse('<?php echo json_encode(getArrangement($song_id)); ?>');
+    var chords = JSON.parse('<?php echo json_encode(getChords($song_id)); ?>');
+    var lyrics = JSON.parse('<?php echo json_encode(getLyrics($song_id)); ?>');
+
     var sections = [];
     var lines = [];
     for(let i = 0; i < arrangement.length; i++){
@@ -92,10 +95,12 @@ $song_id = $_GET['song_id'];
     
     var songContainer = document.getElementById("song");
 
-    songContainer.textContent = title;
-    songContainer.textContent += " by: " + artist;
+    ssongContainer.innerHTML = title;
+    songContainer.innerHTML += " by: " + artist;
 
-    songContainer.appendChild(generatekey(keys[0], keys[1]));
+
+    songContainer.appendChild(generatekey(keys[0], keys[1] || ""));
+
 
     for (let i = 0; i < sections.length; i++) {
       var chunk = i > 0 ? lines[i - 1] : 0;
