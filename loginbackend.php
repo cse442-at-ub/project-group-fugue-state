@@ -3,7 +3,7 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
-require "connect.php";
+require_once "connect.php";
 
 //This function will take in a JSON object and convert it to a SQL query.
 

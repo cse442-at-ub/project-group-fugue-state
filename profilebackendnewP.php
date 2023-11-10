@@ -1,6 +1,6 @@
 <?php 
 
-require "connect.php";
+require_once "connect.php";
 session_start();
 
 //This function quantifies the strength of the password, making sure the user includes 
