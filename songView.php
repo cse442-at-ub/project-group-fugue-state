@@ -85,6 +85,14 @@ $song_id = 711880;//$_GET['song_id'];
     var chords = <?php echo json_decode(getChords($song_id)); ?>;
     var lyrics = <?php echo json_decode(getLyrics($song_id)); ?>;
 
+
+    var songContainer = document.getElementById("song");
+
+    songContainer.innerHTML = title;
+    songContainer.innerHTML += " by: " + artist;
+
+    songContainer.appendChild(generatekey(keys[0], keys[1] || ""));
+
     var sections = [];
     var lines = [];
     for(let i = 0; i < arrangement.length; i++){
@@ -93,13 +101,10 @@ $song_id = 711880;//$_GET['song_id'];
       sections.push(obj['Name']);
     }
     
-    var songContainer = document.getElementById("song");
-
-    songContainer.innerHTML = title;
-    songContainer.innerHTML += " by: " + artist;
+    
 
 
-    songContainer.appendChild(generatekey(keys[0], keys[1] || ""));
+    
 
 
     for (let i = 0; i < sections.length; i++) {
