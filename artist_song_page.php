@@ -1,3 +1,7 @@
+<?php
+require_once "connect.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +33,7 @@
 
                 if(isset($_GET['artist'])){
                     $artist_name = urldecode($_GET['artist']);
-                    $songs = "SELECT * FROM songs WHERE LOWER(songwriter) = LOWER('$artist_name')";
+                    $songs = "SELECT * FROM songs WHERE LOWER(TRIM(songwriter)) = LOWER(TRIM('$artist_name'))";
                     $result = $conn->query($songs);
                     if ($result->num_rows > 0){
                         echo "<h2 class = 'title'>Songs by $artist_name</h2>";
