@@ -32,6 +32,7 @@ session_start();
                 require_once "connect.php";
 
                 if(isset($_GET['artist'])){
+                    global $conn;
                     $artist_name = urldecode($_GET['artist']);
                     $songs = "SELECT * FROM songs WHERE LOWER(TRIM(songwriter)) = LOWER(TRIM('$artist_name'))";
                     $result = $conn->query($songs);
