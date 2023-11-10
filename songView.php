@@ -11,7 +11,7 @@ if ($_SESSION["logged_in"] == false){
   $_SESSION["username"] = "No one is logged in";
 }
 
-$song_id = 711880//$_GET['song_id'];
+$song_id = 711880;//$_GET['song_id'];
 
 ?>
 <!DOCTYPE html>
@@ -78,12 +78,12 @@ $song_id = 711880//$_GET['song_id'];
     }
     
     var keys = ["",""];
-    var title = getTitle($song_id);
-    var artist = getArtist($song_id);
-    keys[0]  = getKey($song_id);
-    var arrangement = JSON.parse('<?php echo json_encode(getArrangement($song_id)); ?>');
-    var chords = JSON.parse('<?php echo json_encode(getChords($song_id)); ?>');
-    var lyrics = JSON.parse('<?php echo json_encode(getLyrics($song_id)); ?>');
+    var title = <?php echo getTitle($song_id); ?>;
+    var artist = <?php echo getArtist($song_id); ?>;
+    keys[0]  = <?php echo getKey($song_id); ?>;
+    var arrangement = <?php echo json_decode(getArrangement($song_id)); ?>;
+    var chords = <?php echo json_decode(getChords($song_id)); ?>;
+    var lyrics = <?php echo json_decode(getLyrics($song_id)); ?>;
 
     var sections = [];
     var lines = [];
