@@ -11,7 +11,7 @@ if (isset($_GET['q'])) {
     
     if ($resultartist->num_rows > 0) {
 
-        $artistpage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/artist_song_page.php?artist=' . urlencode($search_query);
+        $artistpage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/artist_song_page.php?artist=' . urlencode($search_query);
         
         // Add page to user's recent searches list
         $account_id = $_SESSION['account_id'];
