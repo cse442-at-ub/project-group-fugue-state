@@ -16,8 +16,7 @@ if (isset($_GET['q'])) {
 
     if (array_key_exists($search_query, $artist_pages)) {
         $artist_page = $artist_pages[$search_query];
-        // Redirect to the artist's page
-        header("Location: $artist_page");
+        
         // Add page to user's recent searches list
         $account_id = $_SESSION['account_id'];
         $song = $search_query;
@@ -51,6 +50,10 @@ if (isset($_GET['q'])) {
                           VALUES ('$account_id', '$song', 'None', 'None')";
             $conn->query($insertSql);
         }
+
+        // Redirect to the artist's page
+        header("Location: $artist_page");
+
         exit();
 
         
