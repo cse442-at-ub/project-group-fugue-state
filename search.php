@@ -39,7 +39,8 @@ session_start();
 if (isset($_GET['q'])) {
     // global $conn;
     $search_query = strtolower($_GET['q']);
-
+    $search_query = str_replace('"', '\"', $search_query); // Escape double quotes if needed
+    
     $checkartist = "SELECT * FROM songs WHERE songwriter = '$search_query'";
     $resultartist = $conn->query($checkartist);
     
