@@ -47,7 +47,7 @@ if (isset($_GET['q'])) {
     $stmt->bind_param("s", $search_query_like);
     $stmt->execute();
     $resultartist = $stmt->get_result();
-    popUp($stmt)
+    echo($stmt)
     if ($resultartist->num_rows > 0) {
         $artistpage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/artist_song_page.php?artist=' . urlencode($search_query);
         if (isset($_SESSION["logged_in"]) == true) {
