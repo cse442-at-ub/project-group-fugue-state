@@ -99,8 +99,8 @@ $song_id = 711880;//$_GET['song_id'];
     }
     
     var keys = ["",""];
-    var title = <?php echo getTitle($song_id); ?>;
-    var artist = <?php echo getArtist($song_id); ?>;
+    var title = <?php echo strval(getTitle($song_id)); ?>;
+    var artist = <?php echo strval(getArtist($song_id)); ?>;
     keys[0]  = <?php echo getKey($song_id); ?>;
     
     var arrangement = <?php echo getArrangement($song_id); ?>;
