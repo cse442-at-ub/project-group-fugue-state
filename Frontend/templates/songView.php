@@ -78,8 +78,8 @@ $song_id = $_GET['song_id'];
     }
     
     var keys = ["",""];
-    var title = getTitle($song_id).toString();
-    var artist = getArtist($song_id).toString();
+    var title = getTitle($song_id);
+    var artist = getArtist($song_id);
     keys[0]  = getKey($song_id);
     var arrangement = JSON.parse('<?php echo json_encode(getArrangement($song_id)); ?>');
     var chords = JSON.parse('<?php echo json_encode(getChords($song_id)); ?>');
