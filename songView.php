@@ -9,7 +9,8 @@ if ($_SESSION["logged_in"] == false){
   $_SESSION["username"] = "No one is logged in";
 }
 
-$song_id = 711880;//$_GET['song_id'];
+$song_id = $_GET['song_id'];
+// $song_id = 711880;
 
 ?>
 <!DOCTYPE html>
