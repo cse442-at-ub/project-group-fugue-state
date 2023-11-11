@@ -1,3 +1,31 @@
+<?php
+// require "connect.php";
+session_start();
+
+if (isset($_SESSION["logged_in"])){
+    $_SESSION["button"] = "Sign Out";
+    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php";
+    $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
+
+    $username = $_SESSION["username"];
+    // $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
+    // $result = $conn->query($sql);
+    // $row = $result->fetch_assoc();
+    // $song_1 = $row["song_1"];
+    // $song_2 = $row["song_2"];
+    // $song_3 = $row["song_3"];
+
+}else{
+    $_SESSION["button"] = "Sign In";
+    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php"; #replace with global filepath not relative
+    $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php";
+
+    // $song_1 = "None";
+    // $song_2 = "None";
+    // $song_3 = "None";
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,9 +37,18 @@
         <body>
         <div class="desktop-home-page">
             <div class="div">
-                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
-                    <div class="text-wrapper-2">Sign out</div>
-                </a>
+                <!-- <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
+                    <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
+                </a> -->
+                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php" id="inoroutlink" class='sign-in'>
+                    <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
+                </a> 
+
+                <form action=<?php echo $_SESSION["redirect2"]; ?> method="post" id="inoroutform">
+                    <input class="text-wrapper-2" type="hidden" name="logout" value="true">
+                </form>
+
+
                 <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
                     <div class="ellipse-wrapper">
                         <div class="ellipse"></div>
@@ -42,8 +79,6 @@
                 <form action="../../profilebackendnewU.php" method="post">
                     <!-- PlaceHolder Displays Username-->
                     <div class="profile-box">
-                        <div class="font">Current Username: </div>
-                        <input class="text-box" type="text" id="username" name="old_username" placeholder="User123">
                         <div class="font">New Username: </div>
                         <input class="text-box" type="text" id="username" name="username" placeholder="User123">
                         <div class="username-button">
@@ -59,9 +94,6 @@
                     <div class="info-box">
                         <div class="Email">
                             <!-- Placehodler displays email -->
-                            <div class="font">Email: 
-                                <input class="text-box" type="email" id="email" name="email" placeholder="example@gmail.com">
-                            </div>
                         </div>
                         <div class="Password">
                             <div class="font">Current Password: 
@@ -83,9 +115,6 @@
                 <form action="../../profilebackendaddPref.php" method="post">
                     <div class="interests-box">
                         <div class="font">Music Type</div>
-                        <div class="font">Username:
-                            <input class="text-box" type="text" id="username" name="username" placeholder="">
-                        </div>
                         <div class="first-row">
                             <div>
                                 <input type="checkbox" id="Rock" name="Rock" value="Yes"/>
@@ -135,8 +164,28 @@
                         </div>
                     </div>
                 </form>
+                <div class="recent-searches-tab">
+                    <div class="font">Recent Songs</div>
+                </div>
+                    <div class="recent-searches-box">
+                      <div class="font"><?php echo $_SESSION["song_1"]; ?> </div>
+                      <div class="font"><?php echo $_SESSION["song_2"]; ?> </div>
+                      <div class="font"><?php echo $_SESSION["song_3"]; ?> </div>
+                    </div>
             </div>
         </div>
+
+        <script>
+                    function submitForm(){
+                        document.getElementById("inoroutform").submit();
+                    }
+
+                    document.getElementById("inoroutlink").addEventListener("click", function(event){
+                        event.preventDefault();
+                        submitForm();
+                    });
+
+        </script>
     </body>
 </html>
 

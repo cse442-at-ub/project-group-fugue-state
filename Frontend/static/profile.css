@@ -74,6 +74,36 @@
     height: 150px;
 }
 
+.recent-searches-tab{
+    position: absolute;
+    top: 830px;
+    left: 320px;
+    width: 240px;
+    height: 50px;
+}
+.recent-searches-box{
+    position: absolute;
+    left: 570px;
+    top: 830px;
+    width: 650px;
+    height: 150px;
+}
+
+.recent-searches-tab-homepage{
+    position: absolute;
+    top: 930px;
+    left: 430px;
+    width: 240px;
+    height: 50px;
+}
+.recent-searches-box-homepage{
+    position: absolute;
+    left: 630px;
+    top: 930px;
+    width: 650px;
+    height: 150px;
+}
+
 .first-row {
     display: flex;
     flex-direction: row;
