@@ -78,5 +78,71 @@ function getLyrics(int $songID){
     return "";
 }
 
+// This function will read a song id and genre then return TRUE if song is in specified genre
+function isGenre(int $songID, string $genre){
+    global $conn;
+    $genre = strtolower($genre);
+    switch ($genre) {
+        case "rock":
+            $sql = "SELECT rock_genre FROM songs WHERE song_id = '$songID'";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0 && $result->fetch_assoc()["rock_genre"]){
+                return true;
+            }
+            break;
+        case "pop":
+            $sql = "SELECT pop_genre FROM songs WHERE song_id = '$songID'";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0 && $result->fetch_assoc()["pop_genre"]){
+                return true;
+            }
+            break;
+        case "country":
+            $sql = "SELECT country_genre FROM songs WHERE song_id = '$songID'";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0 && $result->fetch_assoc()["country_genre"]){
+                return true;
+            }
+            break;
+        case "jazz":
+            $sql = "SELECT jazz_genre FROM songs WHERE song_id = '$songID'";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0 && $result->fetch_assoc()["jazz_genre"]){
+                return true;
+            }
+            break;
+        case "classical":
+            $sql = "SELECT classical_genre FROM songs WHERE song_id = '$songID'";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0 && $result->fetch_assoc()["classical_genre"]){
+                return true;
+            }
+            break;
+        case "folk":
+            $sql = "SELECT folk_genre FROM songs WHERE song_id = '$songID'";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0 && $result->fetch_assoc()["folk_genre"]){
+                return true;
+            }
+            break;
+        case "indie":
+            $sql = "SELECT indie_genre FROM songs WHERE song_id = '$songID'";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0 && $result->fetch_assoc()["indie_genre"]){
+                return true;
+            }
+            break;
+        case "metal":
+            $sql = "SELECT metal_genre FROM songs WHERE song_id = '$songID'";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0 && $result->fetch_assoc()["metal_genre"]){
+                return true;
+            }
+            break;
+        default:
+            return false;
+    }   
+}
+
 $conn = connect();
 ?>
