@@ -47,31 +47,31 @@ else{
             <div class="explore"></div>
             <div class="text-wrapper">Explore</div>
           </div>
-          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='button-med'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/genre_song_page.php" class='button-med'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Rock</div>
             </div>
           </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='overlap-wrapper'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/genre_song_page.php" class='overlap-wrapper'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Pop</div>
             </div>
           </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='overlap-group-wrapper'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/genre_song_page.php" class='overlap-group-wrapper'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Country</div>
             </div>
           </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='div-wrapper'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/genre_song_page.php" class='div-wrapper'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Jazz</div>
             </div>
           </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='button-med-2'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/genre_song_page.php" class='button-med-2'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Classical</div>
