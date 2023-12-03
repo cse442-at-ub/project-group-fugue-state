@@ -31,7 +31,8 @@ function send_reset(){
 
     session_start();
     $_SESSION["username"] = $username;
-    echo "Reset code sent to email || \n";
+    popUp("Reset code sent to email");
+    redirectPage("forgotpassword.php");
     return true;
 }
 
