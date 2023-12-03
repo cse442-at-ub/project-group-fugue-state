@@ -16,6 +16,7 @@ function generate_reset(){
 
 function send_reset(){
     global $conn;
+    global $forgotPath;
     $email = getInfo("email");
     $sql = "SELECT username FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
@@ -32,7 +33,7 @@ function send_reset(){
     session_start();
     $_SESSION["username"] = $username;
     popUp("Reset code sent to email");
-    redirectPage("forgotpassword.php");
+    redirectPage($forgotPath);
     return true;
 }
 
