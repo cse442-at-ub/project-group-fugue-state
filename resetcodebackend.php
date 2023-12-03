@@ -38,7 +38,7 @@ function send_reset(){
     mail($email,$header,$msg);
 
     session_start();
-    $_SESSION["username"] = $username;
+    //$_SESSION["username"] = $username;
     popUp("Reset code sent to email");
     redirectPage($forgotPath);
     exit();

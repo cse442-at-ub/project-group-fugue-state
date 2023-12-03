@@ -81,6 +81,8 @@
           <div class="relative">
               <h1>Reset Password:</h1>
               <form action="../../forgotpwdbackend.php" method="post">
+                <label for="password">Username:</label><br>
+                <input type="username" id="username" name="username" placeholder="Username" value=""><br>
                 <label for="password">New Password:</label><br>
                 <input type="password" id="newpassword" name="newpassword" placeholder="New Password" value=""><br>
                 <label for="password">Confirm Password:</label><br>
