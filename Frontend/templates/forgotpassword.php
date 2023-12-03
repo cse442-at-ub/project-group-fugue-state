@@ -79,7 +79,7 @@
             }
             </style>
           <div class="relative">
-              <h1>Sign Up:</h1>
+              <h1>Reset Password:</h1>
               <form action="../../forgotpwdbackend.php" method="post">
                 <label for="password">New Password:</label><br>
                 <input type="password" id="newpassword" name="newpassword" placeholder="New Password" value=""><br>
