@@ -75,8 +75,8 @@ function resetPassword(){
         session_destroy();
         exit();
     }else{
-        $sql = "DELETE FROM resetCodes WHERE username = '$username'";
-        $conn->query($sql);
+        //$sql = "DELETE FROM resetCodes WHERE username = '$username'";
+        //$conn->query($sql);
         popUp("Incorrect reset code");
         redirectPage($forgotPath);
         exit();
