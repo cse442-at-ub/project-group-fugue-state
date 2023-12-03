@@ -80,7 +80,7 @@
             </style>
           <div class="relative">
               <h1>Sign Up:</h1>
-              <form action="../../forgotpasswordbackend.php" method="post">
+              <form action="../../forgotpwdbackend.php" method="post">
                 <label for="password">New Password:</label><br>
                 <input type="password" id="newpassword" name="newpassword" placeholder="New Password" value=""><br>
                 <label for="password">Confirm Password:</label><br>

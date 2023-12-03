@@ -94,9 +94,9 @@
             }
           </style>
           <div class="relative">
-            <h1>Sign In:</h1>
+            <h1>Reset Code:</h1>
             <form action="../../resetcodebackend.php" method="post">
-              <input type="email" id="email" name="email" placeholder="Email" value=""><br><br>
+              <input type="username" id="email" name="email" placeholder="Email" value=""><br><br>
               <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
                 <input type="submit" value="Send Code">
               </a>
