@@ -14,9 +14,9 @@ function generate_reset(){
     }
 }
 
-function send_reset($email){
+function send_reset(){
     global $conn;
-    //$email = getInfo("email");
+    $email = getInfo("email");
     $sql = "SELECT username FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
     $username = $result->fetch_assoc()["username"];
@@ -35,7 +35,7 @@ function send_reset($email){
     return true;
 }
 
-send_reset("breckenm@buffalo.edu");
+send_reset();
 
 
 ?>
