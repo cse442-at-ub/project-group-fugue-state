@@ -106,6 +106,9 @@
             <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php">
               <input type="submit" id="signup" value="Register New Account">
             </a>
+            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/resetcode.php">
+              <input type="submit" id="signup" value="Forgot Password?">
+            </a>
       </div>
     </div>
   </body>
