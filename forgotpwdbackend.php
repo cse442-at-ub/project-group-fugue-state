@@ -4,6 +4,36 @@
 require_once "connect.php";
 session_start();
 
+function passwordStrength($password){
+    $message = "Password does not meet requirements";
+    if (strlen($password) < 8){
+        //$message = "password is too short";
+        popUp($message);    
+        return false;
+    }
+    if (preg_match('/[A-Z]/', $password) == false){
+        //$message = "password does not contain uppercase letters";;
+        popUp($message);
+        return false;
+    }
+    if (preg_match('/[a-z]/', $password) == false){
+        //$message = "password does not contain lowercase letters";
+        popUp($message);
+        return false;
+    }
+    if (preg_match('/[0-9]/', $password) == false){
+        //$message = "password does not contain numbers";
+        popUp($message);
+        return false;
+    }
+    if (preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $password) == false){
+        //$message = "password does not contain special characters";
+        popUp($message);
+        return false;
+    }
+    return true;
+}
+
 function resetPassword(){
     global $conn;
     global $forgotPath;
@@ -13,6 +43,9 @@ function resetPassword(){
     $code = getInfo("code");
     if ($newpassword != $confirmpassword){
         popUp("passwords do not match");
+        redirectPage($forgotPath);
+    }
+    if (passwordStrength($newpassword) == false){
         redirectPage($forgotPath);
     }
     $username = $_SESSION["username"];
