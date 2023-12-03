@@ -14,11 +14,13 @@ function resetPassword(){
     $username = $_SESSION["username"];
     $newhashedpassword = hash("sha256",$newpassword);
     global $conn;
+    global $forgotPath;
+    global $loginPath;
     $sql = "SELECT code FROM resetCodes WHERE username = '$username'";
     $result = $conn->query($sql);
     if ($result->num_rows == 0){
         popUp("No reset code is registered with this email or username");
-        redirectPage("forgotpassword.php");
+        redirectPage($forgotPath);
     }
     $result = $result->fetch_assoc()["code"];
 
@@ -27,7 +29,7 @@ function resetPassword(){
     $result2 = $result->fetch_assoc()["password"];
     if ($result2 == $newhashedpassword){
         popUp("New password cannot be the same as the old password");
-        redirectPage("forgotpassword.php");
+        redirectPage($forgotPath);
     }
     if ($result == $code){
         $sql = "UPDATE logins SET password = '$newhashedpassword' WHERE username = '$username'";
@@ -35,12 +37,12 @@ function resetPassword(){
         $sql = "DELETE FROM resetCodes WHERE username = '$username'";
         $conn->query($sql);
         popUp("Password reset successful");
-        redirectPage("login.php");
+        redirectPage($loginPath);
     }else{
         $sql = "DELETE FROM resetCodes WHERE username = '$username'";
         $conn->query($sql);
         popUp("Incorrect reset code");
-        redirectPage("forgotpassword.php");
+        redirectPage($forgotPath);
     }
 }
 
