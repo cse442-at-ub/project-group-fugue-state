@@ -4,18 +4,18 @@ require_once "connect.php";
 session_start();
 
 function resetPassword(){
+    global $conn;
+    global $forgotPath;
+    global $loginPath;
     $newpassword = getInfo("newpassword");
     $confirmpassword = getInfo("confirmpassword");
     $code = getInfo("code");
     if ($newpassword != $confirmpassword){
         popUp("passwords do not match");
-        redirectPage("forgotpassword.php");
+        redirectPage($forgotPath);
     }
     $username = $_SESSION["username"];
     $newhashedpassword = hash("sha256",$newpassword);
-    global $conn;
-    global $forgotPath;
-    global $loginPath;
     $sql = "SELECT code FROM resetCodes WHERE username = '$username'";
     $result = $conn->query($sql);
     if ($result->num_rows == 0){

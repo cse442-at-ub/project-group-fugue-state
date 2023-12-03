@@ -21,10 +21,17 @@ function send_reset(){
     $sql = "SELECT username FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
     $username = $result->fetch_assoc()["username"];
-    $code = generate_reset();
-    $sql = "INSERT INTO resetCodes (username,email,code) VALUES ('$username','$email','$code')";
-    $conn->query($sql);
 
+    $code = generate_reset();
+    $sql = "SELECT code FROM resetCodes WHERE username = '$username'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0){
+        $sql = "UPDATE resetCodes SET code = '$code' WHERE username = '$username'";
+        $conn->query($sql);
+    }else{
+        $sql = "INSERT INTO resetCodes (username,email,code) VALUES ('$username','$email','$code')";
+        $conn->query($sql);
+    }
 
     $msg = "Your reset code is: " . strval($code);
     $header = "Reset Code Gig App";
