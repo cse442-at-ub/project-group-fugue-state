@@ -26,17 +26,18 @@ function missingFields($email){
 function send_reset(){
     global $conn;
     global $forgotPath;
+    global $resetPath;
     $email = getInfo("email");
 
     if (missingFields($email) == false){
-        redirectPage($forgotPath);
+        redirectPage($resetPath);
     }
 
     $sql = "SELECT username FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
     if ($result->num_rows == 0){
         popUp("No account is registered with this email");
-        redirectPage($forgotPath);
+        redirectPage($resetPath);
     }
     $username = $result->fetch_assoc()["username"];
 
