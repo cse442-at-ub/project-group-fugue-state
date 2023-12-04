@@ -94,20 +94,16 @@
             }
           </style>
           <div class="relative">
-            <h1>Sign In:</h1>
-            <form action="../../loginbackend.php" method="post">
-              <input type="username" id="username" name="username" placeholder="Username" value=""><br>
-              <input type="password" id="password" name="password" placeholder="Password" value=""><br><br>
+            <h1>Reset Code:</h1>
+            <form action="../../resetcodebackend.php" method="post">
+              <input type="username" id="email" name="email" placeholder="Email" value=""><br><br>
               <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
-                <input type="submit" value="Sign in">
+                <input type="submit" value="Send Code">
               </a>
             <h2>or</h2>
             </form>
-            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php">
-              <input type="submit" id="signup" value="Register New Account">
-            </a>
-            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/resetcode.php">
-              <input type="submit" id="signup" value="Forgot Password?">
+            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php">
+              <input type="submit" id="signup" value="Login">
             </a>
       </div>
     </div>

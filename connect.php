@@ -49,6 +49,8 @@ $signupPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend
 $homePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php";
 $profilePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php";
 $usersPath = "../Users/";
+$forgotPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/forgotpassword.php";
+$resetPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/resetcode.php";
 //$usersPath = "./Users/";
 
 
