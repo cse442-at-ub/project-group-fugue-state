@@ -136,11 +136,11 @@ else{
         <style>
           form {
             position: relative;
-            background-color: #d9d9d9;
+            /*background-color: #d9d9d9;*/
             width: 820px;
-            height: 53px;
-            border-radius: 43px;
-            border: 0.5px solid;
+            /*height: 53px;*/
+            /*border-radius: 43px;*/
+            /*border: 0.5px solid;*/
             border-color: #cbc2c2;
             top: 107px;
             left: 345px;

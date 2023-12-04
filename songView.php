@@ -28,10 +28,7 @@ $song_id = $_GET['song_id'];
   <style>
     
     .desktop-home-page .div {
-  background-color: rgba(255, 255, 255, 1);
-  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(144.92, 170.5, 220.14) 100%);
   width: 1440px;
-  height: 3000px;
   position: relative;
 }
 
@@ -54,6 +51,7 @@ $song_id = $_GET['song_id'];
     position: relative;
     top:260px;
     left: 400px;
+    width: 400px;
     }
     </style>  
     <div id="song"></div>
