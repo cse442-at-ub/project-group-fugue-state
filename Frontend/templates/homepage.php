@@ -32,7 +32,6 @@ else{
 
 <!DOCTYPE html>
 <html>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <head>
     <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/globals.css">
     <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/styleguide.css">
@@ -105,7 +104,7 @@ else{
           <input class="text-wrapper-2" type="hidden" name="logout" value="true">
         </form>    
 
-        <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='button-sm'>
+        <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/songeditor.php" class='button-sm'>
           <div class="overlap-3">
             <div class="rectangle-3"></div>
             <div class="text-3">New Song</div>
