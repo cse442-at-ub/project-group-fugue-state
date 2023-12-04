@@ -14,12 +14,30 @@ function generate_reset(){
     }
 }
 
+function missingFields($email){
+    if (strlen($email) == 0){
+        $message = "Please fill out all fields";
+        popUp($message);
+        return false;
+    }  
+    return true;
+}
+
 function send_reset(){
     global $conn;
     global $forgotPath;
     $email = getInfo("email");
+
+    if (missingFields($email) == false){
+        redirectPage($forgotPath);
+    }
+
     $sql = "SELECT username FROM logins WHERE email = '$email'";
     $result = $conn->query($sql);
+    if ($result->num_rows == 0){
+        popUp("No account is registered with this email");
+        redirectPage($forgotPath);
+    }
     $username = $result->fetch_assoc()["username"];
 
     $code = generate_reset();

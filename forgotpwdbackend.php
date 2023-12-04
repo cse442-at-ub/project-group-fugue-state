@@ -34,6 +34,15 @@ function passwordStrength($password){
     return true;
 }
 
+function missingFields($password,$newpassword,$code){
+    if (strlen($password) == 0 || strlen($newpassword) == 0 || strlen($code) == 0){
+        $message = "Please fill out all fields";
+        popUp($message);
+        return false;
+    }  
+    return true;
+}
+
 function resetPassword(){
     global $conn;
     global $forgotPath;
@@ -41,6 +50,9 @@ function resetPassword(){
     $newpassword = getInfo("newpassword");
     $confirmpassword = getInfo("confirmpassword");
     $code = getInfo("code");
+    if (missingFields($newpassword,$confirmpassword,$code) == false){
+        redirectPage($forgotPath);
+    }
     if ($newpassword != $confirmpassword){
         popUp("passwords do not match");
         redirectPage($forgotPath);
