@@ -140,7 +140,7 @@
                 <select id="col10" name="col10">
                   <option value="A">A</option>
                   <option value="C">C</option>
-                </select>
+                </select><!--<img class="logo" src="img/logo.png" />-->
                 <select id="col11" name="col11">
                   <option value="A">A</option>
                   <option value="C">C</option>
