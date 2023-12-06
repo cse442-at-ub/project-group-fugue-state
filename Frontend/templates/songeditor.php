@@ -21,6 +21,7 @@
           <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
         </a>
         <!--<img class="logo" src="img/logo.png" />-->
+        <!--<img class="logo" src="img/logo.png" />-->
 
           <style>
             div.relative {
@@ -137,6 +138,10 @@
                   <option value="C">C</option>
                 </select>
                 <select id="col10" name="col10">
+                  <option value="A">A</option>
+                  <option value="C">C</option>
+                </select>
+                <select id="col11" name="col11">
                   <option value="A">A</option>
                   <option value="C">C</option>
                 </select>
