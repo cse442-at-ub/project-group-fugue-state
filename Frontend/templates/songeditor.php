@@ -9,194 +9,70 @@
       <link rel="stylesheet" href="styleguide.css" />
       <link rel="stylesheet" href="style.css" />
     -->
+    <style>
+        /* Hide additional rows by default */
+        .hidden-row {
+            display: none; Remove this line to make the row visible */
+        }
+    </style>
   </head>
   <body>
     <div class="desktop-home-page">
-      <div class="div">
-        <div class="overlap">
+        <div class="div">
+            <div class="overlap"></div>
+            <form action="#" method="post">
+                <label for="Title">Title:</label>
+                <input type="text" name="formTitle" id="formTitle" required />
+                <label for="Key">Title:</label>
+                <input type="text" name="key" id="key" required />
+                <table id="songTable">
+                    <!-- Row template for cloning -->
+                    <tr class="hidden-row" id="rowTemplate">
+                        <td>
+                            <label for="line">Line:</label>
+                        </td>
+                        <td>
+                            <select name="section_dropdown" class="section-dropdown">
+                                <option value="nothing"> </option>
+                                <option value="intro">intro</option>
+                                <option value="chorus">chorus</option>
+                                <option value="verse">verse</option>
+                                <option value="bridge">bridge</option>
+                            </select>
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="text" name="line_text" class="line-text" />
+                        </td>
+                        <td>
+                            <label>
+                                <input type="radio" name="line_option" value="chord" /> Chord
+                            </label>
+                            <label>
+                                <input type="radio" name="line_option" value="lyric" /> Lyric
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                
+                <button type="button" onclick="addRows(10)">Add page</button>
+                <input type="submit" value="Submit">
+            </form>
 
+            <script>
+                function addRows(numRows) {
+                    var table = document.getElementById("songTable");
+                    var rowTemplate = document.getElementById("rowTemplate");
+
+                    for (var i = 0; i < numRows; i++) {
+                        // Clone the row template and append it to the table
+                        var newRow = rowTemplate.cloneNode(true);
+                        newRow.classList.remove("hidden-row");
+                        table.appendChild(newRow);
+                    }
+                }
+            </script>
         </div>
-        <form action="#" method="post">
-    <label for="Title">Title:</label>
-    <input type="text" name="formTitle" id="formTitle" required />
-
-    <table>
-        <tr>
-            <td>
-                <label for="line1"> line:</label>
-            </td>
-            <td>
-                <select name="line1_section_dropdown" id="line1">
-                    <option value="nothing"> </option>
-                    <option value="intro">intro</option>
-                    <option value="chorus">chorus</option>
-                    <option value="verse">verse</option>
-                    <option value="bridge">bridge</option>
-                </select>
-            </td>
-            <td>
-               
-            </td>
-            <td>
-                <input type="text" name="line1_text" id="line1_text" />
-            </td>
-            <td>
-                <label>
-                    <input type="radio" name="line1_option" value="chord" /> Chord
-                </label>
-                <label>
-                    <input type="radio" name="line1_option" value="lyric" /> Lyric
-                </label>
-            </td>
-        </tr>
-        
-        
-        <td>
-                <label for="line2"> line:</label>
-            </td>
-            <td>
-                <select name="line2_section_dropdown" id="line2">
-                    <option value="nothing"> </option>
-                    <option value="intro">intro</option>
-                    <option value="chorus">chorus</option>
-                    <option value="verse">verse</option>
-                    <option value="bridge">bridge</option>
-                </select>
-            </td>
-            <td>
-               
-            </td>
-            <td>
-                <input type="text" name="line2_text" id="line2_text" />
-            </td>
-            <td>
-                <label>
-                    <input type="radio" name="line2_option" value="chord" /> Chord
-                </label>
-                <label>
-                    <input type="radio" name="line2_option" value="lyric" /> Lyric
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="line3"> line:</label>
-            </td>
-            <td>
-                <select name="line3_section_dropdown" id="line3">
-                    <option value="nothing"> </option>
-                    <option value="intro">intro</option>
-                    <option value="chorus">chorus</option>
-                    <option value="verse">verse</option>
-                    <option value="bridge">bridge</option>
-                </select>
-            </td>
-            <td>
-               
-            </td>
-            <td>
-                <input type="text" name="line3_text" id="line3_text" />
-            </td>
-            <td>
-                <label>
-                    <input type="radio" name="line3_option" value="chord" /> Chord
-                </label>
-                <label>
-                    <input type="radio" name="line3_option" value="lyric" /> Lyric
-                </label>
-            </td>
-        </tr>
-        
-        
-        <td>
-                <label for="line4"> line:</label>
-            </td>
-            <td>
-                <select name="line4_section_dropdown" id="line4">
-                    <option value="nothing"> </option>
-                    <option value="intro">intro</option>
-                    <option value="chorus">chorus</option>
-                    <option value="verse">verse</option>
-                    <option value="bridge">bridge</option>
-                </select>
-            </td>
-            <td>
-               
-            </td>
-            <td>
-                <input type="text" name="line4_text" id="line4_text" />
-            </td>
-            <td>
-                <label>
-                    <input type="radio" name="line4_option" value="chord" /> Chord
-                </label>
-                <label>
-                    <input type="radio" name="line4_option" value="lyric" /> Lyric
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="line5"> line:</label>
-            </td>
-            <td>
-                <select name="line5_section_dropdown" id="line5">
-                    <option value="nothing"> </option>
-                    <option value="intro">intro</option>
-                    <option value="chorus">chorus</option>
-                    <option value="verse">verse</option>
-                    <option value="bridge">bridge</option>
-                </select>
-            </td>
-            <td>
-               
-            </td>
-            <td>
-                <input type="text" name="line5_text" id="line5_text" />
-            </td>
-            <td>
-                <label>
-                    <input type="radio" name="line5_option" value="chord" /> Chord
-                </label>
-                <label>
-                    <input type="radio" name="line5_option" value="lyric" /> Lyric
-                </label>
-            </td>
-        </tr>
-        
-        
-        <td>
-                <label for="line6"> line:</label>
-            </td>
-            <td>
-                <select name="line2_section_dropdown" id="line6">
-                    <option value="nothing"> </option>
-                    <option value="intro">intro</option>
-                    <option value="chorus">chorus</option>
-                    <option value="verse">verse</option>
-                    <option value="bridge">bridge</option>
-                </select>
-            </td>
-            <td>
-               
-            </td>
-            <td>
-                <input type="text" name="line6_text" id="line6_text" />
-            </td>
-            <td>
-                <label>
-                    <input type="radio" name="line6_option" value="chord" /> Chord
-                </label>
-                <label>
-                    <input type="radio" name="line6_option" value="lyric" /> Lyric
-                </label>
-            </td>
-        </tr>
-        
-    </table>
-    <input type="submit" value="Create new Page">
-    <input type="submit" value="Submit">
-      </div>
     </div>
-  </body>
+</body>
 </html>
