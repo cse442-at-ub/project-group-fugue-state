@@ -57,12 +57,11 @@
                                 <input type="text" name="line_text" class="line-text" />
                             </td>
                             <td>
-                                <label>
-                                    <input type="radio" name="line_option" value="chord" /> Chord
-                                </label>
-                                <label>
-                                    <input type="radio" name="line_option" value="lyric" /> Lyric
-                                </label>
+                            <select name="lyric_dropdown" class="lyric-dropdown">
+                                    <option value="nothing"> </option>
+                                    <option value="lyric">lyric</option>
+                                    <option value="chord">chord</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
