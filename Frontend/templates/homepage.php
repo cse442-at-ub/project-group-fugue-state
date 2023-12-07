@@ -175,6 +175,9 @@ else{
           <input type="search" id="query" name="q" 
           placeholder="Search..." 
           aria-label="Search through site content">
+          <input type="radio" name="search_by" value="Genre" label="Genre">
+          <input type="radio" name="search_by" value="Songwriter" label="Songwriter">
+          <input type="radio" name="search_by" value="Title" label="Title">
           <button type = "submit">Search</button>
         </form>
         <a href="<?php echo $_SESSION["redirect3"]; ?>" class='profile-icon'>
