@@ -104,7 +104,7 @@ else{
           <input class="text-wrapper-2" type="hidden" name="logout" value="true">
         </form>    
 
-        <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/songView.php" class='button-sm'>
+        <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/songeditor.php" class='button-sm'>
           <div class="overlap-3">
             <div class="rectangle-3"></div>
             <div class="text-3">New Song</div>
