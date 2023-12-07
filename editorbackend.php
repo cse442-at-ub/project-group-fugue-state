@@ -3,12 +3,11 @@
 // parse the info
 // send each value as a json string
 // return to database in correct format
-require_once connect.php;
+require_once 'connect.php';
 session_start();
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
 
 // Retrieve form data
 $title = $_POST['title'];
@@ -18,15 +17,29 @@ $mm = $_POST['mm'];
 
 //json array of json objects containing strings: name, page, line
 $chords = array(
-    $_POST['col1'], $_POST['col2'], $_POST['col3'], $_POST['col4'], $_POST['col5'],
-    $_POST['col6'], $_POST['col7'], $_POST['col8'], $_POST['col9'], $_POST['col10']
+    'col1' => $_POST['col1'],
+    'col2' => $_POST['col2'],
+    'col3' => $_POST['col3'],
+    'col4' => $_POST['col4'],
+    'col5' => $_POST['col5'],
+    'col6' => $_POST['col6'],
+    'col7' => $_POST['col7'],
+    'col8' => $_POST['col8'],
+    'col9' => $_POST['col9'],
+    'col10' => $_POST['col10']
 );
-$chordsList = implode(',', $chords);
+
+// Convert each value in the array to a JSON object
+foreach ($chords as &$value) {
+    $value = json_encode(['value' => $value]);
+}
+
+// Convert the whole list of JSON objects to a JSON array
+$chordsList = json_encode($chords);
+
 
 //lyrics is json array of strings
 $lyrics = $_POST['lyrics'];
-
-
 
 $unique = false;
 while (!$unique) {
@@ -42,7 +55,9 @@ $song_writer = $_SESSION["username"];
 $pages = 1;
 
 // Insert data into the database (replace 'your_table_name' with your actual table name)
-$sql = "INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES ('$song_id', '$title', '$song_writer', '$created_date', '$key', '$chordsList', '$lyrics', '$pages')";
+// $sql = "INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES ('$song_id', '$title', '$song_writer', '$created_date', '$key', '$chordsList', '$lyrics', '$pages')";
+$stmt = $conn->prepare("INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("sssssssi", '$song_id', '$title', '$song_writer', '$created_date', '$key', '$chordsList', '$lyrics', '$pages');
 
 if ($conn->query($sql) === TRUE) {
     header("Location: /CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php");
@@ -50,11 +65,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-// Close the database connection
-$conn->close();
-
-function parsePost(){
-  global $conn;
-}
+$stmt->close();
 
 ?>
