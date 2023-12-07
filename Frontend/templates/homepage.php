@@ -169,16 +169,23 @@ else{
             border-color: #cbc2c2;
             height: 53px;
           }
+
+          radio {
+            position: relative
+            top: 5px;
+            width: 10px;
+            height: 10px;
+          }
           
         </style>
         <form action = "../../search.php" method = "get"   id= "search-bar"> 
           <input type="search" id="query" name="q" 
           placeholder="Search..." 
           aria-label="Search through site content">
-          <input type="radio" name="search_by" value="Genre" label="Genre">
-          <input type="radio" name="search_by" value="Songwriter" label="Songwriter">
-          <input type="radio" name="search_by" value="Title" label="Title">
           <button type = "submit">Search</button>
+          <input type="radio" name="search_by" value="Genre">Genre</br>
+          <input type="radio" name="search_by" value="Songwriter">Songwriter</br>
+          <input type="radio" name="search_by" value="Title">Title</br>
         </form>
         <a href="<?php echo $_SESSION["redirect3"]; ?>" class='profile-icon'>
           <div class="overlap-4">
