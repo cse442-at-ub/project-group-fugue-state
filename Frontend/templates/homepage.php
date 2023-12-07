@@ -182,10 +182,24 @@ else{
           <input type="search" id="query" name="q" 
           placeholder="Search..." 
           aria-label="Search through site content">
-          <button type = "submit">Search</button>
-          <input type="radio" name="search_by" value="Genre">Genre</br>
-          <input type="radio" name="search_by" value="Songwriter">Songwriter</br>
-          <input type="radio" name="search_by" value="Title">Title</br>
+          <div>
+            <label>
+              <input type="radio" name="searchType" value="genres" checked>
+              Genres
+            </label>
+      
+            <label>
+              <input type="radio" name="searchType" value="songwriter">
+              Songwriter
+            </label>
+      
+            <label>
+              <input type="radio" name="searchType" value="title">
+              Title
+            </label>
+          </div>
+      
+          <button type="submit">Search</button>
         </form>
         <a href="<?php echo $_SESSION["redirect3"]; ?>" class='profile-icon'>
           <div class="overlap-4">
