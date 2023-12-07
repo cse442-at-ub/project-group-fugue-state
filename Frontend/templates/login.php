@@ -11,7 +11,6 @@
     -->
   </head>
   <body>
-    <div class="desktop-home-page">
       <div class="div">
         <div class="overlap">
 
@@ -111,6 +110,5 @@
               <input type="submit" id="signup" value="Forgot Password?">
             </a>
       </div>
-    </div>
   </body>
 </html>

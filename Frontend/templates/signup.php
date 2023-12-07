@@ -51,7 +51,6 @@
     -->
   </head>
   <body>
-    <div class="desktop-home-page">
       <div class="div">
         <div class="overlap">
 
@@ -99,6 +98,5 @@
             </a>
           </div>
       </div>
-    </div>
   </body>
 </html>
