@@ -6,17 +6,27 @@
 require_once connect.php;
 session_start();
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 // Retrieve form data
 $title = $_POST['title'];
 $section = $_POST['section'];
 $key = $_POST['key'];
 $mm = $_POST['mm'];
+
+//json array of json objects containing strings: name, page, line
 $chords = array(
     $_POST['col1'], $_POST['col2'], $_POST['col3'], $_POST['col4'], $_POST['col5'],
     $_POST['col6'], $_POST['col7'], $_POST['col8'], $_POST['col9'], $_POST['col10']
 );
 $chordsList = implode(',', $chords);
+
+//lyrics is json array of strings
 $lyrics = $_POST['lyrics'];
+
+
 
 $unique = false;
 while (!$unique) {

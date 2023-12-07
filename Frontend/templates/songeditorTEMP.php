@@ -1,145 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/globals.css">
     <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/styleguide.css">
     <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
+        /* Hide additional rows by default */
+        .hidden-row {
+            display: none; /* Remove this line to make the row visible */
         }
 
-        .desktop-home-page {
+        /* Center the form on the screen */
+        .form-container {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            height: 100vh; /* Adjust as needed */
         }
 
-        .lineEditor {
-            margin-top: 20px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* Style adjustments for better alignment */
+        .form-container form {
+            max-width: 600px; /* Adjust as needed */
+            width: 100%;
         }
 
-        h1 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        label, input, select {
-            margin-bottom: 10px;
-        }
-
-        input[type="submit"] {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
+        .form-container .div {
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="desktop-home-page">
-        <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
-            <img class="logo" src="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png"" />
-        </a>
+        <div class="form-container">
+            <div class="div">
+                <div class="overlap"></div>
+                <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
+                    <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png" />
+                </a>
+                <form action="../../editorbackend.php" method="post">
+                    <label for="Title">Title:</label>
+                    <input type="text" name="formTitle" id="formTitle" required />
+                    <label for="Key">Key:</label>
+                    <input type="text" name="key" id="key" required />
+                    <table id="songTable">
+                        <!-- Row template for cloning -->
+                        <tr class="hidden-row" id="rowTemplate">
+                            <td>
+                                <label for="line">Line:</label>
+                            </td>
+                            <td>
+                                <select name="section_dropdown" class="section-dropdown">
+                                    <option value="nothing"> </option>
+                                    <option value="intro">intro</option>
+                                    <option value="chorus">chorus</option>
+                                    <option value="verse">verse</option>
+                                    <option value="bridge">bridge</option>
+                                </select>
+                            </td>
+                            <td></td>
+                            <td>
+                                <input type="text" name="line_text" class="line-text" />
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="radio" name="line_option" value="chord" /> Chord
+                                </label>
+                                <label>
+                                    <input type="radio" name="line_option" value="lyric" /> Lyric
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <button type="button" onclick="addRows(10)">Add page</button>
+                    <input type="submit" value="Submit">
+                </form>
 
-        <div class="lineEditor">
-            <h1>Song Editor</h1>
-            <form action="../../editorbackend.php" method="post">
-                <div class="title">
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" placeholder="Song Title" required>
-                </div>
+                <script>
+                    function addRows(numRows) {
+                        var table = document.getElementById("songTable");
+                        var rowTemplate = document.getElementById("rowTemplate");
 
-                <div class="section">
-                    <label for="section">Section:</label>
-                    <select id="section" name="section">
-                        <option value="chorus">Chorus</option>
-                        <option value="verse">Verse</option>
-                        <option value="bridge">Bridge</option>
-                    </select>
-                </div>
-
-                <div class="key">
-                    <label for="key">Key:</label>
-                    <select id="key" name="key">
-                        <option value="A">A</option>
-                        <option value="C">C</option>
-                    </select>
-                </div>
-
-                <div class="lineChords">
-                    <label for="chord">Chords:</label>
-                    <select id="col1" name="col1">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                <select id="col2" name="col2">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                <select id="col3" name="col3">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                <select id="col4" name="col4">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                <select id="col5" name="col5">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                <select id="col6" name="col6">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                <select id="col7" name="col7">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                <select id="col8" name="col8">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                <select id="col9" name="col9">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                <select id="col10" name="col10">
-                  <option value="A">A</option>
-                  <option value="C">C</option>
-                </select>
-                </div>
-
-                <div class="lyrics">
-                    <label for="lyrics">Lyrics:</label>
-                    <input type="text" id="lyrics" name="lyrics" placeholder="Enter lyrics" required>
-                </div>
-
-                <input type="submit" value="Submit">
-            </form>
+                        for (var i = 0; i < numRows; i++) {
+                            // Clone the row template and append it to the table
+                            var newRow = rowTemplate.cloneNode(true);
+                            newRow.classList.remove("hidden-row");
+                            table.appendChild(newRow);
+                        }
+                    }
+                </script>
+            </div>
         </div>
     </div>
 </body>
