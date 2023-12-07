@@ -172,9 +172,9 @@ else{
 
           radio {
             position: relative
-            top: 5px;
-            width: 10px;
-            height: 10px;
+            top: 25px;
+            width: 5px;
+            height: 5px;
           }
           
         </style>
