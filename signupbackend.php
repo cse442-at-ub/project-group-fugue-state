@@ -129,7 +129,7 @@ function signUpSQL(){
              // Create folder for new user
              
 
-            mkdir($individualPath, 0777);
+            //mkdir($individualPath, 0777);
 
             
 
