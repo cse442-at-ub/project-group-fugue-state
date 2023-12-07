@@ -20,7 +20,7 @@
     <div class="desktop-home-page">
         <div class="div">
             <div class="overlap"></div>
-            <a href="/CSE442-542/2023-Fall/cse-442o//git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
+            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
             <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png" />
             </a>
             <style>
