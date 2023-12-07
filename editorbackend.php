@@ -1,8 +1,9 @@
 <?php
-// retrieve info from song editor submission
-// parse the info
-// send each value as a json string
-// return to database in correct format
+// Retrieve info from song editor submission
+// Parse the info
+// Send each value as a JSON string
+// Return to the database in the correct format
+
 require_once 'connect.php';
 session_start();
 
@@ -10,12 +11,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Retrieve form data
-$title = $_POST['title'];
-$section = $_POST['section'];
+$title = $_POST['formTitle'];
 $key = $_POST['key'];
-$mm = $_POST['mm'];
 
-//json array of json objects containing strings: name, page, line
+// JSON array of JSON objects containing strings: name, page, line
 $chords = array(
     'col1' => $_POST['col1'],
     'col2' => $_POST['col2'],
@@ -37,8 +36,7 @@ foreach ($chords as &$value) {
 // Convert the whole list of JSON objects to a JSON array
 $chordsList = json_encode($chords);
 
-
-//lyrics is json array of strings
+// Lyrics is a JSON array of strings
 $lyrics = $_POST['lyrics'];
 
 $unique = false;
@@ -55,16 +53,15 @@ $song_writer = $_SESSION["username"];
 $pages = 1;
 
 // Insert data into the database (replace 'your_table_name' with your actual table name)
-// $sql = "INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES ('$song_id', '$title', '$song_writer', '$created_date', '$key', '$chordsList', '$lyrics', '$pages')";
 $stmt = $conn->prepare("INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssssi", '$song_id', '$title', '$song_writer', '$created_date', '$key', '$chordsList', '$lyrics', '$pages');
 
-if ($conn->query($sql) === TRUE) {
+if ($stmt->execute()) {
     header("Location: /CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php");
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $stmt->error;
 }
 
 $stmt->close();
-
+$conn->close();
 ?>
