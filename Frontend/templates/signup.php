@@ -2,9 +2,10 @@
 <html>
   <style>
     div.relative {
-    position: relative;
-    top:260px;
-    left: 400px;
+      position: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
     }
     h1{
     font-size: 32px;
