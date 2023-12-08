@@ -35,11 +35,15 @@
                 <form action="../../editorbackend.php" method="post">
                     <label for="Title">Title:</label>
                     <input type="text" name="formTitle" id="formTitle" required />
+                    <div>
                     <label for="Key">Key:</label>
                     <input type="text" name="key" id="key" required />
+                    </div>
+                    <div>
                     <label for="Key">Artist:</label>
                     <input type="text" name="artist" id="artist" required />
-
+                    </div>
+                    <div>
                     <label for="rock">Rock:</label>
                     <input type="checkbox" name="genres" id="rock" value="rock">
 
@@ -57,7 +61,7 @@
 
                     <label for="other">other:</label>
                     <input type="checkbox" name="genres" id="other" value="other">
-
+                    </div>
 
                     <table id="songTable">
                         <!-- Row template for cloning -->
