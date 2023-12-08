@@ -52,7 +52,7 @@ else{
         </form>
       </div>
       <div class="uo">
-      <a href="<?php echo $_SESSION["redirect3"]; ?>" class='profile-icon'>
+        <a href="<?php echo $_SESSION["redirect3"]; ?>" class='profile-icon'>
           <div class="overlap-4">
             <div class="ellipse-3"></div>
             <img class="img" src= "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/ellipse-4-2.svg" />              
@@ -66,7 +66,7 @@ else{
             <div class="ellipse"></div>
           </div>
         </a>
-    </div>
+      </div>
     </div>
     <div class="desktop-home-page">
       <div class="div">

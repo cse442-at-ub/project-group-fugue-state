@@ -34,7 +34,30 @@ if (isset($_SESSION["logged_in"])){
         <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/style.css">
         <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/profile.css">
     </head>
-        <body>
+    <body>
+    <div class="top">
+        <div class="yo">
+            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class="logo-icon">
+                <img class="logo" src="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png">
+            </a>
+        </div>
+        <div class="uo">
+            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
+                <div class="overlap-4">
+                    <div class="ellipse-3"></div>
+                    <img class="img" src= "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/ellipse-4-2.svg" />
+                </div>
+            </a>
+            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php" id="inoroutlink" class='sign-in'>
+                <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
+            </a>
+            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class="settings">
+                <div class="ellipse-wrapper">
+                    <div class="ellipse"></div>
+                </div>
+            </a>
+        </div>
+    </div>
         <div class="desktop-home-page">
             <div class="div">
                 <!-- <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
@@ -48,21 +71,11 @@ if (isset($_SESSION["logged_in"])){
                     <input class="text-wrapper-2" type="hidden" name="logout" value="true">
                 </form>
 
-
-                <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
-                    <div class="ellipse-wrapper">
-                        <div class="ellipse"></div>
-                    </div>
-                </a>
-                <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
-                    <div class="overlap-4">
-                        <div class="ellipse-3"></div>
-                        <img class="img" src= "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/ellipse-4-2.svg" />
-                    </div>
-                </a>
+                <!--
                 <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
                     <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png" />
                 </a>
+                -->
                 <div class="rectangle-4"></div>
                 <div class="profile-tab">
                     <div class="font">Profile</div>
