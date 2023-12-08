@@ -43,7 +43,7 @@ if (isset($_GET['q'])) {
 
     if (isset($_GET['searchType'])){
         $searchType = $_GET['searchType'];
-        if ($searchType == 'artist'){
+        if ($searchType == 'songwriter'){
             $checkartist = "SELECT * FROM songs WHERE songwriter = '$search_query'";
             $resultartist = $conn->query($checkartist);
             
@@ -85,7 +85,21 @@ if (isset($_GET['q'])) {
             header("Location: $homepage");
             exit();
         }
-        
+        elseif ($searchType == 'genres'){
+            if (isset($_GET['genres'])) {
+                $selectedGenre = $_GET['genres'];
+                $genrelower= strtolower($selectedGenre);  
+                if (isset($_SESSION["logged_in"]) == true){
+                    $account_id = $_SESSION['account_id'];
+                    $song = $search_query;
+                    recentlySearched($conn, $account_id, $song);
+                }
+                // Redirect to the songview's page
+                $songViewPage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_page.php?genre_id=' . $genrelower . '&searchType=genre';
+                header("Location: $songViewPage");
+                exit();
+            }
+        }
     }
     /*
     $checkartist = "SELECT * FROM songs WHERE songwriter = '$search_query'";
