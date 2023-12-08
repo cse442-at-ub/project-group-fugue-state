@@ -52,8 +52,8 @@ $song_writer = $_SESSION["username"];
 $pages = 1;
 echo "2";
 // Insert data into the database (replace 'your_table_name' with your actual table name)
-// $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('$title', '$song_id', '$pages')";
-$sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('TEMP FROM WEBSERVER', 5, 5)";
+$sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES (''$title'', ''$song_id'', ''$pages'')";
+// $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('TEMP FROM WEBSERVER', 5, 5)";
 $conn->query($sql);
 echo "3";
 // $stmt = $conn->prepare("INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
