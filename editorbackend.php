@@ -35,7 +35,7 @@ $key = $_POST['key'];
 // $chordsList = json_encode($chords);
 
 // Lyrics is a JSON array of strings
-// $lyrics = $_POST['lyrics'];
+$lyrics = $_POST['lyrics'];
 
 $unique = false;
 while (!$unique) {
@@ -50,16 +50,14 @@ while (!$unique) {
 $created_date = date('Y-m-d');
 $song_writer = $_SESSION["username"];
 $pages = 1;
-echo "2";
 
-echo "Title: $title, Song ID: $song_id, Pages: $pages";
-
+echo "Title: $title, Song ID: $song_id, Pages: $pages, Date: $created_date, Songwriter: $song_writer";
+echo "Keysig: $key";
 
 // Insert data into the database (replace 'your_table_name' with your actual table name)
-$sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('$title', '$song_id', '$pages')";
+$sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`,`created_date`,`keysig`) VALUES ('$title', '$song_id', '$pages', '$created_date', '$key')";
 // $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('TEMP FROM WEBSERVER', 5, 5)";
 $conn->query($sql);
-echo " number 3";
 // $stmt = $conn->prepare("INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 // $stmt->bind_param("sssssssi", '$song_id', '$title', '$song_writer', '$created_date', '$key', '$chordsList', '$lyrics', '$pages');
 
