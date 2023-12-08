@@ -51,6 +51,9 @@ if (isset($_SESSION["logged_in"])){
             <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php" id="inoroutlink" class='sign-in'>
                 <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
             </a>
+            <form action=<?php echo $_SESSION["redirect2"]; ?> method="post" id="inoroutform">
+                    <input class="text-wrapper-2" type="hidden" name="logout" value="true">
+                </form>
             <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class="settings">
                 <div class="ellipse-wrapper">
                     <div class="ellipse"></div>
@@ -63,14 +66,6 @@ if (isset($_SESSION["logged_in"])){
                 <!-- <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
                     <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
                 </a> -->
-                <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php" id="inoroutlink" class='sign-in'>
-                    <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
-                </a> 
-
-                <form action=<?php echo $_SESSION["redirect2"]; ?> method="post" id="inoroutform">
-                    <input class="text-wrapper-2" type="hidden" name="logout" value="true">
-                </form>
-
                 <!--
                 <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
                     <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png" />
