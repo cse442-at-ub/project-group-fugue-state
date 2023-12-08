@@ -75,7 +75,7 @@ if (isset($_GET['q'])) {
         }
         
         // Redirect to the songview's page
-        $songViewPage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/songView.php?song_id=' $song_id;
+        $songViewPage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/songView.php?song_id=';
         header("Location: $songViewPage");
         exit();
     }
