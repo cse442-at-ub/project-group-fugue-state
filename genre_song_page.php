@@ -2,6 +2,13 @@
 require_once "connect.php";
 require_once "readSong.php";
 session_start();
+
+// Retrieve the genre parameter from the URL
+$genre = isset($_GET['genre']) ? $_GET['genre'] : '';
+
+// Set the genre session variable
+$_SESSION['genre'] = $genre;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,13 +65,13 @@ session_start();
         <div class="desktop-home-page">
             <div class="div">
                 <?php
-                //if(isset($_GET['artist'])){
                     global $conn;
-                    $artist_name = urldecode($_GET['artist']);
-                    $songs = "SELECT * FROM songs WHERE LOWER(TRIM(songwriter)) = LOWER(TRIM('$artist_name'))";
+                    $selectedGenre= $_SESSION['genre']
+                    $genreColumnName = strtolower($selectedGenre) . "_genre";
+                    $songs = "SELECT * FROM songs WHERE $genreColumnName = 1";
                     $result = $conn->query($songs);
                     if ($result->num_rows > 0){
-                        echo "<h2 class = 'title'>Songs by $artist_name</h2>";
+                        echo "<h2 class = 'title'>Songs in $selectedGenre genre</h2>";
                         echo "<ul class = 'list'>";
                         while ($row = $result->fetch_assoc()) {
                             $song_id = $row['song_id'];
@@ -76,7 +83,6 @@ session_start();
                         }
                         echo "</ul>";
                     }
-                //}
                 $conn->close();
                 ?>
             </div>

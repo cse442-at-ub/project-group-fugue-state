@@ -12,7 +12,11 @@ if (isset($_SESSION["logged_in"]) == false){
   // $song_2 = "None";
   // $song_3 = "None";
   $_SESSION["redirect3"] = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php";
-
+  $_SESSION["rock_button"] = "rock";
+  $_SESSION["pop_button"] = "pop";
+  $_SESSION["country_button"] = "country";
+  $_SESSION["jazz_button"] = "jazz";
+  $_SESSION["classical_button"] = "classical";
 }
 else{
     $_SESSION["button"] = "Sign Out";
@@ -25,9 +29,14 @@ else{
     // $song_1 = $row["song_1"];
     // $song_2 = $row["song_2"];
     // $song_3 = $row["song_3"];
-
     $_SESSION["redirect3"] = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php";
+    $_SESSION["rock_button"] = "rock";
+    $_SESSION["pop_button"] = "pop";
+    $_SESSION["country_button"] = "country";
+    $_SESSION["jazz_button"] = "jazz";
+    $_SESSION["classical_button"] = "classical";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -89,31 +98,31 @@ else{
             <div class="explore"></div>
             <div class="text-wrapper">Explore</div>
           </div>
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" class='button-med'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=rock" class='button-med'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Rock</div>
             </div>
           </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" class='overlap-wrapper'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=pop" class='overlap-wrapper'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Pop</div>
             </div>
           </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" class='overlap-group-wrapper'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=country" class='overlap-group-wrapper'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Country</div>
             </div>
           </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" class='div-wrapper'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=jazz" class='div-wrapper'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Jazz</div>
             </div>
           </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" class='button-med-2'>
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=classical" class='button-med-2'>
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="text">Classical</div>
