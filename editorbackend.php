@@ -35,7 +35,7 @@ $key = $_POST['key'];
 // $chordsList = json_encode($chords);
 
 // Lyrics is a JSON array of strings
-$lyrics = $_POST['lyrics'];
+// $lyrics = $_POST['lyrics'];
 
 $unique = false;
 while (!$unique) {
