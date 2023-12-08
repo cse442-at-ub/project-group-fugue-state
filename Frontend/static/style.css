@@ -520,3 +520,54 @@ html,body{
   top: 54px;
   left: 20px;
 }
+
+.top {
+  height: 194px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.yo {
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  display: flex;
+}
+
+.to {
+  flex: 1;
+  width: 200px;
+  margin-left: 70px;
+  margin-right: 70px;
+  align-items: center;
+  max-width: 300px;
+  display: flex;
+}
+
+.search-bar {
+  height: 53px;
+  flex: 1;
+  border-radius: 43px;
+  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.05);
+  font-size: 16px;
+  padding-left: 20px;
+  /* width: 300px; */
+}
+.search-button {
+  border-radius: 40px;
+  height: 55px;
+  width: 55px;
+  /* padding-left: 10px; */
+}
+
+.uo {
+  background: lightblue;
+  width: 200px;
+}

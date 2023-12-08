@@ -152,43 +152,9 @@ else{
 
         <form action=<?php echo $_SESSION["redirect2"]; ?> method="post" id="inoroutform">
           <input class="text-wrapper-2" type="hidden" name="logout" value="true">
-        </form>    
+        </form>  
+        <!--  
         <style>
-          form {
-            position: relative;
-            /*background-color: #d9d9d9;*/
-            width: 820px;
-            /*height: 53px;*/
-            /*border-radius: 43px;*/
-            /*border: 0.5px solid;*/
-            border-color: #cbc2c2;
-            top: 107px;
-            left: 345px;
-          }
-
-          input {
-            position: absolute;
-            background-color: #d9d9d9;
-            width: 820px;
-            height: 53px;
-            border-radius: 43px;
-            border-color: #d9d9d9;
-            top: 0px;
-            left: 0px;
-            box-shadow: 0px 4px 4px #00000040;
-            padding: 20px;
-          }
-
-          button {
-            position: absolute;
-            top: 5px;
-            left: 860px;
-            background-color: #d9d9d9;
-            border-radius: 43px;
-            border: 0.5px solid;
-            border-color: #cbc2c2;
-            height: 53px;
-          }
 
           radio {
             position: relative;
@@ -198,7 +164,7 @@ else{
           }
           
         </style>
-        <!--
+
           <div>
             <label>
               <input type="radio" name="searchType" value="genres" checked>
@@ -218,6 +184,12 @@ else{
         -->
                 
       </div>
+      <a href="<?php echo $_SESSION["redirect3"]; ?>" class='profile-icon'>
+          <div class="overlap-4">
+            <div class="ellipse-3"></div>
+            <img class="img" src= "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/ellipse-4-2.svg" />              
+          </div>
+        </a>
       <div class="recent-searches-tab-homepage">
                     <div class="font">Recent Songs</div>
                 </div>
