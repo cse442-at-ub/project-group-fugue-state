@@ -1,8 +1,7 @@
 <?php 
 
-require "connect.php";
-
-
+require_once "connect.php";
+session_start();
 
 
 //This function checks if any of the fields are empty and returns false if they are
@@ -42,7 +41,13 @@ function usernameMatch($username){
 function profileNewUserSQL(){
     global $profilePath;
     global $conn;
-    $oldusername = getInfo("old_username");
+    if (isset($_SESSION["logged_in"]) == false){
+        $message = "Please login to access this page";
+        popUp($message);
+        redirectPage($profilePath);
+        //exit();
+    }
+    $oldusername = $_SESSION["username"];
     $username = getInfo("username");
     if (missingFields($oldusername,$username) == false || usernameMatch($username) == false){
         redirectPage($profilePath);
@@ -52,6 +57,7 @@ function profileNewUserSQL(){
         $result = $conn->query($sql);
         if ($result === TRUE) {
             $message = "Username Updated";
+            $_SESSION["username"] = $username;
             popUp($message);
             redirectPage($profilePath);
             //exit();
@@ -65,7 +71,6 @@ function profileNewUserSQL(){
 }
 
 
-$conn = connect();
 profileNewUserSQL();
 
 

@@ -1,6 +1,6 @@
 <?php 
 
-require "connect.php";
+require_once "connect.php";
 
 //This function will generate a random ID for the user. It will check if the ID already exists 
 //in the database to make sure every user has a unique ID. If it already exists, it will recursively
@@ -129,7 +129,7 @@ function signUpSQL(){
              // Create folder for new user
              
 
-            mkdir($individualPath, 0777);
+            //mkdir($individualPath, 0777);
 
             
 
@@ -147,7 +147,6 @@ function signUpSQL(){
 }
 
 
-$conn = connect();
 signUpSQL();
 
 

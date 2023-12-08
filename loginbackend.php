@@ -3,7 +3,7 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
-require "connect.php";
+require_once "connect.php";
 
 //This function will take in a JSON object and convert it to a SQL query.
 
@@ -29,12 +29,20 @@ function missingFields($username,$password){
 function initializeSession($username){
     global $conn;
     session_start();
+    session_set_cookie_params(0);
     $_SESSION["username"] = $username;
     $sql = "SELECT account_id FROM logins WHERE username = '$username'";
     $result = $conn->query($sql);
     $account_id = $result->fetch_assoc()["account_id"];
     $_SESSION['account_id'] = $account_id;
     $_SESSION['logged_in'] = true; 
+
+    $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$account_id'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $_SESSION["song_1"] = $row["song_1"];
+    $_SESSION["song_2"] = $row["song_2"];
+    $_SESSION["song_3"] = $row["song_3"];
 }
 
 //This function will take in a username and password string and check if it exists in the database. If it 
@@ -67,7 +75,6 @@ function loginSQL(){
 }
 
 
-$conn = connect();
 loginSQL();
 
 ?>
