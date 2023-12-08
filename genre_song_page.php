@@ -4,10 +4,10 @@ require_once "readSong.php";
 session_start();
 
 // Retrieve the genre parameter from the URL
-$genre = isset($_GET['genre']) ? $_GET['genre'] : '';
+$genre = isset($_POST['genreType']) ? $_POST['genre'] : '';
 
 // Set the genre session variable
-$_SESSION['genre'] = $genre;
+$_SESSION['genreType'] = $genre;
 
 ?>
 <!DOCTYPE html>
@@ -66,7 +66,7 @@ $_SESSION['genre'] = $genre;
             <div class="div">
                 <?php
                     global $conn;
-                    $selectedGenre= $_SESSION['genre']
+                    $selectedGenre= $_SESSION['genreType']
                     $validGenres = array('pop', 'jazz', 'rock', 'country', 'classical', 'folk', 'indie', 'metal');
             if (in_array($selectedGenre, $validGenres)) {  
                 if (isset($_SESSION["logged_in"]) == true){

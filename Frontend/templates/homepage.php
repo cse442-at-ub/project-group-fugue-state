@@ -98,35 +98,35 @@ else{
             <div class="explore"></div>
             <div class="text-wrapper">Explore</div>
           </div>
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=rock" class='button-med'>
+          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='button-med' method="post">
             <div class="overlap-group">
               <div class="rectangle"></div>
-              <div class="text">Rock</div>
+              <button type="submit" name='genreType'>Rock</button>
             </div>
+          </form>          
+          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='overlap-wrapper' method="post">
+            <div class="overlap-group">
+              <div class="rectangle"></div>
+              <button type="submit" name='genreType'>Pop</button>
+            </div>
+          </form>          
+          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='overlap-group-wrapper' method="post">
+            <div class="overlap-group">
+              <div class="rectangle"></div>
+              <button type="submit" name='genreType'>Country</button>
+            </div>
+          </form>          
+          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='div-wrapper' method="post">
+            <div class="overlap-group">
+              <div class="rectangle"></div>
+              <button type="submit" name='genreType'>Jazz</button>
+            </form>
           </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=pop" class='overlap-wrapper'>
+          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='button-med-2' method="post">
             <div class="overlap-group">
               <div class="rectangle"></div>
-              <div class="text">Pop</div>
-            </div>
-          </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=country" class='overlap-group-wrapper'>
-            <div class="overlap-group">
-              <div class="rectangle"></div>
-              <div class="text">Country</div>
-            </div>
-          </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=jazz" class='div-wrapper'>
-            <div class="overlap-group">
-              <div class="rectangle"></div>
-              <div class="text">Jazz</div>
-            </div>
-          </a>          
-          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php?genre=classical" class='button-med-2'>
-            <div class="overlap-group">
-              <div class="rectangle"></div>
-              <div class="text">Classical</div>
-            </div>
+              <button type="submit" name='genreType'>Classical</button>
+            </form>
           </a>
           <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='button-med-3'>
             <div class="overlap-group">
