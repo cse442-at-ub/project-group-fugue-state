@@ -35,7 +35,7 @@ $key = $_POST['key'];
 // $chordsList = json_encode($chords);
 
 // Lyrics is a JSON array of strings
-$lyrics = $_POST['lyrics'];
+$lyric = $_POST['lyric'];
 
 $unique = false;
 while (!$unique) {
@@ -52,7 +52,7 @@ $song_writer = $_SESSION["username"];
 $pages = 1;
 
 echo "Title: $title, Song ID: $song_id, Pages: $pages, Date: $created_date, Songwriter: $song_writer";
-echo "Keysig: $key";
+echo "Keysig: $key, Lyric: $lyric";
 
 // Insert data into the database (replace 'your_table_name' with your actual table name)
 $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`,`created_date`,`keysig`) VALUES ('$title', '$song_id', '$pages', '$created_date', '$key')";
