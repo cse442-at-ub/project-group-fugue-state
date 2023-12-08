@@ -186,33 +186,6 @@ html,body{
   height: 112px;
 }
 
-.desktop-home-page .sign-in {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  position: absolute;
-  top: 187px;
-  left: 1268px;
-  background-color: #89c0f2;
-  border-radius: 50px;
-  box-shadow: 0px 4px 4px #00000040, inset 0px 4px 4px #00000040;
-}
-
-.desktop-home-page .text-wrapper-2 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  text-shadow: 0px 4px 4px #00000040;
-  font-family: "Miriam Libre", Helvetica;
-  font-weight: 700;
-  color: #6a6868;
-  font-size: 32px;
-  letter-spacing: 2.88px;
-  line-height: normal;
-}
-
 .desktop-home-page .button-sm {
   left: 0px;
   position: absolute;
@@ -562,4 +535,29 @@ html,body{
   left: 31px;
   background-color: #6a6868;
   border-radius: 18.89px;
+}
+
+.sign-in {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  top: 187px;
+  left: 1268px;
+  background-color: #89c0f2;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px #00000040, inset 0px 4px 4px #00000040;
+}
+
+.text-wrapper-2 {
+  position: relative;
+  margin-top: -1px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Miriam Libre", Helvetica;
+  font-weight: 700;
+  color: #6a6868;
+  font-size: 32px;
+  letter-spacing: 2.88px;
+  line-height: normal;
 }
