@@ -67,22 +67,20 @@ $_SESSION['genre'] = $genre;
                 <?php
                     global $conn;
                     $selectedGenre= $_SESSION['genre']
-                    $genreColumnName = strtolower($selectedGenre) . "_genre";
-                    $songs = "SELECT * FROM songs WHERE $genreColumnName = 1";
-                    $result = $conn->query($songs);
-                    if ($result->num_rows > 0){
-                        echo "<h2 class = 'title'>Songs in $selectedGenre genre</h2>";
-                        echo "<ul class = 'list'>";
-                        while ($row = $result->fetch_assoc()) {
-                            $song_id = $row['song_id'];
-                            $title = $row['title'];
-                            $songwriter = $row['songwriter'];
-                            echo "<li><a href='songView.php?song_id=$song_id'>$title</a></li>";
-                            echo "<div>$songwriter</div>";
-
-                        }
-                        echo "</ul>";
-                    }
+                    $validGenres = array('pop', 'jazz', 'rock', 'country', 'classical', 'folk', 'indie', 'metal');
+            if (in_array($selectedGenre, $validGenres)) {  
+                if (isset($_SESSION["logged_in"]) == true){
+                    $account_id = $_SESSION['account_id'];
+                    $song = $search_query;
+                    recentlySearched($conn, $account_id, $song);
+                }
+                // Redirect to the songview's page
+                $songViewPage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_page.php?genre_id=' . $selectedGenre . '&searchType=genre';
+                header("Location: $songViewPage");
+                exit();
+            }
+            $homepage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php';
+            header("Location: $homepage");
                 $conn->close();
                 ?>
             </div>
