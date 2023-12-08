@@ -74,7 +74,7 @@ $song_id = $_GET['song_id'];
     <style>
       #song {
     position: relative;
-    top:160px;
+    top:100px;
     left: 42%;
     width: 400px;
     display: flex;
