@@ -271,7 +271,7 @@ html,body{
   position: absolute;
   width: 170px;
   height: 77px;
-  top: 269px;
+  top: 0px;
 }
 
 .desktop-home-page .button-sm-4 {
@@ -279,7 +279,7 @@ html,body{
   position: absolute;
   width: 170px;
   height: 77px;
-  top: 269px;
+  top: 0px;
 }
 
 .desktop-home-page .settings {
