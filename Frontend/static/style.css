@@ -359,31 +359,6 @@ html,body{
   left: 23px;
 }
 
-.desktop-home-page .profile-icon {
-  position: absolute;
-  width: 102px;
-  height: 114px;
-  top: 47px;
-  left: 1296px;
-  box-shadow: 0px 4px 4px #00000040;
-}
-
-.desktop-home-page .overlap-4 {
-  position: relative;
-  height: 102px;
-  background-color: #b0a9a9;
-  border-radius: 51px;
-}
-
-.desktop-home-page .ellipse-3 {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  top: 13px;
-  left: 31px;
-  background-color: #6a6868;
-  border-radius: 18.89px;
-}
 
 .desktop-home-page .img {
   position: absolute;
@@ -491,11 +466,6 @@ html,body{
   left: 23px;
 }
 
-.profile-icon {
-  width: 102px;
-  height: 114px;
-}
-
 .profile-icon .overlap-group {
   position: relative;
   height: 102px;
@@ -513,26 +483,14 @@ html,body{
   border-radius: 18.89px;
 }
 
-.profile-icon .img {
-  position: absolute;
-  width: 60px;
-  height: 31px;
-  top: 54px;
-  left: 20px;
-}
-
 .top {
   height: 194px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
 }
 
 .yo {
-  background-color: lightblue;
   display: flex;
   align-items: center;
 }
@@ -568,6 +526,40 @@ html,body{
 }
 
 .uo {
-  background: lightblue;
   width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  height: 109px;
+}
+
+.profile-icon .img {
+  position: relative;
+  width: 60px;
+  height: 31px;
+  top: 11px;
+  left: 20px;
+}
+
+.overlap-4 {
+  position: relative;
+  height: 101px;
+  background-color: #b0a9a9;
+  border-radius: 51px;
+  width: 101px;
+}
+
+.ellipse-3 {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  top: 9px;
+  left: 31px;
+  background-color: #6a6868;
+  border-radius: 18.89px;
 }
