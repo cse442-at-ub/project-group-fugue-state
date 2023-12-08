@@ -29,7 +29,7 @@
                     <button type="submit" class="search-button">Search</button>
                     <div class = "radio">
                         <label for="genres">
-                            <input type="radio" name="searchType" value="genres" id="genres" data-gtm-form-interact-field-id="0"> Genres
+                            <input type="radio" name="searchType" value="genres" id="genres" data-gtm-form-interact-field-id="0" checked = "checked"> Genres
                         </label>
                         <label for="songwriter">
                             <input type="radio" name="searchType" value="songwriter" id="songwriter" data-gtm-form-interact-field-id="2"> Songwriter
