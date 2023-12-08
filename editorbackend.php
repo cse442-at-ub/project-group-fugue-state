@@ -39,7 +39,7 @@ $key = $_POST['key'];
 
 $unique = false;
 while (!$unique) {
-    $song_id = uniqid();
+    $song_id = mt_rand(0, 1000000);
     echo "1";
     $result = $conn->query("SELECT `song_id` FROM `songs` WHERE `song_id` = '$song_id'");
     if ($result->num_rows == 0) {
@@ -59,7 +59,7 @@ echo "Title: $title, Song ID: $song_id, Pages: $pages";
 $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('$title', '$song_id', '$pages')";
 // $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('TEMP FROM WEBSERVER', 5, 5)";
 $conn->query($sql);
-echo "3";
+echo " number 3";
 // $stmt = $conn->prepare("INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 // $stmt->bind_param("sssssssi", '$song_id', '$title', '$song_writer', '$created_date', '$key', '$chordsList', '$lyrics', '$pages');
 
