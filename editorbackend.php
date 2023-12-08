@@ -69,6 +69,7 @@ window.onload = function () {
     alert("Song submitted successfully");
 }
 </script>';
+header("Location: /CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php");
 // $stmt = $conn->prepare("INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 // $stmt->bind_param("sssssssi", '$song_id', '$title', '$song_writer', '$created_date', '$key', '$chordsList', '$lyrics', '$pages');
 
