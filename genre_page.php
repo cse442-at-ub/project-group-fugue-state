@@ -58,7 +58,7 @@ session_start();
             <div class="div">
                 <?php
                     global $conn;
-                    $artist_name = ($_GET['genre_id']);
+                    $selectedGenre= ($_GET['genre_id']);
                     $genreColumnName = strtolower($selectedGenre) . "_genre";
                     $songs = "SELECT * FROM songs WHERE $genreColumnName = 1";
                     $result = $conn->query($songs);

@@ -86,19 +86,22 @@ if (isset($_GET['q'])) {
             exit();
         }
         elseif ($searchType == 'genres'){
-            if (isset($_GET['genres'])) {
-                $selectedGenre = $_GET['genres'];
-                $genrelower= strtolower($selectedGenre);  
+            $selectedGenre = strtolower($_GET['q']);
+            $validGenres = array('pop', 'jazz', 'rock', 'country', 'classical', 'folk', 'indie', 'metal');
+            if (in_array($selectedGenre, $validGenres)) {  
                 if (isset($_SESSION["logged_in"]) == true){
                     $account_id = $_SESSION['account_id'];
                     $song = $search_query;
                     recentlySearched($conn, $account_id, $song);
                 }
                 // Redirect to the songview's page
-                $songViewPage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_page.php?genre_id=' . $genrelower . '&searchType=genre';
+                $songViewPage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_page.php?genre_id=' . $selectedGenre . '&searchType=genre';
                 header("Location: $songViewPage");
                 exit();
             }
+            $homepage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php';
+            header("Location: $homepage");
+            exit();
         }
     }
     /*
