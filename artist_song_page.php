@@ -21,15 +21,17 @@ session_start();
                 <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/search.php" method="get" id="search-bar" data-gtm-form-interact-id="0"> 
                     <input type="search" class="search-bar" id="query" name="q" placeholder="Search..." aria-label="Search through site content" data-gtm-form-interact-field-id="0">
                     <button type="submit" class="search-button">Search</button>
-                    <label for="genres">
-                        <input type="radio" name="searchType" value="genres" id="genres" data-gtm-form-interact-field-id="0"> Genres
-                    </label>
-                    <label for="songwriter">
-                        <input type="radio" name="searchType" value="songwriter" id="songwriter" data-gtm-form-interact-field-id="2"> Songwriter
-                    </label>
-                    <label for="title">
-                        <input type="radio" name="searchType" value="title" id="title" data-gtm-form-interact-field-id="1"> Title
-                    </label>
+                    <div class = "radio">
+                        <label for="genres">
+                            <input type="radio" name="searchType" value="genres" id="genres" data-gtm-form-interact-field-id="0"> Genres
+                        </label>
+                        <label for="songwriter">
+                            <input type="radio" name="searchType" value="songwriter" id="songwriter" data-gtm-form-interact-field-id="2"> Songwriter
+                        </label>
+                        <label for="title">
+                            <input type="radio" name="searchType" value="title" id="title" data-gtm-form-interact-field-id="1"> Title
+                        </label>
+                    </div>
                 </form>
             </div>
             <div class="uo">
