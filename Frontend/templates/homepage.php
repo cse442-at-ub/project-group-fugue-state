@@ -49,6 +49,15 @@ else{
         <form action="../../search.php" method="get" id="search-bar" data-gtm-form-interact-id="0"> 
           <input type="search" class="search-bar" id="query" name="q" placeholder="Search..." aria-label="Search through site content" data-gtm-form-interact-field-id="0">
           <button type="submit" class="search-button">Search</button>
+          <label for="genres">
+            <input type="radio" name="searchType" value="genres" id="genres" data-gtm-form-interact-field-id="0"> Genres
+          </label>
+          <label for="songwriter">
+            <input type="radio" name="searchType" value="songwriter" id="songwriter" data-gtm-form-interact-field-id="2"> Songwriter
+          </label>
+          <label for="title">
+            <input type="radio" name="searchType" value="title" id="title" data-gtm-form-interact-field-id="1"> Title
+          </label>
         </form>
       </div>
       <div class="uo">
@@ -151,38 +160,6 @@ else{
             </div>
           </a>                  
         </div> 
-
-
-        <!--  
-        <style>
-
-          radio {
-            position: relative;
-            top: 25px;
-            width: 5px;
-            height: 5px;
-          }
-          
-        </style>
-
-          <div>
-            <label>
-              <input type="radio" name="searchType" value="genres" checked>
-              Genres
-            </label>
-      
-            <label>
-              <input type="radio" name="searchType" value="songwriter">
-              Songwriter
-            </label>
-      
-            <label>
-              <input type="radio" name="searchType" value="title">
-              Title
-            </label>
-          </div>
-        -->
-                
       </div>
       <div class="recent-searches-tab-homepage">
                     <div class="font">Recent Songs</div>
