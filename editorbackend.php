@@ -35,7 +35,7 @@ $key = $_POST['key'];
 // $chordsList = json_encode($chords);
 
 // Lyrics is a JSON array of strings
-$lyric = $_POST['lyric'];
+// $lyric = $_POST['lyric'];
 
 $unique = false;
 while (!$unique) {
@@ -48,14 +48,20 @@ while (!$unique) {
 }
 
 $created_date = date('Y-m-d');
-$song_writer = $_SESSION["username"];
+
+if ($_SESSION["username"] == 'No one is logged in') {
+    $song_writer = "None";
+} else {
+    $song_writer = $_SESSION["username"];
+}
+
 $pages = 1;
 
 echo "Title: $title, Song ID: $song_id, Pages: $pages, Date: $created_date, Songwriter: $song_writer";
 echo "Keysig: $key, Lyric: $lyric";
 
 // Insert data into the database (replace 'your_table_name' with your actual table name)
-$sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`,`created_date`,`keysig`) VALUES ('$title', '$song_id', '$pages', '$created_date', '$key')";
+$sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`,`created_date`,`keysig`, `songwriter`) VALUES ('$title', '$song_id', '$pages', '$created_date', '$key', $song_writer)";
 // $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('TEMP FROM WEBSERVER', 5, 5)";
 $conn->query($sql);
 // $stmt = $conn->prepare("INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -69,4 +75,6 @@ $conn->query($sql);
 
 // $stmt->close();
 // $conn->close();
+header("Location: /CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/songeditor.php");
+exit;
 ?>
