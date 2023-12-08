@@ -61,7 +61,7 @@ echo "Title: $title, Song ID: $song_id, Pages: $pages, Date: $created_date, Song
 echo "Keysig: $key, Lyric: $lyric";
 
 // Insert data into the database (replace 'your_table_name' with your actual table name)
-$sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`,`created_date`,`keysig`, `songwriter`) VALUES ('$title', '$song_id', '$pages', '$created_date', '$key', $song_writer)";
+$sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`,`created_date`,`keysig`, `songwriter`) VALUES ('$title', '$song_id', '$pages', '$created_date', '$key', '$song_writer')";
 // $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('TEMP FROM WEBSERVER', 5, 5)";
 $conn->query($sql);
 // $stmt = $conn->prepare("INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
