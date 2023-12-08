@@ -72,9 +72,12 @@ $song_id = $_GET['song_id'];
     <style>
       #song {
     position: relative;
-    top:260px;
-    left: 400px;
+    top:160px;
+    left: 42%;
     width: 400px;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-35%, -1%)
     }
     </style>  
     <div id="song"></div>
