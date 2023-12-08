@@ -59,8 +59,14 @@
                     <label for="classical">Classical:</label>
                     <input type="checkbox" name="genres" id="classical" value="classical">
 
-                    <label for="other">other:</label>
-                    <input type="checkbox" name="genres" id="other" value="other">
+                    <label for="folk">other:</label>
+                    <input type="checkbox" name="genres" id="folk" value="folk">
+
+                    <label for="indie">other:</label>
+                    <input type="checkbox" name="genres" id="indie" value="indie">
+
+                    <label for="metal">other:</label>
+                    <input type="checkbox" name="genres" id="metal" value="metal">
                     </div>
 
                     <table id="songTable">
