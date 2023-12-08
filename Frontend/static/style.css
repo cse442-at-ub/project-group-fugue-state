@@ -9,8 +9,9 @@ html,body{
   position: absolute;
   width: 671px;
   height: 475px;
-  top: 398px;
-  left: 387px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .desktop-home-page .explore-box {
