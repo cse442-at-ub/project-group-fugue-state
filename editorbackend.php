@@ -64,6 +64,11 @@ echo "Keysig: $key, Lyric: $lyric";
 $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`,`created_date`,`keysig`, `songwriter`) VALUES ('$title', '$song_id', '$pages', '$created_date', '$key', '$song_writer')";
 // $sql = "INSERT INTO `songs` (`title`, `song_id`, `pages`) VALUES ('TEMP FROM WEBSERVER', 5, 5)";
 $conn->query($sql);
+echo '<script type="text/javascript">
+window.onload = function () {
+    alert("Song submitted successfully");
+}
+</script>';
 // $stmt = $conn->prepare("INSERT INTO `songs` (`song_id`, `title`, `songwriter`, `created_date`, `keysig`, `chord_progression`, `lyrics`, `pages`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 // $stmt->bind_param("sssssssi", '$song_id', '$title', '$song_writer', '$created_date', '$key', '$chordsList', '$lyrics', '$pages');
 
@@ -75,6 +80,6 @@ $conn->query($sql);
 
 // $stmt->close();
 // $conn->close();
-header("Location: /CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/songeditor.php");
+// header("Location: /CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/songeditor.php");
 exit;
 ?>
