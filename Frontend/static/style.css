@@ -18,7 +18,7 @@ html,body{
   position: absolute;
   width: 671px;
   height: 475px;
-  top: 0;
+  top: 153px;
   left: 0;
 }
 
@@ -51,7 +51,7 @@ html,body{
 }
 
 .desktop-home-page .button-med {
-  top: 57px;
+  top: 207px;
   left: 17px;
   position: absolute;
   width: 207px;
@@ -95,7 +95,7 @@ html,body{
 }
 
 .desktop-home-page .overlap-wrapper {
-  top: 57px;
+  top: 207px;
   left: 234px;
   position: absolute;
   width: 207px;
@@ -103,7 +103,7 @@ html,body{
 }
 
 .desktop-home-page .overlap-group-wrapper {
-  top: 57px;
+  top: 207px;
   left: 453px;
   position: absolute;
   width: 207px;
@@ -111,7 +111,7 @@ html,body{
 }
 
 .desktop-home-page .div-wrapper {
-  top: 206px;
+  top: 352px;
   left: 18px;
   position: absolute;
   width: 207px;
@@ -119,7 +119,7 @@ html,body{
 }
 
 .desktop-home-page .button-med-2 {
-  top: 207px;
+  top: 352px;
   left: 235px;
   position: absolute;
   width: 207px;
@@ -127,7 +127,7 @@ html,body{
 }
 
 .desktop-home-page .button-med-3 {
-  top: 207px;
+  top: 352px;
   left: 453px;
   position: absolute;
   width: 207px;
@@ -135,7 +135,7 @@ html,body{
 }
 
 .desktop-home-page .button-lg {
-  top: 352px;
+  top: 499px;
   left: 18px;
   position: absolute;
   width: 317px;
@@ -179,7 +179,7 @@ html,body{
 }
 
 .desktop-home-page .button-lg-2 {
-  top: 353px;
+  top: 499px;
   left: 346px;
   position: absolute;
   width: 317px;
@@ -214,11 +214,11 @@ html,body{
 }
 
 .desktop-home-page .button-sm {
-  left: 398px;
+  left: 0px;
   position: absolute;
   width: 170px;
   height: 77px;
-  top: 269px;
+  top: 0px;
 }
 
 .desktop-home-page .overlap-3 {
@@ -259,15 +259,15 @@ html,body{
 }
 
 .desktop-home-page .button-sm-2 {
-  left: 582px;
+  left: 184px;
   position: absolute;
   width: 170px;
   height: 77px;
-  top: 269px;
+  top: 0px;
 }
 
 .desktop-home-page .button-sm-3 {
-  left: 767px;
+  left: 368px;
   position: absolute;
   width: 170px;
   height: 77px;
@@ -275,7 +275,7 @@ html,body{
 }
 
 .desktop-home-page .button-sm-4 {
-  left: 951px;
+  left: 552px;
   position: absolute;
   width: 170px;
   height: 77px;

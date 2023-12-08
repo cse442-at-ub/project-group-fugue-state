@@ -94,7 +94,31 @@ else{
               <div class="rectangle-2"></div>
               <div class="text-2">Random</div>
             </div>
-          </a>          
+          </a>
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/songeditor.php" class='button-sm'>
+            <div class="overlap-3">
+              <div class="rectangle-3"></div>
+              <div class="text-3">New Song</div>
+            </div>
+          </a>        
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='button-sm-2'>
+            <div class="overlap-3">
+              <div class="rectangle-3"></div>
+              <div class="text-3">Practice</div>
+            </div>
+          </a>        
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='button-sm-3'>
+            <div class="overlap-3">
+              <div class="rectangle-3"></div>
+              <div class="text-3">Song List</div>
+            </div>
+          </a>        
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='button-sm-4'>
+            <div class="overlap-3">
+              <div class="rectangle-3"></div>
+              <div class="text-3">Progress</div>
+            </div>
+          </a>                  
         </div>
         <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php" id="inoroutlink" class='sign-in'>
           <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
@@ -104,30 +128,6 @@ else{
           <input class="text-wrapper-2" type="hidden" name="logout" value="true">
         </form>    
 
-        <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/songeditor.php" class='button-sm'>
-          <div class="overlap-3">
-            <div class="rectangle-3"></div>
-            <div class="text-3">New Song</div>
-          </div>
-        </a>        
-        <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='button-sm-2'>
-          <div class="overlap-3">
-            <div class="rectangle-3"></div>
-            <div class="text-3">Practice</div>
-          </div>
-        </a>        
-        <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='button-sm-3'>
-          <div class="overlap-3">
-            <div class="rectangle-3"></div>
-            <div class="text-3">Song List</div>
-          </div>
-        </a>        
-        <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='button-sm-4'>
-          <div class="overlap-3">
-            <div class="rectangle-3"></div>
-            <div class="text-3">Progress</div>
-          </div>
-        </a>        
         <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
           <div class="ellipse-wrapper">
             <div class="ellipse"></div>
