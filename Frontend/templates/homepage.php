@@ -12,11 +12,7 @@ if (isset($_SESSION["logged_in"]) == false){
   // $song_2 = "None";
   // $song_3 = "None";
   $_SESSION["redirect3"] = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php";
-  $_SESSION["rock_button"] = "rock";
-  $_SESSION["pop_button"] = "pop";
-  $_SESSION["country_button"] = "country";
-  $_SESSION["jazz_button"] = "jazz";
-  $_SESSION["classical_button"] = "classical";
+
 }
 else{
     $_SESSION["button"] = "Sign Out";
@@ -29,14 +25,9 @@ else{
     // $song_1 = $row["song_1"];
     // $song_2 = $row["song_2"];
     // $song_3 = $row["song_3"];
-    $_SESSION["redirect3"] = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php";
-    $_SESSION["rock_button"] = "rock";
-    $_SESSION["pop_button"] = "pop";
-    $_SESSION["country_button"] = "country";
-    $_SESSION["jazz_button"] = "jazz";
-    $_SESSION["classical_button"] = "classical";
-}
 
+    $_SESSION["redirect3"] = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php";
+}
 ?>
 
 <!DOCTYPE html>
@@ -98,35 +89,35 @@ else{
             <div class="explore"></div>
             <div class="text-wrapper">Explore</div>
           </div>
-          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='button-med' method="post">
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/rock_redirect.php" class='button-med'>
             <div class="overlap-group">
               <div class="rectangle"></div>
-              <button type="submit" name='genreType'>Rock</button>
+              <div class="text">Rock</div>
             </div>
-          </form>          
-          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='overlap-wrapper' method="post">
-            <div class="overlap-group">
-              <div class="rectangle"></div>
-              <button type="submit" name='genreType'>Pop</button>
-            </div>
-          </form>          
-          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='overlap-group-wrapper' method="post">
-            <div class="overlap-group">
-              <div class="rectangle"></div>
-              <button type="submit" name='genreType'>Country</button>
-            </div>
-          </form>          
-          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='div-wrapper' method="post">
-            <div class="overlap-group">
-              <div class="rectangle"></div>
-              <button type="submit" name='genreType'>Jazz</button>
-            </form>
           </a>          
-          <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_song_page.php" id='button-med-2' method="post">
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/pop_redirect.php" class='overlap-wrapper'>
             <div class="overlap-group">
               <div class="rectangle"></div>
-              <button type="submit" name='genreType'>Classical</button>
-            </form>
+              <div class="text">Pop</div>
+            </div>
+          </a>          
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/country_redirect.php" class='overlap-group-wrapper'>
+            <div class="overlap-group">
+              <div class="rectangle"></div>
+              <div class="text">Country</div>
+            </div>
+          </a>          
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/jazz_redirect.php" class='div-wrapper'>
+            <div class="overlap-group">
+              <div class="rectangle"></div>
+              <div class="text">Jazz</div>
+            </div>
+          </a>          
+          <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/classical_redirect.php" class='button-med-2'>
+            <div class="overlap-group">
+              <div class="rectangle"></div>
+              <div class="text">Classical</div>
+            </div>
           </a>
           <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class='button-med-3'>
             <div class="overlap-group">
