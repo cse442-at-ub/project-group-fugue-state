@@ -5,7 +5,7 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-    <form action="../../search.php" method="get" id="genre_redirect">
+    <form action="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/search.php" method="get" id="genre_redirect">
         <input type="hidden" name="q" value="classical">
         <input type="hidden" name="searchType" value="genres">
         <input type="submit" value="Submit">
