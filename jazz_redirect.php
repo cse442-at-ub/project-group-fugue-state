@@ -1,5 +1,7 @@
 <?php
 require_once "connect.php";
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -10,7 +12,8 @@ require_once "connect.php";
     </form> 
 
     <script>
-        document.getElementById('myForm').submit(); 
+        window.onload = function() {
+            document.getElementById('genre_redirect').submit(); 
+        };
     </script>
 </html>
-?>
