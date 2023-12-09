@@ -2,10 +2,9 @@
 <html>
   <style>
     div.relative {
-      position: flex;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
+    position: relative;
+    top:260px;
+    left: 400px;
     }
     h1{
     font-size: 32px;
@@ -51,14 +50,17 @@
     -->
   </head>
   <body>
-    <div class="top">
-      <div class="yo">
-        <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class="logo-icon">
-          <img class="logo" src="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png">
-        </a>
-      </div>
-    </div>
+    <div class="desktop-home-page">
       <div class="div">
+        <div class="overlap">
+
+        </div>
+
+        <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
+          <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png" />
+        </a>
+        <!--<img class="logo" src="img/logo.png" />-->
+
           <style>
               input[type=text] {
               width: 50%;
@@ -77,18 +79,16 @@
             }
             </style>
           <div class="relative">
-              <h1>Sign Up:</h1>
-              <form action="../../signupbackend.php" method="post">
-                <label for="username">Create Username:</label><br>
-                <input type="username" id="username" name="username" placeholder="Username" value=""><br>
-                <label for="email">Enter Email:</label><br>
-                <input type="username" id="email" name="email" placeholder="example@gmail.com" value=""><br>
-                <label for="password">Create Password:</label><br>
-                <input type="password" id="password" name="password" placeholder="Password" value=""><br><br>
-                <label for="confirm_password">Confirm Password:</label><br>
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Password" value=""><br><br>
+              <h1>Reset Password:</h1>
+              <form action="../../forgotpwdbackend.php" method="post">
+                <label for="password">New Password:</label><br>
+                <input type="password" id="newpassword" name="newpassword" placeholder="New Password" value=""><br>
+                <label for="password">Confirm Password:</label><br>
+                <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" value=""><br>
+                <label for="password">Reset Code:</label><br>
+                <input type="username" id="code" name="code" placeholder="Code" value=""><br><br>
                 <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php">
-                  <input type="submit" value="Sign up">
+                  <input type="submit" value="Reset Password">
                 </a>
             </form>
             <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php">
@@ -96,5 +96,6 @@
             </a>
           </div>
       </div>
+    </div>
   </body>
 </html>

@@ -44,11 +44,13 @@ function redirectPage($redirect){
     echo '</script>';
 }
 
-$loginPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php";
-$signupPath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/signup.php";
-$homePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php";
-$profilePath = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php";
+$loginPath = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php";
+$signupPath = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/signup.php";
+$homePath = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php";
+$profilePath = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php";
 $usersPath = "../Users/";
+$forgotPath = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/forgotpassword.php";
+$resetPath = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/resetcode.php";
 //$usersPath = "./Users/";
 
 

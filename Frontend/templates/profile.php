@@ -4,8 +4,8 @@ session_start();
 
 if (isset($_SESSION["logged_in"])){
     $_SESSION["button"] = "Sign Out";
-    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php";
-    $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/logoutbackend.php";
+    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php";
+    $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/logoutbackend.php";
 
     $username = $_SESSION["username"];
     // $sql = "SELECT song_1, song_2, song_3 FROM recent_songs WHERE account_id = '$username'";
@@ -17,8 +17,8 @@ if (isset($_SESSION["logged_in"])){
 
 }else{
     $_SESSION["button"] = "Sign In";
-    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php"; #replace with global filepath not relative
-    $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php";
+    $_SESSION["redirect"] = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php"; #replace with global filepath not relative
+    $_SESSION["redirect2"] = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php";
 
     // $song_1 = "None";
     // $song_2 = "None";
@@ -29,40 +29,48 @@ if (isset($_SESSION["logged_in"])){
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/globals.css">
-        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/styleguide.css">
-        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/style.css">
-        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/profile.css">
+        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/globals.css">
+        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/styleguide.css">
+        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/style.css">
+        <link rel="stylesheet" type="text/css" href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/profile.css">
     </head>
-        <body>
+    <body>
+    <div class="top">
+        <div class="yo">
+            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class="logo-icon">
+                <img class="logo" src="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png">
+            </a>
+        </div>
+        <div class="uo">
+            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
+                <div class="overlap-4">
+                    <div class="ellipse-3"></div>
+                    <img class="img" src= "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/ellipse-4-2.svg" />
+                </div>
+            </a>
+            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/login.php" id="inoroutlink" class='sign-in'>
+                <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
+            </a>
+            <form action=<?php echo $_SESSION["redirect2"]; ?> method="post" id="inoroutform">
+                    <input class="text-wrapper-2" type="hidden" name="logout" value="true">
+                </form>
+            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/tbd.php" class="settings">
+                <div class="ellipse-wrapper">
+                    <div class="ellipse"></div>
+                </div>
+            </a>
+        </div>
+    </div>
         <div class="desktop-home-page">
             <div class="div">
                 <!-- <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='sign-in'>
                     <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
                 </a> -->
-                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/login.php" id="inoroutlink" class='sign-in'>
-                    <div class="text-wrapper-2"><?php echo $_SESSION["button"]; ?></div>
-                </a> 
-
-                <form action=<?php echo $_SESSION["redirect2"]; ?> method="post" id="inoroutform">
-                    <input class="text-wrapper-2" type="hidden" name="logout" value="true">
-                </form>
-
-
-                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/tbd.php" class='settings'>
-                    <div class="ellipse-wrapper">
-                        <div class="ellipse"></div>
-                    </div>
+                <!--
+                <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
+                    <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/static/img/logo.png" />
                 </a>
-                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php" class='profile-icon'>
-                    <div class="overlap-4">
-                        <div class="ellipse-3"></div>
-                        <img class="img" src= "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/ellipse-4-2.svg" />
-                    </div>
-                </a>
-                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php" class='logo-icon'>
-                    <img class="logo" src = "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/static/img/logo.png" />
-                </a>
+                -->
                 <div class="rectangle-4"></div>
                 <div class="profile-tab">
                     <div class="font">Profile</div>
@@ -82,7 +90,7 @@ if (isset($_SESSION["logged_in"])){
                         <div class="font">New Username: </div>
                         <input class="text-box" type="text" id="username" name="username" placeholder="User123">
                         <div class="username-button">
-                            <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
+                            <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php">
                                     <input type="submit" value="Save" />
                                 </a>
                         </div>
@@ -104,7 +112,7 @@ if (isset($_SESSION["logged_in"])){
                                 <input class="text-box" type="password" id="password" name="password" placeholder="">
                             </div>
                             <div class="password-button">
-                                <a href="/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
+                                <a href="/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php">
                                     <input class="font3" type="submit" value="Save" />
                                 </a>
                             </div>
@@ -157,7 +165,7 @@ if (isset($_SESSION["logged_in"])){
                         </div>
                         <div class="submit-row">
                             <div>
-                                <a href= "/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/profile.php">
+                                <a href= "/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/profile.php">
                                     <input class="font3" type="submit" value="Submit" />
                                 </a>
                             </div>

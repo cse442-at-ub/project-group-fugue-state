@@ -40,13 +40,77 @@ if (isset($_GET['q'])) {
     // global $conn;
     $search_query = strtolower($_GET['q']);
     $search_query = str_replace('"', '\"', $search_query); // Escape double quotes if needed
-    
+
+    if (isset($_GET['searchType'])){
+        $searchType = $_GET['searchType'];
+        if ($searchType == 'songwriter'){
+            $checkartist = "SELECT * FROM songs WHERE songwriter = '$search_query'";
+            $resultartist = $conn->query($checkartist);
+            
+            if ($resultartist->num_rows > 0) {
+                $artistpage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/artist_song_page.php?artist=' . urlencode($search_query) . '&searchType=artist';
+                if (isset($_SESSION["logged_in"]) == true){
+                    $account_id = $_SESSION['account_id'];
+                    $song = $search_query;
+                    recentlySearched($conn, $account_id, $song);
+                }
+                // Redirect to the artist's page
+                header("Location: $artistpage");
+                exit();
+            }
+            $homepage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php';
+            header("Location: $homepage");
+            exit();
+        }
+        elseif ($searchType == 'title'){
+            $checktitle = "SELECT * FROM songs WHERE LOWER(title) = '$search_query'";
+            $resulttitle = $conn->query($checktitle);
+
+            if ($resulttitle->num_rows > 0) {
+                $row = $resulttitle->fetch_assoc();
+                $song_id = $row['song_id'];
+                $_SESSION['current_song_id'] = $song_id;
+                
+                if (isset($_SESSION["logged_in"]) == true){
+                    $account_id = $_SESSION['account_id'];
+                    $song = $search_query;
+                    recentlySearched($conn, $account_id, $song);
+                }
+                // Redirect to the songview's page
+                $songViewPage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/songView.php?song_id=' . $song_id . '&searchType=title';
+                header("Location: $songViewPage");
+                exit();
+            }
+            $homepage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php';
+            header("Location: $homepage");
+            exit();
+        }
+        elseif ($searchType == 'genres'){
+            $selectedGenre = strtolower($_GET['q']);
+            $validGenres = array('pop', 'jazz', 'rock', 'country', 'classical', 'folk', 'indie', 'metal');
+            if (in_array($selectedGenre, $validGenres)) {  
+                if (isset($_SESSION["logged_in"]) == true){
+                    $account_id = $_SESSION['account_id'];
+                    $song = $search_query;
+                    recentlySearched($conn, $account_id, $song);
+                }
+                // Redirect to the songview's page
+                $songViewPage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/genre_page.php?genre_id=' . $selectedGenre . '&searchType=genre';
+                header("Location: $songViewPage");
+                exit();
+            }
+            $homepage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php';
+            header("Location: $homepage");
+            exit();
+        }
+    }
+    /*
     $checkartist = "SELECT * FROM songs WHERE songwriter = '$search_query'";
     $resultartist = $conn->query($checkartist);
     
     if ($resultartist->num_rows > 0) {
 
-        $artistpage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/artist_song_page.php?artist=' . urlencode($search_query);
+        $artistpage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/artist_song_page.php?artist=' . urlencode($search_query);
         if (isset($_SESSION["logged_in"]) == true){
             $account_id = $_SESSION['account_id'];
             $song = $search_query;
@@ -75,13 +139,14 @@ if (isset($_GET['q'])) {
         }
         
         // Redirect to the songview's page
-        $songViewPage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/songView.php';
+        $songViewPage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/songView.php?song_id=' . $song_id;
         header("Location: $songViewPage");
         exit();
     }
-
+    
+*/
     } else {
-        $homepage = '/CSE442-542/2023-Fall/cse-442o/project-group-fugue-state/Frontend/templates/homepage.php';
+        $homepage = '/CSE442-542/2023-Fall/cse-442o/git_repo/project-group-fugue-state/Frontend/templates/homepage.php';
         header("Location: $homepage");
         exit();
     }

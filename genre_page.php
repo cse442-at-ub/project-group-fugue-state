@@ -57,13 +57,13 @@ session_start();
         <div class="desktop-home-page">
             <div class="div">
                 <?php
-                //if(isset($_GET['artist'])){
                     global $conn;
-                    $artist_name = urldecode($_GET['artist']);
-                    $songs = "SELECT * FROM songs WHERE LOWER(TRIM(songwriter)) = LOWER(TRIM('$artist_name'))";
+                    $selectedGenre= ($_GET['genre_id']);
+                    $genreColumnName = strtolower($selectedGenre) . "_genre";
+                    $songs = "SELECT * FROM songs WHERE $genreColumnName = 1";
                     $result = $conn->query($songs);
                     if ($result->num_rows > 0){
-                        echo "<h2 class = 'title'>Songs by $artist_name</h2>";
+                        echo "<h2 class = 'title'>Songs in $selectedGenre genre</h2>";
                         echo "<ul class = 'list'>";
                         while ($row = $result->fetch_assoc()) {
                             $song_id = $row['song_id'];
@@ -75,7 +75,6 @@ session_start();
                         }
                         echo "</ul>";
                     }
-                //}
                 $conn->close();
                 ?>
             </div>
